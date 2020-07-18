@@ -1,0 +1,65 @@
+:root {
+    --blue: #3d70ed;
+    --purple: #6139ee;
+    --turkey: #45bcd4;
+    --bg-primary: linear-gradient(45deg, #2196f3, #2196f3);
+    --bg-secondary: linear-gradient(45deg, #343c49, #142238);
+    --bg-alert: linear-gradient(45deg, #d65d54, #e01f54) ;
+	--bg-white: white;
+    --secondary: #45bcd4;
+    --primary-dark: #1565c0;
+    --primary: #2196f3;
+	--light-gray: #f5f5f5;
+	--alert: #d65d54;
+	--bg-lima: linear-gradient(135deg, #acd000, #7a8d1e);
+	--bg-teal: linear-gradient(135deg, #4dcdb6, #037a69);
+	--bg-purple: linear-gradient(135deg, #6d3c87, #cd232e);
+	--bg-sky: linear-gradient(135deg, #00d8ff, #367ad8);
+	--bg-orange: linear-gradient(135deg, #e8354a, #ea533a);
+	--bg-mix01: linear-gradient(135deg, #c22ed0, #5ffae0);
+	--bg-darkpink: linear-gradient(135deg, #ff3e9d, #0e1f40);
+}
+.bg-white{
+	background: var(--bg-white) !important;
+	color: gray;
+}
+.bg-primary{
+    background: var(--bg-primary) !important;
+}
+.bg-secondary {
+    background: var(--bg-secondary) !important;
+}
+.primary-dark{
+    color: var(--primary-dark) !important;
+}
+.primary{
+    color: var(--primary) !important;
+}
+.secondary{
+    color: var(--secondary) !important;
+}
+.alert{
+	color: var(--alert) !important;
+}
+.bg-alert{
+    background: var(--bg-alert) !important;
+}
+.bg-primary-image{
+    background: var(--primary);
+    color: white;
+    position: relative;
+	z-index: 0;
+}
+.bg-primary-image::after{
+    content: '';
+    z-index: -1;
+    background-image: url(../images/bg_001.jpg);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: .1;
+    background-position: center;
+    background-size: cover;
+}

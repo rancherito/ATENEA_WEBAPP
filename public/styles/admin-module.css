@@ -1,0 +1,176 @@
+h2{
+	font-family: var(--primary-font)
+}
+html, body{
+	height: 100vh;
+	width: 100%;
+}
+body{
+	display: inline-flex;
+	background: var(--bg-teal);
+}
+:root{
+	--bg-primary: var(--bg-orange)
+}
+#logoapp{
+	height: 30px;
+}
+aside{
+	width: 60px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: rgba(255, 255, 255, 0.85);
+}
+#content-body{
+	width: calc(100% - 60px);
+}
+#logo{
+	background: rgba(0, 0, 0, 0.1);
+	height: 60px;
+	width: 60px;
+}
+
+#menu-aside a{
+	display: block;
+	width: 100%;
+	font-size: 1.5rem;
+	color: #272727;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 50px;
+	margin: 4px;
+	border-radius: 2px;
+	transition: linear background-color 0.2s;
+}
+#menu-aside a:hover{
+	background: var(--bg-primary);
+	color: white;
+}
+#menu-aside a.active{
+	background: var(--bg-primary);
+	color: white;
+}
+#options-aside{
+	padding: 8px 0;
+}
+#options-aside a.aside-item-opt{
+	display: block;
+	font-size: 1.5rem;
+	color: var(--bg-secondary);
+	margin: 8px;
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 50%;
+	overflow: hidden;
+}
+#options-aside a.aside-item-opt div{
+	height: 100%;
+	width: 100%;
+}
+
+#barsearch{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#barsearch h2{
+	margin: 0;
+}
+.searchBox2{
+	height: 46px;
+}
+.table-index{
+	width: 1px; padding: 0 16px;
+}
+.table-items{
+	margin-top: 32px;
+	background: white;
+	border-radius: 2px;
+}
+
+#c-options i{
+	color: white;
+	font-size: 1.2rem;
+	display: inline-flex;
+	padding: 0 8px;
+}
+#c-list{
+	padding-top: 16px;
+}
+#c-list div{
+	background-color: white;
+	padding: 16px;
+	margin-bottom: 2px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 2px;
+}
+#c-list div label{
+	height: 20px;
+	width: 20px;
+}
+.row-menu{
+	padding: 0 16px;
+}
+.row-menu > i{
+	background-color: #dedede;
+	width: 20px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 2px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#content-body{
+	padding: 0;
+	display: flex;
+	overflow: hidden;
+}
+#divider-main, #divider-option{
+	padding: 32px;
+}
+#divider-main{
+	width: calc(100% - 400px);
+}
+#divider-option{
+	background: rgba(255, 255, 255, 0.2);
+	width: 400px;
+}
+
+#barsearch{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#barsearch h2{
+	margin: 0;
+}
+.searchBox2{
+	width: 400px;
+	margin: 0;
+	height: 44px;
+	box-shadow: none;
+}
+#content-barsearch{
+	display: inline-flex
+}
+#content-barsearch > *{
+	margin-right: 16px !important;
+}
+#content-barsearch a{
+	width: calc(46px);
+	box-sizing: content-box;
+	border-radius: 2px;
+	font-size: 2rem;
+	cursor: pointer;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.1);
+}

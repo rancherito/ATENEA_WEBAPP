@@ -1,0 +1,17 @@
+:root{
+	--primary-font: 'Roboto Condensed','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--title-font: 'Rosario', sans-serif;
+}
+* {
+	font-family: var(--primary-font);
+	outline: none;
+}
+button, input, optgroup, select, textarea{
+	font-family: var(--primary-font);
+}
+body{
+	background: #fafafa;
+}a
+body, html{
+	overflow-x: hidden;
+}
