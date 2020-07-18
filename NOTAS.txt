@@ -1,8 +1,0 @@
-SOBRE RESULTADOS:
-El variable del pdf esta en el archivo .env, editar "variable.resultado", para ver cambios
-
-SOBRE TEMARIO:
-El variable del pdf esta en el archivo .env, editar "variable.temario", para ver cambios
-
-SOBRE REGLAMENTO:
-El variable del pdf esta en el archivo .env, editar "variable.reglamento", para ver cambios
