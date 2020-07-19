@@ -1,4 +1,5 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="<?= base_url() ?>/public/libs/JaroWrinker/JaroWrinker.js"></script>
 <?php color_modulo('var(--bg-teal)') ?>
 <style media="screen">
 .row{
@@ -8,7 +9,7 @@
 .state{
 	height: 20px;
 	width: 20px;
-	background: var(--bg-primary);
+	background: var(--bg-lima);
 	border-radius: 50%;
 }
 .state-off{
@@ -17,11 +18,16 @@
 </style>
 <div id="divider-main">
 	<!--BUSCARDOR DEL MODULO, PROVEIDO POR HELPERS PHP-->
-	<?php search_admin([
-		'placeholder' => 'BUSCAR MARCA',
-		'title' => 'Gestion de Marcas'
-	])
-	?>
+	<div id='barsearch'>
+		<div id='content-barsearch'>
+			<input id='search' class='searchinput' placeholder="BUSCAR MARCA">
+			<a id='add-item' class='f-c'><i class='fal fa-plus'></i></a>
+		</div>
+		<h2 class='white-text'>GESTION MARCA</h2>
+	</div>
+	<script>
+
+	</script>
 	<!--CONTENEDOR DE ITEMS-->
 
 	<table class="table-items open-module">
@@ -91,6 +97,8 @@
 </script>
 
 <script type="text/javascript">
+const add_item = $('#add-item')
+const search = $('#search')
 const message_edit = 'Proceso de modificacion. Modifica una marca si estas seguro del proceso.';
 const message_new = 'Crean una marca para la gestion de y organizacion de productos.'
 let crudmarca = Vue.component('crudmarca', {
@@ -137,9 +145,11 @@ let app_list_marcas = new Vue({
 	el: '#app_list_marcas',
 	data: {
 		marcas: [
-			{Marca_nombre: 'Nombre de la marca', descripcion: 'Descripcion de la marca', estado: 0, Id_marca: 45},
-			{Marca_nombre: 'Nombre de la marca', descripcion: 'Descripcion de la marca', estado: 1, Id_marca: 75},
-			{Marca_nombre: 'Nombre de la marca', descripcion: 'Descripcion de la marca', estado: 0, Id_marca: 55}
+			{Marca_nombre: 'MARCA 01', descripcion: 'Descripcion de la marca', estado: 0},
+			{Marca_nombre: 'MARCA 02', descripcion: 'Descripcion de la marca', estado: 1},
+			{Marca_nombre: 'MARCA 03', descripcion: 'Descripcion de la marca', estado: 0},
+			{Marca_nombre: 'OSTER', descripcion: 'Descripcion de la marca', estado: 0},
+			{Marca_nombre: 'PHILIPS', descripcion: 'Descripcion de la marca', estado: 0}
 		]
 	},
 	methods:{
@@ -182,5 +192,15 @@ add_item.click( e => {
 	app_controll.message = false
 	app_controll.crud_message = message_new
 	app_controll.mode_edit = false
+})
+
+
+search.keyup( e => {
+	const flag = 'jamon';
+	for (var i = 0; i < app_list_marcas.marcas.length; i++) {
+		let marca = app_list_marcas.marcas[i]
+		marca.order = JaroWrinker(search.val().toLowerCase(), marca.Marca_nombre.toLowerCase());
+	}
+	app_list_marcas.marcas.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
 })
 </script>

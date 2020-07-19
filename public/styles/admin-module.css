@@ -146,6 +146,7 @@ aside{
 }
 
 #barsearch{
+	height: 44px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -160,13 +161,21 @@ aside{
 	box-shadow: none;
 }
 #content-barsearch{
-	display: inline-flex
+	display: inline-flex;
+	height: 100%;
+}
+
+#content-barsearch > input{
+	margin-bottom: 0 !important;
+	padding: 0 16px;
+	height: 100%;
+	width: 400px;
 }
 #content-barsearch > *{
 	margin-right: 16px !important;
 }
 #content-barsearch a{
-	width: calc(46px);
+	width: 46px;
 	box-sizing: content-box;
 	border-radius: 2px;
 	font-size: 2rem;
