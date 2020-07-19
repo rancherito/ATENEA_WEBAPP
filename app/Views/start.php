@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="public/libs/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="<?= base_url()?>/public/libs/swiper/swiper-bundle.min.css">
 
-<script src="public/libs/swiper/swiper-bundle.min.js"></script>
+<script src="<?= base_url()?>/public/libs/swiper/swiper-bundle.min.js"></script>
 <style media="screen">
 :root {
     --swiper-theme-color: var(--bg-primary);
@@ -20,16 +20,16 @@
 	<div class="swiper-container container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
-				<img src="public/images/010720-slider-amd-1.png" style="width: 100%">
+				<img src="<?= base_url()?>/public/images/010720-slider-amd-1.png" style="width: 100%">
 			</div>
 			<div class="swiper-slide">
-				<img src="public/images/010720-slider-lb-1.png" style="width: 100%">
+				<img src="<?= base_url()?>/public/images/010720-slider-lb-1.png" style="width: 100%">
 			</div>
 			<div class="swiper-slide">
-				<img src="public/images/010720-slider-pads-1.png" style="width: 100%">
+				<img src="<?= base_url()?>/public/images/010720-slider-pads-1.png" style="width: 100%">
 			</div>
 			<div class="swiper-slide">
-				<img src="public/images/010720-slider-celulares-1.png" style="width: 100%">
+				<img src="<?= base_url()?>/public/images/010720-slider-celulares-1.png" style="width: 100%">
 			</div>
 		</div>
 		<!-- Add Arrows -->

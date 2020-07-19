@@ -7,26 +7,26 @@ $year = date("Y");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>INVERSIONES ATENEA</title>
-	<link rel="stylesheet" href="public/styles/normalize.css">
-	<link rel="stylesheet" href="public/libs/animate/animate.min.css">
-	<link rel="icon" href="public/images/ICON.svg" type="image/svg" sizes="16x16">
-	<link rel="stylesheet" href="public/libs/materialize/css/materialize.min.css">
+	<link rel="stylesheet" href="<?= base_url()?>/public/styles/normalize.css">
+	<link rel="stylesheet" href="<?= base_url()?>/public/libs/animate/animate.min.css">
+	<link rel="icon" href="<?= base_url()?>/public/images/ICON.svg" type="image/svg" sizes="16x16">
+	<link rel="stylesheet" href="<?= base_url()?>/public/libs/materialize/css/materialize.min.css">
 	<!--JQUERY-->
-	<script src="public/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="public/libs/materialize/js/materialize.min.js"></script>
-	
+	<script src="<?= base_url()?>/public/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="<?= base_url()?>/public/libs/materialize/js/materialize.min.js"></script>
 
-	<link rel="stylesheet" href="public/styles/colors.css">
-	<link rel="stylesheet" href="public/styles/custom_materialize.css">
-	<link rel="stylesheet" href="public/styles/style_components.css">
-	<link rel="stylesheet" href="public/styles/styles.css">
-	<link rel="stylesheet" href="public/styles/main.css">
+
+	<link rel="stylesheet" href="<?= base_url()?>/public/styles/colors.css">
+	<link rel="stylesheet" href="<?= base_url()?>/public/styles/custom_materialize.css">
+	<link rel="stylesheet" href="<?= base_url()?>/public/styles/style_components.css">
+	<link rel="stylesheet" href="<?= base_url()?>/public/styles/styles.css">
+	<link rel="stylesheet" href="<?= base_url()?>/public/styles/main.css">
 	<!--FUENTE DE ICONOS-->
-	<link rel="stylesheet" href="public/font/fontawesome/css/all.css">
+	<link rel="stylesheet" href="<?= base_url()?>/public/font/fontawesome/css/all.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Rosario:ital@1&display=swap" rel="stylesheet">
 	<style media="screen">
 		#modal-login{
-			background-image: url('public/images/bg_003.jpg');
+			background-image: url('<?= base_url()?>/public/images/bg_003.jpg');
 		}
 		#modal-login::before{
 			content: '';
@@ -83,7 +83,7 @@ $year = date("Y");
 	<header>
 		<div class="container header_content">
 			<a href="." id="content-title-web">
-				<img src="public/images/ICON.svg" alt="UNAMAD" class="logo-index">
+				<img src="<?= base_url()?>/public/images/ICON.svg" alt="UNAMAD" class="logo-index">
 				<span><?= $_ENV['varialbe.webname']?></span>
 			</a>
 			<div class="header-links">
@@ -111,11 +111,11 @@ $year = date("Y");
 	form_acceso.submit( e => {
 		e.preventDefault();
 		const serialize = form_acceso.serialize()
-		$.post('validar_acceso', serialize, function (res) {
+		$.post('<?= base_url()?>/validar_acceso', serialize, function (res) {
 			switch (res) {
 				case 'A':
 					console.log('ADMINSTRADOR');
-					location.href = '/dadmin'
+					location.href = '<?= base_url()?>/dadmin'
 				break;
 				case 'U':
 					console.log('USUARIO');
