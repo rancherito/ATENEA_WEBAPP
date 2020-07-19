@@ -75,7 +75,7 @@
 			coverTrigger: false,
 			closeOnClick: false
 		});
-
+		console.log('<?= base_url()  ?>');
 		aside_items.each(function(i, el) {
 			const obj = $(el);
 			if (obj.attr('href') == window.location.href) obj.addClass('active')
