@@ -1,3 +1,5 @@
+
+varialbe.webname = 'Inversiones Atenea'
 #--------------------------------------------------------------------
 # Example Environment Configuration file
 #
@@ -14,13 +16,13 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+CI_ENVIRONMENT = production
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
+app.baseURL = 'http://web.com:120'
 # app.forceGlobalSecureRequests = false
 
 # app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
@@ -49,11 +51,11 @@
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
+database.default.hostname = LAPTOP-76AGLT2P\SQLEXPRESS
+database.default.database = DB_ATHENEA
+database.default.username = dlarico
+database.default.password = 123
+database.default.DBDriver = sqlsrv
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4
