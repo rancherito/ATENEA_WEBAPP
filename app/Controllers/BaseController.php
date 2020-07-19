@@ -30,7 +30,7 @@ class BaseController extends Controller
 	{
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
-		helper('tdatabase');
+		helper('database');
 		helper('utils');
 		//--------------------------------------------------------------------
 		// Preload any models, libraries, etc, here.
