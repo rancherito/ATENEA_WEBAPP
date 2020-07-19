@@ -32,8 +32,6 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 session_start();
 
-<<<<<<< HEAD
-
 $_APPVARS = $_SESSION['ateneaapp'];
 $routes->get('/', 'Pages::index');
 $routes->get('close', 'Utils::close_session');
@@ -54,31 +52,6 @@ if ($_APPVARS['user'] == 'admin') {
 	$routes->get('dadmin/categorias', 'Utils::void');
 
 }
-=======
-$routes->group($_ENV['app.subURL'], function($routes)
-{
-	$_APPVARS = $_SESSION['ateneaapp'];
-	$routes->get('/', 'Pages::index');
-	$routes->get('close', 'Utils::close_session');
-	$routes->post('validar_acceso', 'Pages::validar_acceso');
-
->>>>>>> 40cbf57daa2a9354c192be410cfbd572b1ad8233
-
-	//SECCION ADMINISTRADOR
-	if ($_APPVARS['user'] == 'admin') {
-
-
-		$routes->get('dadmin', 'Pages::dadmin');
-		$routes->get('dadmin/productos', 'AdmProductos::index');
-		$routes->get('dadmin/marcas', 'AdmMarcas::index');
-		$routes->get('dadmin/proveedores', 'AdmProveedores::index');
-		$routes->get('dadmin/almacen', 'AdmAlmacen::index');
-		$routes->get('dadmin/reportes', 'Utils::void');
-		$routes->get('dadmin/ventas', 'Utils::void');
-		$routes->get('dadmin/categorias', 'Utils::void');
-
-	}
-});
 /**resultados
 * --------------------------------------------------------------------
 * Additional Routing
