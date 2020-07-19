@@ -11,10 +11,10 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
 }
 
 /**
- * --------------------------------------------------------------------
- * Router Setup
- * --------------------------------------------------------------------
- */
+* --------------------------------------------------------------------
+* Router Setup
+* --------------------------------------------------------------------
+*/
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
@@ -23,45 +23,51 @@ $routes->set404Override();
 $routes->setAutoRoute(true);
 
 /**
- * --------------------------------------------------------------------
- * Route Definitions
- * --------------------------------------------------------------------
- */
+* --------------------------------------------------------------------
+* Route Definitions
+* --------------------------------------------------------------------
+*/
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 session_start();
-$_APPVARS = $_SESSION['ateneaapp'];
 
-$routes->get('/', 'Pages::index');
-$routes->get('/close', 'Utils::close_session');
-$routes->post('/validar_acceso', 'Pages::validar_acceso');
+$routes->group($_ENV['app.subURL'], function($routes)
+{
+	$_APPVARS = $_SESSION['ateneaapp'];
+	$routes->get('/', 'Pages::index');
+	$routes->get('close', 'Utils::close_session');
+	$routes->post('validar_acceso', 'Pages::validar_acceso');
 
-//SECCION ADMINISTRADOR
-if ($_APPVARS['user'] == 'admin') {
-	$routes->get('/dadmin', 'Pages::dadmin');
-	$routes->get('/dadmin/productos', 'AdmProductos::index');
-	$routes->get('/dadmin/marcas', 'AdmMarcas::index');
-	$routes->get('/dadmin/proveedores', 'AdmProveedores::index');
-	$routes->get('/dadmin/almacen', 'AdmAlmacen::index');
-	$routes->get('/dadmin/reportes', 'Utils::void');
-	$routes->get('/dadmin/ventas', 'Utils::void');
-	$routes->get('/dadmin/categorias', 'Utils::void');
-}
 
+	//SECCION ADMINISTRADOR
+	if ($_APPVARS['user'] == 'admin') {
+
+
+		$routes->get('dadmin', 'Pages::dadmin');
+		$routes->get('dadmin/productos', 'AdmProductos::index');
+		$routes->get('dadmin/marcas', 'AdmMarcas::index');
+		$routes->get('dadmin/proveedores', 'AdmProveedores::index');
+		$routes->get('dadmin/almacen', 'AdmAlmacen::index');
+		$routes->get('dadmin/reportes', 'Utils::void');
+		$routes->get('dadmin/ventas', 'Utils::void');
+		$routes->get('dadmin/categorias', 'Utils::void');
+
+	}
+});
 /**resultados
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
- *
- * There will often be times that you need additional routing and you
- * need to it be able to override any defaults in this file. Environment
- * based routes is one such time. require() additional route files here
- * to make that happen.
- *
- * You will have access to the $routes object within that file without
- * needing to reload it.
- */
+* --------------------------------------------------------------------
+* Additional Routing
+* --------------------------------------------------------------------
+*
+* There will often be times that you need additional routing and you
+* need to it be able to override any defaults in this file. Environment
+* based routes is one such time. require() additional route files here
+* to make that happen.
+*
+* You will have access to the $routes object within that file without
+* needing to reload it.
+*/
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
