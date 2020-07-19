@@ -36,13 +36,14 @@ function search_admin($vars = [])
 	<div id='barsearch' class='open-module'>
 		<div id='content-barsearch'>
 			<label id='search' class='searchinput'></label>
-			<a class='f-c'><i class='fal fa-plus'></i></a>
+			<a id='add-item' class='f-c'><i class='fal fa-plus'></i></a>
 		</div>
 
 		<h2 class='white-text'>$vars[title]</h2>
 	</div>
 	<script>
 		const search = $('#search').focus();
+		const add_item = $('#add-item')
 		search.searchBox2();
 		search.searchBox2_placeholder('$vars[placeholder]')
 

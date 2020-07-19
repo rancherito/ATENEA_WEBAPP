@@ -1,9 +1,18 @@
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <?php color_modulo('var(--bg-teal)') ?>
 <style media="screen">
 .row{
 	margin-left: -11px;
 	margin-right: -11px;
+}
+.state{
+	height: 20px;
+	width: 20px;
+	background: var(--bg-primary);
+	border-radius: 50%;
+}
+.state-off{
+	background: gray;
 }
 </style>
 <div id="divider-main">
@@ -11,119 +20,167 @@
 	<?php search_admin([
 		'placeholder' => 'BUSCAR MARCA',
 		'title' => 'Gestion de Marcas'
-		])?>
-		<!--CONTENEDOR DE ITEMS-->
+	])
+	?>
+	<!--CONTENEDOR DE ITEMS-->
 
-		<table class="table-items open-module">
-			<thead>
-				<tr>
-					<th class="table-index">#</th>
-					<th style="width: 200px">NOMBRE</th>
-					<th>DESCRIPCION</th>
-					<th class="c" style="width: 100px">ESTADO</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php for ($i = 0; $i < 10; $i++): ?>
-					<tr>
-						<td class="table-index"><?= ($i+1) ?></td>
-						<td>NOMBRE DE MARCA #<?= ($i+1) ?></td>
-						<td>DESCRIPCION LIGERA DE LA MARCA #<?= ($i+1) ?></td>
-						<td class="c f-c">
-							<div class="switch">
-								<label>
-									<input type="checkbox" disabled  <?= rand() % 2 ? '' : 'checked'?>>
-									<span class="lever"></span>
-								</label>
-							</div>
-						</td>
-					</tr>
-				<?php endfor; ?>
-
-			</tbody>
-		</table>
+	<table class="table-items open-module">
+		<thead>
+			<tr>
+				<th style="width: 200px">NOMBRE</th>
+				<th>DESCRIPCION</th>
+				<th class="c" style="width: 100px">ESTADO</th>
+			</tr>
+		</thead>
+		<tbody id="app_list_marcas">
+			<tr v-for="(marca, i) in marcas" @click="opencrud(i)">
+				<td>{{marca.Marca_nombre}}</td>
+				<td>{{marca.descripcion}}</td>
+				<td class="c f-c">
+					<div class="state" :class="{'state-off': !marca.estado}"></div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div id="divider-option" class="f-c">
+	<crudmarca></crudmarca>
+	<div class="f-c open-module" v-if="message">
+		<i class="fal fa-comment-alt-smile icon-pres"></i>
+		<br>
+		<span class="c white-text">Gestiona las marcas de tu productos, te ayudara a tener mas orden en la busqueda de productos</span>
 	</div>
-	<div id="divider-option" class="f-c">
-		<div id="message" class="f-c open-module">
-			<i class="fal fa-comment-alt-smile icon-pres"></i>
-			<br>
-			<span class="c white-text">Gestiona las marcas de tu productos, te ayudara a tener mas orden en la busqueda de productos</span>
+
+</div>
+<script type="text/template" id="crudmarca">
+	<div class="opm" v-if="$parent.show_crudmarca">
+		<div class="c white-text">
+			<i class="fal icon-pres c" :class="{'fa-pen' : $parent.mode_edit, 'fa-plus' : !$parent.mode_edit}"></i>
+			<p>{{$parent.crud_message}}</p>
 		</div>
-
+		<br>
+		<div class="row">
+			<div class="input-field col s12">
+				<input placeholder="ingrese marca" id="in_nombre" type="text" v-model="$parent.f_nombre">
+				<label for="first_name">NOMBRE</label>
+			</div>
+			<div class="input-field col s12">
+				<textarea id="in_descripcion" class="materialize-textarea" v-model="$parent.f_descripcion"></textarea>
+				<label for="textarea1">DESCRIPCION</label>
+			</div>
+			<div class="col s12 f-b">
+				<span class="white-text">DESACTIVAR / ACTIVAR</span>
+				<div class="switch">
+					<label>
+						<input type="checkbox" id="ck_estado" v-model="$parent.f_estado">
+						<span class="lever"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="r">
+			<a class="btn bg-white" @click="close">
+				<i class="fal fa-times left"></i>CERRAR
+			</a>
+			<a class="btn waves-effect waves-light" @click="save">
+				<i class="fal fa-save left"></i>SALVAR
+			</a>
+		</div>
 	</div>
+</script>
 
-	<script type="text/javascript">
-	const rows = $('.table-items tbody tr');
-	const message = $('#message')
-	const divider_option = $('#divider-option')
-	let c_marca = {};
-	c_marca.form = $(`
-		<form class="opm">
-			<div class="c white-text">
-				<i class="fal fa-pen icon-pres c"></i>
-				<p>Proceso de modificacion. Modifica una marca si estas seguro del proceso.</p>
-			</div>
-			<br>
-			<div class="row">
-				<div class="input-field col s12">
-					<input placeholder="Placeholder" id="in_nombre" type="text">
-					<label for="first_name">NOMBRE</label>
-				</div>
-				<div class="input-field col s12">
-					<textarea id="in_descripcion" class="materialize-textarea"></textarea>
-					<label for="textarea1">DESCRIPCION</label>
-				</div>
-				<div class="col s12 f-b">
-					<span class="white-text">DESACTIVAR / ACTIVAR</span>
-					<div class="switch">
-						<label>
-							<input type="checkbox" id="ck_estado">
-							<span class="lever"></span>
-						</label>
-					</div>
-				</div>
-			</div>
-			<br>
-			<div class="r">
-				<a class="btn bg-white">
-					<i class="fal fa-times"></i>
-				</a>
-				<button class="btn waves-effect waves-light">
-					<i class="fal fa-save"></i>
-				</button>
-			</div>
-		</form>
-		`)
-		c_marca.nombre = c_marca.form.find('#in_nombre')
-		c_marca.descripcion = c_marca.form.find('#in_descripcion')
-		c_marca.estado = c_marca.form.find('#ck_estado')
-		c_marca.cancelar = c_marca.form.find('a')
-		c_marca.submit = c_marca.form.find('button')
+<script type="text/javascript">
+const message_edit = 'Proceso de modificacion. Modifica una marca si estas seguro del proceso.';
+const message_new = 'Crean una marca para la gestion de y organizacion de productos.'
+let crudmarca = Vue.component('crudmarca', {
+	template: '#crudmarca',
+	methods: {
+		close: function () {
+			app_controll.message = true
+			app_controll.show_crudmarca = false
+		},
+		save: function () {
+			if (app_controll.f_nombre.length >= 3 && app_controll.f_descripcion.length >= 3) {
+				app_list_marcas.add(app_controll.id_item, app_controll.f_nombre, app_controll.f_descripcion, app_controll.f_estado);
+			}
+			else {
+				console.log('campos vacios');
+			}
+		}
+	}
+})
 
 
+let app_controll = new Vue({
+	el: '#divider-option',
+	data: {
+		show_crudmarca: false,
+		message: true,
+		crud_message: '',
+		mode_edit: true,
+		f_nombre: '',
+		f_descripcion: '',
+		f_estado: 1,
+		id_item: -1,
+	},
+	methods: {
+		clear: function () {
+			app_controll.id_item = -1
+			app_controll.f_nombre = ''
+			app_controll.f_descripcion = ''
+			app_controll.f_estado = 1
+		}
+	}
+})
+let app_list_marcas = new Vue({
+	el: '#app_list_marcas',
+	data: {
+		marcas: [
+			{Marca_nombre: 'Nombre de la marca', descripcion: 'Descripcion de la marca', estado: 0, Id_marca: 45},
+			{Marca_nombre: 'Nombre de la marca', descripcion: 'Descripcion de la marca', estado: 1, Id_marca: 75},
+			{Marca_nombre: 'Nombre de la marca', descripcion: 'Descripcion de la marca', estado: 0, Id_marca: 55}
+		]
+	},
+	methods:{
+		add: function (id, nombre, descripcion, estado) {
+			console.log(id);
+			if (id < 0) {
+				this.marcas.push({Marca_nombre: nombre.toUpperCase(), descripcion: descripcion.toUpperCase(), estado: estado, Id_marca: 45})
+				app_controll.message = true
+				app_controll.show_crudmarca = false
+			}
+			else {
+				console.log(id);
+				this.marcas[id].Marca_nombre = nombre.toUpperCase()
+				this.marcas[id].descripcion = descripcion.toUpperCase()
+				this.marcas[id].estado = estado
+				app_controll.message = true
+				app_controll.show_crudmarca = false
+			}
+		},
+		opencrud: function (id) {
+			let item = this.marcas[id];
+			app_controll.clear()
+			app_controll.id_item = id
+			app_controll.show_crudmarca = true
+			app_controll.message = false
+			app_controll.crud_message = message_edit
+			app_controll.mode_edit = true
 
-		c_marca.form.submit( e => {
-			e.preventDefault();
-			console.log(656565);
-		})
-		c_marca.cancelar.click( e =>{
-			divider_option.find('>*').detach()
-			divider_option.append(message)
-		})
+			app_controll.f_nombre = item.Marca_nombre
+			app_controll.f_descripcion = item.descripcion
+			app_controll.f_estado = item.estado
 
+		}
+	}
+})
 
-		rows.click( e => {
-
-			const target = $(e.currentTarget);
-			const nombre = target.find('td:nth-child(2)').text();
-			const descripcion = target.find('td:nth-child(3)').text();
-			const estado = target.find('input').is(':checked');
-
-			c_marca.nombre.val(nombre)
-			c_marca.descripcion.val(descripcion)
-			c_marca.estado.prop('checked', estado)
-
-			divider_option.find('>*').detach()
-			divider_option.append(c_marca.form)
-		})
-	</script>
+add_item.click( e => {
+	app_controll.clear()
+	app_controll.show_crudmarca = true
+	app_controll.message = false
+	app_controll.crud_message = message_new
+	app_controll.mode_edit = false
+})
+</script>
