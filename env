@@ -23,6 +23,7 @@ CI_ENVIRONMENT = production
 #--------------------------------------------------------------------
 
 app.baseURL = 'http://web.com:120'
+app.subURL = ''
 # app.forceGlobalSecureRequests = false
 
 # app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
