@@ -9,6 +9,8 @@
 	<link rel="icon" href="<?= base_url() ?>/public/images/ICON.svg" type="image/svg" sizes="16x16">
 	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/materialize/css/materialize.min.css">
 
+	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/simplebar/simplebar.css"/>
+	<script src="<?= base_url() ?>/public/libs/simplebar/simplebar.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!--JQUERY-->
 	<script src="<?= base_url() ?>/public/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>

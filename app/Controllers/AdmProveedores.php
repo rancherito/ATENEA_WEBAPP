@@ -5,4 +5,5 @@ class AdmProveedores extends BaseController
 	{
 		echo $this->layout_view('admin', 'pages/adm_proveedores');
 	}
+
 }

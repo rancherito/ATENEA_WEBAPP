@@ -49,7 +49,7 @@ if ($_APPVARS['user'] == 'admin') {
 	$routes->get('dadmin/almacen', 'AdmAlmacen::index');
 	$routes->get('dadmin/reportes', 'Utils::void');
 	$routes->get('dadmin/ventas', 'Utils::void');
-	$routes->get('dadmin/categorias', 'Utils::void');
+	$routes->get('dadmin/categorias', 'AdmController::categorias');
 
 }
 /**resultados

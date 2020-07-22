@@ -1,28 +1,12 @@
 <script src="<?= base_url() ?>/public/libs/JaroWrinker/JaroWrinker.js"></script>
-<?php color_modulo('var(--bg-teal)') ?>
-<style media="screen">
-.row{
-	margin-left: -11px;
-	margin-right: -11px;
-}
-.state{
-	height: 20px;
-	width: 20px;
-	background: var(--bg-lima);
-	border-radius: 50%;
-}
-.state-off{
-	background: gray;
-}
-</style>
 <div id="divider-main">
 	<!--BUSCARDOR DEL MODULO, PROVEIDO POR HELPERS PHP-->
 	<div id='barsearch'>
 		<div id='content-barsearch'>
-			<input id='search' class='searchinput' placeholder="BUSCAR MARCA">
+			<input id='search' class='searchinput' placeholder="BUSCAR CATEGORIA">
 			<a id='add-item' class='f-c'><i class='fal fa-plus'></i></a>
 		</div>
-		<h2 class='white-text'>GESTION MARCA</h2>
+		<h2 class='white-text'>GESTION CATEGORIA</h2>
 	</div>
 	<script>
 
@@ -37,28 +21,28 @@
 				<th class="c" style="width: 100px">ESTADO</th>
 			</tr>
 		</thead>
-		<tbody id="app_list_marcas">
-			<tr v-for="(marca, i) in marcas" @click="opencrud(i)">
-				<td>{{marca.Marca_nombre}}</td>
-				<td>{{marca.descripcion}}</td>
+		<tbody id="app_list_categorias">
+			<tr v-for="(categoria, i) in categorias" @click="opencrud(i)">
+				<td>{{categoria.Marca_nombre}}</td>
+				<td>{{categoria.descripcion}}</td>
 				<td class="c f-c">
-					<div class="state" :class="{'state-off': !marca.estado}"></div>
+					<div class="state" :class="{'state-off': !categoria.estado}"></div>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 <div id="divider-option" class="f-c">
-	<crudmarca></crudmarca>
+	<crudcategoria></crudcategoria>
 	<div class="f-c open-module" v-if="message">
 		<i class="fal fa-comment-alt-smile icon-pres"></i>
 		<br>
-		<span class="c white-text">Gestiona las marcas de tu productos, te ayudara a tener mas orden en la busqueda de productos</span>
+		<span class="c white-text">Gestiona las categorias de tu categorias, te ayudara a tener mas orden en la busqueda de categorias</span>
 	</div>
 
 </div>
-<script type="text/template" id="crudmarca">
-	<div class="opm" v-if="$parent.show_crudmarca">
+<script type="text/template" id="crudcategoria">
+	<div class="opm" v-if="$parent.show_crudcategoria">
 		<div class="c white-text">
 			<i class="fal icon-pres c" :class="{'fa-pen' : $parent.mode_edit, 'fa-plus' : !$parent.mode_edit}"></i>
 			<p>{{$parent.crud_message}}</p>
@@ -66,7 +50,7 @@
 		<br>
 		<div class="row">
 			<div class="input-field col s12">
-				<input placeholder="ingrese marca" id="in_nombre" type="text" v-model="$parent.f_nombre">
+				<input placeholder="ingrese categoria" id="in_nombre" type="text" v-model="$parent.f_nombre">
 				<label for="first_name">NOMBRE</label>
 			</div>
 			<div class="input-field col s12">
@@ -98,18 +82,18 @@
 <script type="text/javascript">
 const add_item = $('#add-item')
 const search = $('#search')
-const message_edit = 'Proceso de modificacion. Modifica una marca si estas seguro del proceso.';
-const message_new = 'Crean una marca para la gestion de y organizacion de productos.'
-let crudmarca = Vue.component('crudmarca', {
-	template: '#crudmarca',
+const message_edit = 'Proceso de modificacion. Modifica una categoria si estas seguro del proceso.';
+const message_new = 'Crean una categoria para la gestion de y organizacion de categorias.'
+let crudcategoria = Vue.component('crudcategoria', {
+	template: '#crudcategoria',
 	methods: {
 		close: function () {
 			app_controll.message = true
-			app_controll.show_crudmarca = false
+			app_controll.show_crudcategoria = false
 		},
 		save: function () {
 			if (app_controll.f_nombre.length >= 3 && app_controll.f_descripcion.length >= 3) {
-				app_list_marcas.add(app_controll.id_item, app_controll.f_nombre, app_controll.f_descripcion, app_controll.f_estado);
+				app_list_categorias.add(app_controll.id_item, app_controll.f_nombre, app_controll.f_descripcion, app_controll.f_estado);
 			}
 			else {
 				console.log('campos vacios');
@@ -122,7 +106,7 @@ let crudmarca = Vue.component('crudmarca', {
 let app_controll = new Vue({
 	el: '#divider-option',
 	data: {
-		show_crudmarca: false,
+		show_crudcategoria: false,
 		message: true,
 		crud_message: '',
 		mode_edit: true,
@@ -140,39 +124,39 @@ let app_controll = new Vue({
 		}
 	}
 })
-let app_list_marcas = new Vue({
-	el: '#app_list_marcas',
+let app_list_categorias = new Vue({
+	el: '#app_list_categorias',
 	data: {
-		marcas: [
-			{Marca_nombre: 'MARCA 01', descripcion: 'Descripcion de la marca', estado: 0},
-			{Marca_nombre: 'MARCA 02', descripcion: 'Descripcion de la marca', estado: 1},
-			{Marca_nombre: 'MARCA 03', descripcion: 'Descripcion de la marca', estado: 0},
-			{Marca_nombre: 'OSTER', descripcion: 'Descripcion de la marca', estado: 0},
-			{Marca_nombre: 'PHILIPS', descripcion: 'Descripcion de la marca', estado: 0}
+		categorias: [
+			{Marca_nombre: 'COCINA', descripcion: 'Descripcion de la categoria', estado: 0},
+			{Marca_nombre: 'REFRIGERACION', descripcion: 'Descripcion de la categoria', estado: 1},
+			{Marca_nombre: 'MULTIMEDIA', descripcion: 'Descripcion de la categoria', estado: 0},
+			{Marca_nombre: 'LAVANDERIA', descripcion: 'Descripcion de la categoria', estado: 0},
+			{Marca_nombre: 'LIMPIEZA', descripcion: 'Descripcion de la categoria', estado: 0}
 		]
 	},
 	methods:{
 		add: function (id, nombre, descripcion, estado) {
 			console.log(id);
 			if (id < 0) {
-				this.marcas.push({Marca_nombre: nombre.toUpperCase(), descripcion: descripcion.toUpperCase(), estado: estado, Id_marca: 45})
+				this.categorias.push({Marca_nombre: nombre.toUpperCase(), descripcion: descripcion.toUpperCase(), estado: estado, Id_categoria: 45})
 				app_controll.message = true
-				app_controll.show_crudmarca = false
+				app_controll.show_crudcategoria = false
 			}
 			else {
 				console.log(id);
-				this.marcas[id].Marca_nombre = nombre.toUpperCase()
-				this.marcas[id].descripcion = descripcion.toUpperCase()
-				this.marcas[id].estado = estado
+				this.categorias[id].Marca_nombre = nombre.toUpperCase()
+				this.categorias[id].descripcion = descripcion.toUpperCase()
+				this.categorias[id].estado = estado
 				app_controll.message = true
-				app_controll.show_crudmarca = false
+				app_controll.show_crudcategoria = false
 			}
 		},
 		opencrud: function (id) {
-			let item = this.marcas[id];
+			let item = this.categorias[id];
 			app_controll.clear()
 			app_controll.id_item = id
-			app_controll.show_crudmarca = true
+			app_controll.show_crudcategoria = true
 			app_controll.message = false
 			app_controll.crud_message = message_edit
 			app_controll.mode_edit = true
@@ -187,19 +171,18 @@ let app_list_marcas = new Vue({
 
 add_item.click( e => {
 	app_controll.clear()
-	app_controll.show_crudmarca = true
+	app_controll.show_crudcategoria = true
 	app_controll.message = false
 	app_controll.crud_message = message_new
 	app_controll.mode_edit = false
 })
 
-
 search.keyup( e => {
 	const flag = 'jamon';
-	for (var i = 0; i < app_list_marcas.marcas.length; i++) {
-		let marca = app_list_marcas.marcas[i]
-		marca.order = JaroWrinker(search.val().toLowerCase(), marca.Marca_nombre.toLowerCase());
+	for (var i = 0; i < app_list_categorias.categorias.length; i++) {
+		let categoria = app_list_categorias.categorias[i]
+		categoria.order = JaroWrinker(search.val().toLowerCase(), categoria.Marca_nombre.toLowerCase());
 	}
-	app_list_marcas.marcas.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
+	app_list_categorias.categorias.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
 })
 </script>
