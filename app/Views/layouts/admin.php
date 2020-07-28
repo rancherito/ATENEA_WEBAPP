@@ -11,7 +11,7 @@
 
 	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/simplebar/simplebar.css"/>
 	<script src="<?= base_url() ?>/public/libs/simplebar/simplebar.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="<?= base_url() ?>/public/libs/vue/vue.min.js"></script>
 	<!--JQUERY-->
 	<script src="<?= base_url() ?>/public/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="<?= base_url() ?>/public/libs/materialize/js/materialize.min.js"></script>
@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/styles.css">
 	<!--FUENTE DE ICONOS-->
 	<link rel="stylesheet" href="<?= base_url() ?>/public/font/fontawesome/css/all.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Rosario:ital@1&display=swap" rel="stylesheet">
+	<link href="<?= base_url() ?>/public/font/globalfont/globalfont.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?= base_url()?>/public/styles/admin-module.css">
 </head>
 <body>

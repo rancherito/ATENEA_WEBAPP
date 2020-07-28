@@ -16,6 +16,12 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+.wrapper-tab{
+	padding: 32px;
+	height: calc(100% - 48px);
+	overflow-y: auto;
+	position: relative;
+}
 .icon-pres{
 	color: white;
 	font-size: 4rem;

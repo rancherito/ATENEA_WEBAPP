@@ -43,12 +43,20 @@ if ($_APPVARS['user'] == 'admin') {
 
 
 	$routes->get('dadmin', 'Pages::dadmin');
+
 	$routes->get('dadmin/productos', 'AdmProductos::index');
+	$routes->post('dadmin/productos/listar', 'AdmProductos::serv_Productos_Listar');
+
 	$routes->get('dadmin/marcas', 'AdmMarcas::index');
+
 	$routes->get('dadmin/proveedores', 'AdmProveedores::index');
+
 	$routes->get('dadmin/almacen', 'AdmAlmacen::index');
+
 	$routes->get('dadmin/reportes', 'Utils::void');
+
 	$routes->get('dadmin/ventas', 'Utils::void');
+
 	$routes->get('dadmin/categorias', 'AdmController::categorias');
 
 }

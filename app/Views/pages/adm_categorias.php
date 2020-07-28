@@ -8,9 +8,6 @@
 		</div>
 		<h2 class='white-text'>GESTION CATEGORIA</h2>
 	</div>
-	<script>
-
-	</script>
 	<!--CONTENEDOR DE ITEMS-->
 
 	<table class="table-items open-module">
