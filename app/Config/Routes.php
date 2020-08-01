@@ -46,6 +46,7 @@ if ($_APPVARS['user'] == 'admin') {
 
 	$routes->get('dadmin/productos', 'AdmProductos::index');
 	$routes->post('dadmin/productos/listar', 'AdmProductos::serv_Productos_Listar');
+	$routes->post('dadmin/productos/salvar', 'AdmProductos::serv_Productos_Salvar');
 
 	$routes->get('dadmin/marcas', 'AdmMarcas::index');
 

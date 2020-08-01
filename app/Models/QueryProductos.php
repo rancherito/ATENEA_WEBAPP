@@ -33,5 +33,19 @@ class QueryProductos
 		";
 		return query_database($sql);
 	}
-
+	public function Productos_Guardar($Id_producto, $Nombre, $Descripcion, $Categoria, $Marca, $precio, $Imagen, $Estado)
+	{
+		$sql = "
+			EXEC [dbo].[spu_Productos_Guardar]
+			@Id_producto = '$Id_producto',
+			@Nombre = '$Nombre',
+			@Descripcion = '$Descripcion',
+			@Categoria = '$Categoria',
+			@Marca = '$Marca',
+			@Imagen = '$Imagen',
+			@Estado = '$Estado',
+			@precio = '$precio'
+		";
+		query_database($sql);
+	}
 }

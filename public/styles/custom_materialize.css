@@ -204,8 +204,8 @@ color: #000;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus,.input-field select:focus {
-	border-bottom: 1px solid var(--primary);
-	box-shadow: 0 1px 0 0 var(--primary);
+	border: 1px solid #ddd;
+    box-shadow: 0 0 0px 1px #ddd;
 }
 /* valid color */
 
@@ -246,7 +246,11 @@ select:focus{
 	outline: none;
 }
 .input-field select{
-	padding: 0;
+	border: 1px solid white;
+	padding: 14px 11px 0 11px;
+	height: 54px;
+	border-radius: 3px;
+	margin-bottom: 8px;
 }
 .input-field select + label{
 	position: absolute;

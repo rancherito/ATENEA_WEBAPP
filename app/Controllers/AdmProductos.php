@@ -15,7 +15,7 @@ class AdmProductos extends BaseController
 	{
 		$_V =  [
 			'id_producto' => '',
-			'Categoria' => '',
+			'categoria' => '',
 			'marca' => '',
 			'nombre' => '',
 			'descripcion' => '',
@@ -23,8 +23,13 @@ class AdmProductos extends BaseController
 		];
 		$_V = array_merge($_V, $_POST);
 		$Productos = new QueryProductos();
-		$res = $Productos->Productos_Listar($_V['id_producto'], $_V['Categoria'], $_V['marca'], $_V['nombre'], $_V['descripcion'], $_V['estado']);
+		$res = $Productos->Productos_Listar($_V['id_producto'], $_V['categoria'], $_V['marca'], $_V['nombre'], $_V['descripcion'], $_V['estado']);
 
 		return $this->response->setJSON($res);
+	}
+	public function serv_Productos_Salvar()
+	{
+		$Productos = new QueryProductos();
+		$res = $Productos->Productos_Guardar($_POST['key'], $_POST['nombre'], $_POST['descripcion'], $_POST['categoria'], $_POST['marca'],$_POST['precio'], '', $_POST['estado']);
 	}
 }

@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>ATENEA ADMINISTRADOR</title>
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/normalize.css">
+
 	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/animate/animate.min.css">
 	<link rel="icon" href="<?= base_url() ?>/public/images/ICON.svg" type="image/svg" sizes="16x16">
 	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/materialize/css/materialize.min.css">
-
+	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/normalize.css">
 	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/simplebar/simplebar.css"/>
 	<script src="<?= base_url() ?>/public/libs/simplebar/simplebar.min.js"></script>
 	<script src="<?= base_url() ?>/public/libs/vue/vue.min.js"></script>
