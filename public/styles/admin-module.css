@@ -1,4 +1,4 @@
-h2{
+h2, h3{
 	font-family: var(--primary-font)
 }
 html, body{
@@ -7,7 +7,7 @@ html, body{
 }
 body{
 	display: inline-flex;
-	background: var(--bg-teal);
+	background: #f3f3f3;
 }
 :root{
 	--bg-primary: var(--bg-orange);
@@ -26,7 +26,7 @@ aside{
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
-	background-color: rgba(255, 255, 255, 0.85);
+	background: var(--bg-secondary);
 }
 #content-body{
 	width: calc(100% - 60px);
@@ -41,7 +41,7 @@ aside{
 	display: block;
 	width: 100%;
 	font-size: 1.5rem;
-	color: #272727;
+	color: white;
 	height: 50px;
 	width: 50px;
 	text-align: center;
@@ -50,13 +50,9 @@ aside{
 	border-radius: 2px;
 	transition: linear background-color 0.2s;
 }
-#menu-aside a:hover{
-	background: var(--bg-primary);
-	color: white;
-}
-#menu-aside a.active{
-	background: var(--bg-primary);
-	color: white;
+#menu-aside a:hover, #menu-aside a.active{
+	background: white;
+	color: var(--primary);
 }
 #options-aside{
 	padding: 8px 0;
@@ -87,18 +83,22 @@ aside{
 #barsearch h2{
 	margin: 0;
 }
+.space-32{
+	height: 32px;
+}
 .searchBox2{
 	height: 46px;
 }
 .table-index{
-	width: 1px; padding: 0 16px;
+	width: 1px;;
 }
 .table-items{
-	margin-top: 32px;
 	background: white;
 	border-radius: 2px;
 }
-
+.title-module, h2{
+	color: gray;
+}
 #c-options i{
 	color: white;
 	font-size: 1.2rem;
@@ -108,19 +108,7 @@ aside{
 #c-list{
 	padding-top: 16px;
 }
-#c-list div{
-	background-color: white;
-	padding: 16px;
-	margin-bottom: 2px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-radius: 2px;
-}
-#c-list div label{
-	height: 20px;
-	width: 20px;
-}
+
 .row-menu{
 	padding: 0 16px;
 }
@@ -139,15 +127,39 @@ aside{
 	display: flex;
 	overflow: hidden;
 }
-#divider-main, #divider-option{
+#divider-option{
 	padding: 32px;
 }
 #divider-main{
 	width: calc(100% - 400px);
 }
 #divider-option{
-	background: rgba(255, 255, 255, 0.2);
+	background: #e8e8e8;
 	width: 400px;
+}
+.c-options{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: white;
+	color: white;
+	padding: 16px;
+}
+.c-options label{
+	height: 20px;
+	width: 20px;
+}
+.c-options > input{
+	padding: 0px 8px !important;
+	height: 30px !important;
+	margin: 0 16px 0 0 !important;
+}
+#divider-main{
+	position: relative;
+}
+#content-main{
+	padding: 32px;
+	height: 100%;
 }
 
 #barsearch{
@@ -186,7 +198,7 @@ aside{
 	font-size: 2rem;
 	cursor: pointer;
 	color: white;
-	background-color: rgba(255, 255, 255, 0.1);
+	background: var(--bg-primary);
 }
 .tab-in-divider{
 	margin: -32px;

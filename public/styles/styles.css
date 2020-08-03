@@ -23,7 +23,7 @@
 	position: relative;
 }
 .icon-pres{
-	color: white;
+	color: var(--primary);
 	font-size: 4rem;
 }
 ::selection { background-color: var(--blue); color: white;}

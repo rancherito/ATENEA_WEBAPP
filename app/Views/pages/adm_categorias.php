@@ -1,4 +1,3 @@
-<script src="<?= base_url() ?>/public/libs/JaroWrinker/JaroWrinker.js"></script>
 <div id="divider-main">
 	<!--BUSCARDOR DEL MODULO, PROVEIDO POR HELPERS PHP-->
 	<div id='barsearch'>
@@ -6,41 +5,44 @@
 			<input id='search' class='searchinput' placeholder="BUSCAR CATEGORIA">
 			<a id='add-item' class='f-c'><i class='fal fa-plus'></i></a>
 		</div>
-		<h2 class='white-text'>GESTION CATEGORIA</h2>
+		<h2 class='title-module'>GESTION CATEGORIA</h2>
 	</div>
 	<!--CONTENEDOR DE ITEMS-->
+	<div class="space-32"></div>
 
-	<table class="table-items open-module">
-		<thead>
-			<tr>
-				<th style="width: 200px">NOMBRE</th>
-				<th>DESCRIPCION</th>
-				<th class="c" style="width: 100px">ESTADO</th>
-			</tr>
-		</thead>
-		<tbody id="app_list_categorias">
-			<tr v-for="(categoria, i) in categorias" @click="opencrud(i)">
-				<td>{{categoria.Marca_nombre}}</td>
-				<td>{{categoria.descripcion}}</td>
-				<td class="c f-c">
-					<div class="state" :class="{'state-off': !categoria.estado}"></div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+		<table class="table-items open-module">
+			<thead>
+				<tr>
+					<th style="width: 200px">NOMBRE</th>
+					<th>DESCRIPCION</th>
+					<th class="c" style="width: 100px">ESTADO</th>
+				</tr>
+			</thead>
+			<tbody id="app_list_categorias">
+				<tr v-for="(categoria, i) in categorias" @click="opencrud(i)">
+					<td>{{categoria.Marca_nombre}}</td>
+					<td>{{categoria.descripcion}}</td>
+					<td class="c f-c">
+						<div class="state" :class="{'state-off': !categoria.estado}"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+
 </div>
 <div id="divider-option" class="f-c">
 	<crudcategoria></crudcategoria>
 	<div class="f-c open-module" v-if="message">
 		<i class="fal fa-comment-alt-smile icon-pres"></i>
 		<br>
-		<span class="c white-text">Gestiona las categorias de tu categorias, te ayudara a tener mas orden en la busqueda de categorias</span>
+		<span class="c ">Gestiona las categorias de tu categorias, te ayudara a tener mas orden en la busqueda de categorias</span>
 	</div>
 
 </div>
 <script type="text/template" id="crudcategoria">
 	<div class="opm" v-if="$parent.show_crudcategoria">
-		<div class="c white-text">
+		<div class="c">
 			<i class="fal icon-pres c" :class="{'fa-pen' : $parent.mode_edit, 'fa-plus' : !$parent.mode_edit}"></i>
 			<p>{{$parent.crud_message}}</p>
 		</div>
@@ -55,7 +57,7 @@
 				<label for="textarea1">DESCRIPCION</label>
 			</div>
 			<div class="col s12 f-b">
-				<span class="white-text">DESACTIVAR / ACTIVAR</span>
+				<span class="">DESACTIVAR / ACTIVAR</span>
 				<div class="switch">
 					<label>
 						<input type="checkbox" id="ck_estado" v-model="$parent.f_estado">

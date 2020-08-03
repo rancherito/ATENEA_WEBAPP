@@ -22,13 +22,10 @@
 			<input id='search' class='searchinput' placeholder="BUSCAR MARCA">
 			<a id='add-item' class='f-c'><i class='fal fa-plus'></i></a>
 		</div>
-		<h2 class='white-text'>GESTION MARCA</h2>
+		<h2>GESTION MARCA</h2>
 	</div>
-	<script>
-
-	</script>
 	<!--CONTENEDOR DE ITEMS-->
-
+	<div class="space-32"></div>
 	<table class="table-items open-module">
 		<thead>
 			<tr>
@@ -53,13 +50,13 @@
 	<div class="f-c open-module" v-if="message">
 		<i class="fal fa-comment-alt-smile icon-pres"></i>
 		<br>
-		<span class="c white-text">Gestiona las marcas de tu productos, te ayudara a tener mas orden en la busqueda de productos</span>
+		<span class="c ">Gestiona las marcas de tu productos, te ayudara a tener mas orden en la busqueda de productos</span>
 	</div>
 
 </div>
 <script type="text/template" id="crudmarca">
 	<div class="opm" v-if="$parent.show_crudmarca">
-		<div class="c white-text">
+		<div class="c ">
 			<i class="fal icon-pres c" :class="{'fa-pen' : $parent.mode_edit, 'fa-plus' : !$parent.mode_edit}"></i>
 			<p>{{$parent.crud_message}}</p>
 		</div>
@@ -74,7 +71,7 @@
 				<label for="textarea1">DESCRIPCION</label>
 			</div>
 			<div class="col s12 f-b">
-				<span class="white-text">DESACTIVAR / ACTIVAR</span>
+				<span class="">DESACTIVAR / ACTIVAR</span>
 				<div class="switch">
 					<label>
 						<input type="checkbox" id="ck_estado" v-model="$parent.f_estado">
