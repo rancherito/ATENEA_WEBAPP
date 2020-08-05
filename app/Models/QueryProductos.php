@@ -3,16 +3,14 @@
 
 class QueryProductos
 {
-	public function Productos_Listar($Id_producto = '', $Categoria = '', $Marca = '', $Nombre = '', $Descripcion = '', $Estado = '')
+	public function Productos_Listar($Id_producto = '', $Categoria = '', $Marca = '', $Nombre = '', $Estado = '')
 	{
-
         $sql = "
 			EXEC [dbo].[spu_Productos_Listar_por]
 			@Id_producto = '$Id_producto',
 			@Categoria = '$Categoria',
 			@Marca = '$Marca',
 			@Nombre = '$Nombre',
-			@Descripcion = '$Descripcion',
 			@Estado = '$Estado'
 		";
         return query_database($sql);

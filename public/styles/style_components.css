@@ -59,11 +59,16 @@
 	background-color: rgba(255,255,255,0.95);
 	display: flex;
 	min-height: 120px;
+	color: gray;
+}
+.dashbox.disable{
+	opacity: .4;
 }
 .dashbox i{
 	padding: 16px;
 	padding-right: 0;
 	font-size: 1.5rem;
+	color: var(--primary)
 }
 .dashbox-info{
 	padding: 16px;

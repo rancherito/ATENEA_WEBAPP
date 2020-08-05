@@ -88,6 +88,9 @@ aside{
 }
 .searchBox2{
 	height: 46px;
+	margin: 0;
+	height: 44px;
+	box-shadow: none;
 }
 .table-index{
 	width: 1px;;
@@ -172,10 +175,7 @@ aside{
 	margin: 0;
 }
 .searchBox2{
-	width: 400px;
-	margin: 0;
-	height: 44px;
-	box-shadow: none;
+
 }
 #content-barsearch{
 	display: inline-flex;

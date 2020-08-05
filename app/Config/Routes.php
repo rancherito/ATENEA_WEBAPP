@@ -48,13 +48,17 @@ if ($_APPVARS['user'] == 'admin') {
 	$routes->post('dadmin/productos/listar', 'AdmProductos::serv_Productos_Listar');
 	$routes->post('dadmin/productos/salvar', 'AdmProductos::serv_Productos_Salvar');
 
+
 	$routes->get('dadmin/marcas', 'AdmMarcas::index');
 
 	$routes->get('dadmin/proveedores', 'AdmProveedores::index');
 	$routes->get('dadmin/proveedores/recuperar', 'AdmProveedores::serv_Proveedores_Recuperar');
 	$routes->post('dadmin/proveedores/salvar', 'AdmProveedores::serv_Proveedores_Salvar');
 
+
 	$routes->get('dadmin/almacen', 'AdmAlmacen::index');
+	$routes->get('dadmin/almacen/stock/registro', 'AdmAlmacen::Stock_Registro');
+	$routes->post('dadmin/almacen/stock/salvar', 'AdmAlmacen::serv_StockPorProveedor_Salvar');
 
 	$routes->get('dadmin/reportes', 'Utils::void');
 

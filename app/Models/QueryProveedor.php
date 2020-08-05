@@ -23,4 +23,15 @@ class QueryProveedor
 		";
 		return query_database($sql);
 	}
+	public function StockPorProveedor_Salvar($IdProveedor, $IdProducto, $Id_almacen, $Stock)
+	{
+		$sql = "
+		EXEC [dbo].[spu_StockPorProveedor_Guardar]
+		@IdProveedor = '$IdProveedor',
+		@IdProducto = '$IdProducto',
+		@Id_almacen = '$Id_almacen',
+		@Stock = '$Stock'
+		";
+		query_database($sql);
+	}
 }

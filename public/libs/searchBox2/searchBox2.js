@@ -1,15 +1,3 @@
-
-class SearchBox {
-	constructor(input) {
-
-		this.input = document.querySelector(input);
-
-		this.wrapper = document.createElement('label');
-		this.wrapper.classList.add('SearchBox')
-		el.parentNode.insertBefore(this.wrapper, this.input);	
-		wrapper.appendChild(this.input);
-	}
-}
 jQuery.fn.searchBox2 = function () {
     let el = this;
     let input = $(`<input type="text" placeholder="INGRESE PALABRA CLAVE">`);

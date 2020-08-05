@@ -18,12 +18,16 @@ class AdmProductos extends BaseController
 			'categoria' => '',
 			'marca' => '',
 			'nombre' => '',
-			'descripcion' => '',
 			'estado' => ''
 		];
 		$_V = array_merge($_V, $_POST);
+		$_V['nombre'] = str_replace(' ', '', $_V['nombre']);
+
+		$nombre = '%';
+		for ($i=0; $i < strlen($_V['nombre']); $i++) $nombre .= $_V['nombre'][$i] . '%';
+
 		$Productos = new QueryProductos();
-		$res = $Productos->Productos_Listar($_V['id_producto'], $_V['categoria'], $_V['marca'], $_V['nombre'], $_V['descripcion'], $_V['estado']);
+		$res = $Productos->Productos_Listar($_V['id_producto'], $_V['categoria'], $_V['marca'], $nombre, $_V['estado']);
 
 		return $this->response->setJSON($res);
 	}
