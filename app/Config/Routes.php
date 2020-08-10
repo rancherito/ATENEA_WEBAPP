@@ -50,6 +50,8 @@ if ($_APPVARS['user'] == 'admin') {
 
 
 	$routes->get('dadmin/marcas', 'AdmMarcas::index');
+	$routes->get('dadmin/marcas/recuperar', 'AdmMarcas::serv_Marcas_Recuperar');
+	$routes->post('dadmin/marcas/salvar', 'AdmMarcas::serv_Marca_Salvar');
 
 	$routes->get('dadmin/proveedores', 'AdmProveedores::index');
 	$routes->get('dadmin/proveedores/recuperar', 'AdmProveedores::serv_Proveedores_Recuperar');
@@ -57,6 +59,7 @@ if ($_APPVARS['user'] == 'admin') {
 
 
 	$routes->get('dadmin/almacen', 'AdmAlmacen::index');
+	$routes->get('dadmin/almacen/stock/consulta', 'AdmAlmacen::Stock_Consulta');
 	$routes->get('dadmin/almacen/stock/registro', 'AdmAlmacen::Stock_Registro');
 	$routes->post('dadmin/almacen/stock/salvar', 'AdmAlmacen::serv_StockPorProveedor_Salvar');
 
@@ -64,7 +67,9 @@ if ($_APPVARS['user'] == 'admin') {
 
 	$routes->get('dadmin/ventas', 'Utils::void');
 
-	$routes->get('dadmin/categorias', 'AdmController::categorias');
+	$routes->get('dadmin/categorias', 'AdmCategorias::categorias');
+	$routes->get('dadmin/categorias/recuperar', 'AdmCategorias::serv_Categorias_Recuperar');
+	$routes->post('dadmin/categorias/salvar', 'AdmCategorias::serv_Categorias_Salvar');
 
 }
 /**resultados

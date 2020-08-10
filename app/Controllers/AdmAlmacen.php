@@ -21,10 +21,14 @@ class AdmAlmacen extends BaseController
 		];
 		return $this->layout_view('admin', 'pages/adm_stockregistro', $data);
 	}
+	public function Stock_Consulta()
+	{
+
+	}
 	public function serv_StockPorProveedor_Salvar()
 	{
 		$Proveedores = new QueryProveedor();
 		$Proveedores->StockPorProveedor_Salvar($_POST['id_proveedor'], $_POST['id_producto'], $_POST['id_almacen'], $_POST['stock']);
-		
+
 	}
 }

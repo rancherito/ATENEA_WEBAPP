@@ -21,7 +21,7 @@ td, th{
 }
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default), textarea.materialize-textarea{
-	background-color: #f7f7f7;
+	background-color: #fefefe;
 	border: 1px solid #eee;
 	height: 56px;
 	padding: 14px 14px 0px;
@@ -72,7 +72,7 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
 	padding: 0;
 }
 
-.btn:hover, .btn-large:hover, .btn-small:hover{
+.z-depth-1-half, .btn:hover, .btn-large:hover, .btn-small:hover, .btn-floating:hover{
 	box-shadow: none;
 	opacity: .8;
 }
@@ -99,7 +99,8 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
 	left: -100%;
 }
 .btn-floating {
-	background: var(--bg-primary)
+	background: var(--bg-primary);
+	box-shadow: none
 }
 .btn-control{
 	display: flex;

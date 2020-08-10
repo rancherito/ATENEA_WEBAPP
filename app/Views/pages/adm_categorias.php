@@ -1,178 +1,121 @@
-<div id="app" class="module">
-	<div id="divider-main">
-		<div id="content-main">
+<div id="app" class="module opacity-0" :class="{'opacity-1': loaded}">
+	<Smain @content="content = $event">
+		<div class="container">
 			<div id='barsearch'>
 				<div id='content-barsearch'>
-					<input id='search' class='searchinput' placeholder="BUSCAR CATEGORIA">
-					<a id='add-item' class='f-c'><i class='fal fa-plus' @click="addItem"></i></a>
+					<input id='search' placeholder="BUSCAR CATEGORIA" v-model="categoria">
+					<a id='add-item' class='f-c waves-effect waves-light' @click="addItem"><i class='fal fa-plus'></i></a>
 				</div>
-				<h2 class='title-module'>GESTION CATEGORIA</h2>
+				<h2 class='title-module'>Gestion Categorias</h2>
 			</div>
 			<div class="space-32"></div>
-
-			<table class="table-items open-module">
+			<table class="table-items">
 				<thead>
 					<tr>
-						<th style="width: 200px">NOMBRE</th>
-						<th>DESCRIPCION</th>
-						<th class="c" style="width: 100px">ESTADO</th>
+						<th style="width: 1px">#</th>
+						<th>Nombre</th>
+						<th class="c" style="width: 240px">Total Productos <br>
+							<span style="font-size: .8rem; color: gray">(# Productos asociados a esta categoria)</span>
+						</th>
 					</tr>
 				</thead>
-				<tbody id="app_list_categorias">
-					<tr v-for="(categoria, i) in categorias" @click="opencrud(i)">
-						<td>{{categoria.Marca_nombre}}</td>
-						<td>{{categoria.descripcion}}</td>
-						<td class="c f-c">
-							<div class="state" :class="{'state-off': !categoria.estado}"></div>
-						</td>
-					</tr>
-				</tbody>
+				<tr v-for="(categoria, i) in categorias" @click="editItem(categoria)">
+					<td>{{i+1}}</td>
+					<td>{{categoria.Nombre}}</td>
+					<td class="c">{{categoria.TotalProductos}}</td>
+				</tr>
 			</table>
 		</div>
-
-	</div>
-	<div id="divider-option" class="f-c">
-		<div class="opm" v-show="show_crudcategoria">
-			<div class="c">
-				<i class="fal icon-pres c" :class="{'fa-pen' : mode_edit, 'fa-plus' : !mode_edit}"></i>
-				<p></p>
-			</div>
-			<br>
-			<div class="row">
-				<div class="input-field col s12">
-					<input placeholder="ingrese categoria" id="in_nombre" type="text" v-model="f_nombre">
-					<label for="first_name">NOMBRE</label>
-				</div>
-				<div class="input-field col s12">
-					<input placeholder="ingrese descripcion" type="text" v-model="f_descripcion">
-					<label for="textarea1">DESCRIPCION</label>
-				</div>
-				<div class="col s12 f-b">
-					<span class="">DESACTIVAR / ACTIVAR</span>
-					<div class="switch">
-						<label>
-							<input type="checkbox" id="ck_estado" v-model="f_estado">
-							<span class="lever"></span>
-						</label>
-					</div>
-				</div>
-			</div>
-			<br>
-			<div class="r">
-				<a class="btn bg-white" @click="close">
-					<i class="fal fa-times left"></i>CERRAR
-				</a>
-				<a class="btn waves-effect waves-light" @click="save">
-					<i class="fal fa-save left"></i>SALVAR
-				</a>
-			</div>
-		</div>
-		<div class="f-c open-module" v-if="message">
+	</Smain>
+	<Soption>
+		<div class="f-c open-module" v-if="!isOpenCrud">
 			<i class="fal fa-comment-alt-smile icon-pres"></i>
 			<br>
-			<span class="c ">Gestiona las categorias de tu categorias, te ayudara a tener mas orden en la busqueda de categorias</span>
+			<span class="c ">Gestiona las marcas de tus productos, te ayudara a tener mas orden en la busqueda de productos</span>
 		</div>
-
-	</div>
-	<script type="text/template" id="crudcategoria">
-
-	</script>
+		<div class="open-module w100" v-show="isOpenCrud">
+			<div class="c">
+				<i class="fal icon-pres c" :class="{'fa-pen' : !isNewItem, 'fa-plus' : isNewItem}"></i>
+				<p>{{isNewItem ? message_new : message_edit}}</p>
+			</div>
+			<div class="space-32"></div>
+			<div class="row">
+				<div class="input-field col s12">
+		          <input placeholder="ingrese nombre" type="text" v-model.trim="form_nombre">
+		          <label for="first_name">NOMBRE CATEGORIA</label>
+		        </div>
+			</div>
+			<div class="r">
+				<a class="btn bg-white" @click="isOpenCrud = false"><i class="fal fa-times left"></i>CERRAR</a>
+				<a class="btn waves-effect waves-light" @click="saveItem"><i class="fal fa-save left"></i>SALVAR</a>
+			</div>
+		</div>
+	</Soption>
 </div>
 <script type="text/javascript">
-const message_edit = 'Proceso de modificacion. Modifica una categoria si estas seguro del proceso.';
-const message_new = 'Crean una categoria para la gestion de y organizacion de categorias.'
-let crudcategoria = Vue.component('crudcategoria', {
-	template: '#crudcategoria',
-	methods: {
-
-	}
-})
-
-let app_controll = new Vue({
-	el: '#app',
-	data: {
-		show_crudcategoria: false,
-		message: true,
-		crud_message: '',
-		mode_edit: true,
-		f_nombre: '',
-		f_descripcion: '',
-		f_estado: 1,
-		id_item: -1,
-		categorias: [
-			{Marca_nombre: 'COCINA', descripcion: 'Descripcion de la categoria', estado: 0},
-			{Marca_nombre: 'REFRIGERACION', descripcion: 'Descripcion de la categoria', estado: 1},
-			{Marca_nombre: 'MULTIMEDIA', descripcion: 'Descripcion de la categoria', estado: 0},
-			{Marca_nombre: 'LAVANDERIA', descripcion: 'Descripcion de la categoria', estado: 0},
-			{Marca_nombre: 'LIMPIEZA', descripcion: 'Descripcion de la categoria', estado: 0}
-		]
-	},
-	methods:{
-		close: function () {
-			app_controll.message = true
-			app_controll.show_crudcategoria = false
+	new Vue({
+		el: '#app',
+		data: {
+			message_edit: 'Proceso de modificacion. Modifica esta categoria si estas seguro del proceso.',
+			message_new: 'Crean una categoria para la gestion y organizacion de productos.',
+			loaded: false,
+			categorias: [],
+			content: null,
+			isOpenCrud: false,
+			isNewItem: true,
+			categoria: '',
+			form_nombre: '',
+			form_key: -1
 		},
-		save: function () {
-			if (app_controll.f_nombre.length >= 3 && app_controll.f_descripcion.length >= 3) {
-				app_controll.add(app_controll.id_item, app_controll.f_nombre, app_controll.f_descripcion, app_controll.f_estado);
-			}
-			else {
-				console.log('campos vacios');
+		created: function () {
+			this.loadItems()
+		},
+		mounted: function () {
+			this.loaded = true
+			new SimpleBar(this.content,{ autoHide: false });
+		},
+		watch: {
+			categoria: function (val) {
+				for (var categoria of this.categorias) categoria.order = JaroWrinker(val.toLowerCase(), categoria.Nombre.toLowerCase());
+				this.categorias.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
 			}
 		},
-		addItem: function () {
-			this.clear()
-			this.show_crudcategoria = true
-			this.message = false
-			this.crud_message = message_new
-			this.mode_edit = false
-		},
-		clear: function () {
-			this.id_item = -1
-			this.f_nombre = ''
-			this.f_descripcion = ''
-			this.f_estado = 1
-		},
-		add: function (id, nombre, descripcion, estado) {
-			console.log(id);
-			if (id < 0) {
-				this.categorias.push({Marca_nombre: nombre.toUpperCase(), descripcion: descripcion.toUpperCase(), estado: estado, Id_categoria: 45})
-				this.message = true
-				this.show_crudcategoria = false
+		methods: {
+			addItem: function () {
+				this.isOpenCrud = true
+				this.isNewItem = true
+				this.form_nombre = ''
+				this.form_key = -1
+			},
+			loadItems: function () {
+				$.get('<?= base_url() ?>/dadmin/categorias/recuperar', data =>{
+					//console.log(data);
+					this.categorias = data
+					this.categoria = this.form_nombre
+				})
+			},
+			editItem: function (item) {
+				this.isOpenCrud = true
+				this.isNewItem = false
+				this.form_nombre = item.Nombre
+				this.form_key = item.Id_categoriaProducto
+			},
+			saveItem: function () {
+				if (this.form_nombre) {
+					let values = {
+						nombre: this.form_nombre.toUpperCase(),
+						id: this.form_key
+					}
+					$.post('<?= base_url() ?>/dadmin/categorias/salvar', values, data => {
+						M.toast({html: 'CATEGIRIA SALVADA', classes: 'bg-primary'});
+						this.loadItems()
+						this.isOpenCrud = false
+					})
+				}
+				else {
+					M.toast({html: 'RELLENE LOS CAMPOS CORRECTAMENTE', classes: 'bg-alert'});
+				}
 			}
-			else {
-				console.log(id);
-				this.categorias[id].Marca_nombre = nombre.toUpperCase()
-				this.categorias[id].descripcion = descripcion.toUpperCase()
-				this.categorias[id].estado = estado
-				app_controll.message = true
-				app_controll.show_crudcategoria = false
-			}
-		},
-		opencrud: function (id) {
-			let item = this.categorias[id];
-			this.clear()
-			this.id_item = id
-			this.show_crudcategoria = true
-			this.message = false
-			this.crud_message = message_edit
-			this.mode_edit = true
-
-			this.f_nombre = item.Marca_nombre
-			this.f_descripcion = item.descripcion
-			this.f_estado = item.estado
-
 		}
-	}
-})
-
-const search = $('#search')
-search.keyup( e => {
-	const flag = 'jamon';
-	for (var i = 0; i < app_controll.categorias.length; i++) {
-		let categoria = app_controll.categorias[i]
-		categoria.order = JaroWrinker(search.val().toLowerCase(), categoria.Marca_nombre.toLowerCase());
-	}
-	app_controll.categorias.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
-})
+	})
 </script>

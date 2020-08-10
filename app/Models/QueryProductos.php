@@ -23,11 +23,34 @@ class QueryProductos
 		";
 		return query_database($sql);
 	}
+	public function CategoriaProductos_Salvar($id, $nombre)
+	{
+		$sql = "
+		EXEC [dbo].[spu_CategoriaProductos_Guardar]
+		@Id_categoriaProducto = '$id',
+		@Nombre = '$nombre'
+		";
+		query_database($sql);
+	}
 	public function MarcaProductos_Recuperar($Marca = '')
 	{
 		$sql = "
 		EXEC [dbo].[spu_MarcaProductos_Recuperar]
 		@Id_marcaProducto  = '$Marca'
+		";
+		$list = query_database($sql);
+
+		foreach ($list as $key => $v) {
+			$file = 'public/images/brands/' . $v['Id_marcaProducto'] .'.png';
+			$list[$key]['ImageUrl'] = file_exists($file) ? base_url() . '/' . $file . '?v=' . rand() : base_url() . '/public/images/brands/default.svg';
+		}
+		return $list;
+	}
+	public function MarcaProductos_Salvar($id, $nombre){
+		$sql = "
+		EXEC [dbo].[spu_MarcaProductos_Guardar]
+		@Id_marcaProducto = '$id',
+		@Nombre = '$nombre'
 		";
 		return query_database($sql);
 	}
