@@ -3,6 +3,26 @@
 
 class QueryProductos
 {
+	public function StockProductos_Listar($IdProducto = '', $IdAlmacen = '')
+	{
+		$sql = "
+		EXEC [dbo].[spu_StockProductos_Listar_por]
+		@IdProducto = '$IdProducto',
+		@IdAlmacen = '$IdAlmacen'
+		";
+		return query_database($sql);
+	}
+	public function StockProductos_Transferir($id_producto, $id_almacen_origen, $id_alamcen_destino, $unidades)
+	{
+		$sql = "
+		EXEC [dbo].[spu_StockProductos_Transferir]
+		@id_producto = '$id_producto',
+		@id_almacen_origen = '$id_almacen_origen',
+		@id_alamcen_destino = '$id_alamcen_destino',
+		@unidades = '$unidades'
+		";
+		return query_database($sql);
+	}
 	public function Productos_Listar($Id_producto = '', $Categoria = '', $Marca = '', $Nombre = '', $Estado = '')
 	{
         $sql = "

@@ -21,14 +21,37 @@ class AdmAlmacen extends BaseController
 		];
 		return $this->layout_view('admin', 'pages/adm_stockregistro', $data);
 	}
+
 	public function Stock_Consulta()
 	{
-
+		$Productos = new QueryProductos();
+		$Infraestructura = new QueryInfraestructura();
+		$data = [
+			'productos' => $Productos->StockProductos_Listar('', ''),
+			'almacenes' => $Infraestructura->LocalesEmpresa_Listar('', '', '1')
+		];
+		echo $this->layout_view('admin', 'pages/adm_stockconsulta', $data);
 	}
 	public function serv_StockPorProveedor_Salvar()
 	{
 		$Proveedores = new QueryProveedor();
 		$Proveedores->StockPorProveedor_Salvar($_POST['id_proveedor'], $_POST['id_producto'], $_POST['id_almacen'], $_POST['stock']);
 
+	}
+	public function serv_StockProductos_Listar()
+	{
+		$_v = [
+			'id_almacen' => '',
+			'id_producto' => ''
+		];
+		$_v = array_merge($_v, $_POST);
+		$Productos = new QueryProductos();
+		$res = $Productos->StockProductos_Listar($_v['id_almacen'], $_v['id_producto']);
+		return $this->response->setJSON($res);
+	}
+	public function serv_StockProductos_Transferir()
+	{
+		$Productos = new QueryProductos();
+		$Productos->StockProductos_Transferir($_POST['id_producto'], $_POST['id_almacen_origen'], $_POST['id_alamcen_destino'], $_POST['unidades']);
 	}
 }

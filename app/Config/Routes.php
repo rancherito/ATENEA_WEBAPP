@@ -37,7 +37,6 @@ $routes->get('/', 'Pages::index');
 $routes->get('close', 'Utils::close_session');
 $routes->add('validar_acceso', 'Pages::validar_acceso');
 
-
 //SECCION ADMINISTRADOR
 if ($_APPVARS['user'] == 'admin') {
 
@@ -62,6 +61,8 @@ if ($_APPVARS['user'] == 'admin') {
 	$routes->get('dadmin/almacen/stock/consulta', 'AdmAlmacen::Stock_Consulta');
 	$routes->get('dadmin/almacen/stock/registro', 'AdmAlmacen::Stock_Registro');
 	$routes->post('dadmin/almacen/stock/salvar', 'AdmAlmacen::serv_StockPorProveedor_Salvar');
+	$routes->post('servicios/almacen/stock/transferir', 'AdmAlmacen::serv_StockProductos_Transferir');
+	$routes->post('servicios/almacen/stock/listar', 'AdmAlmacen::serv_StockProductos_Listar');
 
 	$routes->get('dadmin/reportes', 'Utils::void');
 

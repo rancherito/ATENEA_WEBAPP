@@ -1,3 +1,38 @@
+.stockproducto{
+	background: white;
+	width: 100%;
+	height: 220px;
+	border-radius: 3px;
+	margin-bottom: 16px;
+	position: relative;
+	display: inline-flex;
+}
+.stockproducto-wrap-image{
+	width: 180px;
+	position: relative;
+	padding: 16px;
+	padding-right: 0px;
+	display: flex;
+	align-items: center;
+}
+.stockproducto-wrap-image img{
+	width: 100%;
+}
+.stockproducto-wrap-description{
+	width: calc(100% - 180px);
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.stockproducto-wrap-description span{
+	background: white;
+	padding: 8px 16px;
+	border: 1px solid lightgray;
+	display: inline-block;
+	border-radius: 3px;
+	cursor: default;
+}
 .brandbox{
 	width: 100%;
 	text-align: center;

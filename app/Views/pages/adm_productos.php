@@ -57,15 +57,8 @@
 
 </style>
 <div id="app" class="module">
-	<Smain @content="content = $event">
-		<div id='barsearch'>
-			<div id='content-barsearch'>
-				<input id='search' class='searchinput' placeholder="BUSCAR PRODUCTOS" v-model="searchProducto">
-				<a id='add-item' class='f-c waves-effect waves-light' @click="addProducto"><i class='fal fa-plus'></i></a>
-			</div>
-			<h2 class=''>GESTION PRODUCTOS</h2>
-		</div>
-		<!--CONTENEDOR DE ITEMS-->
+	<main-search :onsearch="onsearch" :additem="addProducto" :namemodule="'GESTION PRODUCTOS'">
+
 		<div class="wrapp-card-productos">
 			<table class="table-items">
 				<thead>
@@ -91,120 +84,119 @@
 					</tr>
 				</tbody>
 			</table>
-
-		</div>
-	</Smain>
-	<Soption>
-		<div class="tab-in-divider" v-show="!onOpenCrud">
-			<ul ref="tabs" class="tabs tabs-fixed-width">
-				<li class="tab col s3"><a href="#tab-categorias">CATEGORIAS</a></li>
-				<li class="tab col s3"><a href="#tab-marcas">MARCAS</a></li>
-			</ul>
-			<div id="tab-categorias" class="wrapper-tab">
-				<div class="c  open-module">
-					<div class="space-32"></div>
-					<i class="fal fa-ballot icon-pres c"></i>
-					<p>Filtre la operacion de consulta por <b class="black-text">CATEGORIAS</b> , sera mas sencillo visualizar lo que esta buscando</p>
+			</div>
+		</main-search>
+		<Soption>
+			<div class="tab-in-divider" v-show="!onOpenCrud">
+				<ul ref="tabs" class="tabs tabs-fixed-width">
+					<li class="tab col s3"><a href="#tab-categorias">CATEGORIAS</a></li>
+					<li class="tab col s3"><a href="#tab-marcas">MARCAS</a></li>
+				</ul>
+				<div id="tab-categorias" class="wrapper-tab">
+					<div class="c  open-module">
+						<div class="space-32"></div>
+						<i class="fal fa-ballot icon-pres c"></i>
+						<p>Filtre la operacion de consulta por <b class="black-text">CATEGORIAS</b> , sera mas sencillo visualizar lo que esta buscando</p>
+						<br>
+					</div>
+					<div class="c-options open-module">
+						<input type="text" placeholder="buscar categoria" v-model="searchCategoria">
+						<label>
+							<input type="checkbox" class="filled-in" v-model="filter_categoria" ><span></span>
+						</label>
+					</div>
 					<br>
+					<div class="open-module">
+						<list-filter v-for="(categoria, index) in categorias" :onchange="onChecked_categoria" :name="categoria.Nombre" :check="categoria.check" @changecheck="categoria.check = $event">
+						</list-filter>
+					</div>
 				</div>
-				<div class="c-options open-module">
-					<input type="text" placeholder="buscar categoria" v-model="searchCategoria">
-					<label>
-						<input type="checkbox" class="filled-in" v-model="filter_categoria" ><span></span>
-					</label>
-				</div>
-				<br>
-				<div class="open-module">
-					<list-filter v-for="(categoria, index) in categorias" :onchange="onChecked_categoria" :name="categoria.Nombre" :check="categoria.check" @changecheck="categoria.check = $event">
+				<div id="tab-marcas"  class="wrapper-tab">
+					<div class="c open-module">
+						<div class="space-32"></div>
+						<i class="fal fa-tag icon-pres c"></i>
+						<p>Filtre la operacion de consulta por <b class="black-text">MARCAS</b> , sera mas sencillo visualizar lo que esta buscando</p>
+						<br>
+					</div>
+
+					<div class="c-options open-module">
+						<input type="text" placeholder="buscar categoria" v-model="searchMarca">
+						<label>
+							<input type="checkbox" class="filled-in" v-model="filter_marca">
+							<span></span>
+						</label>
+					</div>
+					<div id="c-list" class="open-module">
+						<list-filter
+						v-for="marca in marcas"
+						:onchange="onChecked_categoria"
+						:name="marca.Nombre"
+						:check="marca.check"
+						@changecheck="marca.check = $event"
+						>
 					</list-filter>
 				</div>
 			</div>
-			<div id="tab-marcas"  class="wrapper-tab">
-				<div class="c open-module">
-					<div class="space-32"></div>
-					<i class="fal fa-tag icon-pres c"></i>
-					<p>Filtre la operacion de consulta por <b class="black-text">MARCAS</b> , sera mas sencillo visualizar lo que esta buscando</p>
-					<br>
-				</div>
-
-				<div class="c-options open-module">
-					<input type="text" placeholder="buscar categoria" v-model="searchMarca">
-					<label>
-						<input type="checkbox" class="filled-in" v-model="filter_marca">
-						<span></span>
-					</label>
-				</div>
-				<div id="c-list" class="open-module">
-					<list-filter
-					v-for="marca in marcas"
-					:onchange="onChecked_categoria"
-					:name="marca.Nombre"
-					:check="marca.check"
-					@changecheck="marca.check = $event"
-					>
-				</list-filter>
-			</div>
 		</div>
-	</div>
-	<div v-show="onOpenCrud" class="fill f-c">
-		<div class="opm">
-			<div class="c ">
-				<i class="fal icon-pres c" :class="{'fa-pen' : !onNewProducto, 'fa-plus' : onNewProducto}"></i>
-				<p>{{onNewProducto ? message_new : message_edit}}</p>
-			</div>
-			<br>
-			<div class="row">
-				<div class="input-field col s12">
-					<input placeholder="ingrese categoria" type="text" v-model="form_nombre">
-					<label>NOMBRE</label>
+		<div v-show="onOpenCrud" class="fill f-c">
+			<div class="opm">
+				<div class="c ">
+					<i class="fal icon-pres c" :class="{'fa-pen' : !onNewProducto, 'fa-plus' : onNewProducto}"></i>
+					<p>{{onNewProducto ? message_new : message_edit}}</p>
 				</div>
-				<div class="input-field col s12">
-					<input  id="in_descripcion" type="text" placeholder="ingrese descripcion"  v-model="form_descripcion"></input>
-					<label>DESCRIPCION</label>
-				</div>
-				<div class="input-field col s12">
-					<label>CATEGORIA</label>
-					<select v-model="form_categoria">
-						<option value="" disabled selected>Seleccione categoria</option>
-						<option v-for="categoria in categorias" :value="categoria.Id_categoriaProducto">{{categoria.Nombre}}</option>
-					</select>
-				</div>
+				<br>
+				<div class="row">
+					<div class="input-field col s12">
+						<input placeholder="ingrese categoria" type="text" v-model="form_nombre">
+						<label>NOMBRE</label>
+					</div>
+					<div class="input-field col s12">
+						<input  id="in_descripcion" type="text" placeholder="ingrese descripcion"  v-model="form_descripcion"></input>
+						<label>DESCRIPCION</label>
+					</div>
+					<div class="input-field col s12">
+						<label>CATEGORIA</label>
+						<select v-model="form_categoria">
+							<option value="" disabled selected>Seleccione categoria</option>
+							<option v-for="categoria in categorias" :value="categoria.Id_categoriaProducto">{{categoria.Nombre}}</option>
+						</select>
+					</div>
 
-				<div class="input-field col s12">
-					<label>MARCA</label>
-					<select v-model="form_marca">
-						<option value="" disabled selected>Seleccione marca</option>
-						<option v-for="marca in marcas" :value="marca.Id_marcaProducto">{{marca.Nombre}}</option>
-					</select>
-				</div>
-				<div class="input-field col s12">
-					<input ref="input_precio" type="text" placeholder="ingrese descripcion" v-model="form_precio"></input>
-					<label>PRECIO</label>
-				</div>
-				<div class="col s12 f-b">
-					<span class="">DESACTIVAR / ACTIVAR</span>
-					<div class="switch">
-						<label>
-							<input type="checkbox" id="ck_estado"  v-model="form_estado">
-							<span class="lever"></span>
-						</label>
+					<div class="input-field col s12">
+						<label>MARCA</label>
+						<select v-model="form_marca">
+							<option value="" disabled selected>Seleccione marca</option>
+							<option v-for="marca in marcas" :value="marca.Id_marcaProducto">{{marca.Nombre}}</option>
+						</select>
+					</div>
+					<div class="input-field col s12">
+						<input ref="input_precio" type="text" placeholder="ingrese descripcion" v-model="form_precio"></input>
+						<label>PRECIO</label>
+					</div>
+					<div class="col s12 f-b">
+						<span class="">DESACTIVAR / ACTIVAR</span>
+						<div class="switch">
+							<label>
+								<input type="checkbox" id="ck_estado"  v-model="form_estado">
+								<span class="lever"></span>
+							</label>
+						</div>
 					</div>
 				</div>
-			</div>
-			<br>
-			<div class="r">
-				<a class="btn bg-white" @click="onOpenCrud = false">
-					<i class="fal fa-times left" ></i>CERRAR
-				</a>
-				<a class="btn waves-effect waves-light" @click="saveForm">
-					<i class="fal fa-save left"></i>SALVAR
-				</a>
+				<br>
+				<div class="r">
+					<a class="btn bg-white" @click="onOpenCrud = false">
+						<i class="fal fa-times left" ></i>CERRAR
+					</a>
+					<a class="btn waves-effect waves-light" @click="saveForm">
+						<i class="fal fa-save left"></i>SALVAR
+					</a>
+				</div>
 			</div>
 		</div>
-	</div>
 
 
-</Soption>
+	</Soption>
 </div>
 
 
@@ -221,7 +213,6 @@ let app = new Vue({
 		this.getProductos()
 	},
 	data: {
-		content: null,
 		productos : [],
 		categorias: categorias,
 		marcas: marcas,
@@ -238,13 +229,11 @@ let app = new Vue({
 		form_estado: true,
 		form_key: -1,
 		form_precio: 0,
-		searchProducto: '',
 		searchCategoria: '',
 		searchMarca: ''
 
 	},
 	mounted: function () {
-		new SimpleBar(this.content, { autoHide: false })
 		M.Tabs.init(this.$refs.tabs)
 		Inputmask({
 			mask: '(99){+|1}.00',
@@ -277,17 +266,17 @@ let app = new Vue({
 			for (var marca of this.marcas) marca.order = JaroWrinker(val.toLowerCase(), marca.Nombre.toLowerCase())
 			this.marcas.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
 		},
-		searchProducto: function (val) {
+
+	},
+	methods: {
+		onsearch: function (val) {
 			for (var producto of this.productos) {
-				let flag_descripcion = JaroWrinker(this.searchProducto.toLowerCase(), producto.Descripcion.toLowerCase())
-				let flag_nombre = JaroWrinker(this.searchProducto.toLowerCase(), producto.Nombre.toLowerCase())
+				let flag_descripcion = JaroWrinker(val.toLowerCase(), producto.Descripcion.toLowerCase())
+				let flag_nombre = JaroWrinker(val.toLowerCase(), producto.Nombre.toLowerCase())
 				producto.order = flag_descripcion > flag_nombre ? flag_descripcion : flag_nombre;
 			}
 			this.productos.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
-		}
-	},
-	methods: {
-
+		},
 		onChecked_categoria: function (data) {
 			this.getProductos();
 		},
@@ -346,7 +335,6 @@ let app = new Vue({
 		getProductos: function (val) {
 			$.post('<?= base_url()?>/dadmin/productos/listar',{marca: this.getListCheckedMarcas(), categoria: this.getListCheckedCategorias()},productos => {
 				this.productos = productos;
-				this.searchProducto = val ? val : ''
 			})
 		},
 

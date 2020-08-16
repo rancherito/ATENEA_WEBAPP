@@ -9,42 +9,33 @@
 			color: var(--primary)
 	}
 </style>
+
 <div id="app" class="module">
-	<div id="divider-main">
-		<div id="content-main">
-			<div id='barsearch'>
-				<div id='content-barsearch'>
-					<input id='search' class='searchinput' placeholder="BUSCAR PROVEEDOR" v-model="searchItem">
-					<a id='add-item' class='f-c waves-effect waves-light' @click="addItem"><i class='fal fa-plus'></i></a>
-				</div>
-				<h2>GESTION PROVEEDORES</h2>
-			</div>
-			<div class="space-32"></div>
-			<table class="table-items open-module">
-				<tr>
-					<th class="table-index">#</th>
-					<th>NOMBRE</th>
-					<th>DESCRIPCION</th>
-					<th class="c">TELEFONO</th>
-					<th class="c">EMAIL</th>
-					<th class="c">CALIFICACION</th>
-				</tr>
-				<tbody>
-						<tr v-for="(proveedor, index) in proveedores" @click="editItem(proveedor)">
-							<td class="table-index">{{index + 1}}</td>
-							<td>{{proveedor.Nombre}}</td>
-							<td>{{proveedor.Descripcion}}</td>
-							<td class="c">{{proveedor.Telefono}}</td>
-							<td class="c">{{proveedor.email}}</td>
-							<td class="c">
-								<i style="color: var(--primary)" v-for="n in 5" class="fa-star" :class="{'fal': proveedor.Calificacion < n, 'fas': proveedor.Calificacion >= n}"></i>
-							</td>
-						</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div id="divider-option" class="f-c">
+	<main-search :namemodule="'GESTION PROVEEDORES'" :onsearch="orderItems" :additem="addItem">
+		<table class="table-items open-module">
+			<tr>
+				<th class="table-index">#</th>
+				<th>NOMBRE</th>
+				<th>DESCRIPCION</th>
+				<th class="c">TELEFONO</th>
+				<th class="c">EMAIL</th>
+				<th class="c">CALIFICACION</th>
+			</tr>
+			<tbody>
+					<tr v-for="(proveedor, index) in proveedores" @click="editItem(proveedor)">
+						<td class="table-index">{{index + 1}}</td>
+						<td>{{proveedor.Nombre}}</td>
+						<td>{{proveedor.Descripcion}}</td>
+						<td class="c">{{proveedor.Telefono}}</td>
+						<td class="c">{{proveedor.email}}</td>
+						<td class="c">
+							<i style="color: var(--primary)" v-for="n in 5" class="fa-star" :class="{'fal': proveedor.Calificacion < n, 'fas': proveedor.Calificacion >= n}"></i>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</main-search>
+	<Soption>
 		<div class="f-c" v-show="!isOpenForm">
 			<i class="fal fa-comment-alt-smile icon-pres open-module" style="font-size: 4rem"></i>
 			<br>
@@ -63,11 +54,11 @@
 						<label>NOMBRE</label>
 					</div>
 					<div class="input-field col s12">
-						<input  id="in_descripcion" type="text" placeholder="ingrese descripcion"  v-model="form_descripcion"></input>
+						<input type="text" placeholder="ingrese descripcion"  v-model="form_descripcion"></input>
 						<label>DESCRIPCION</label>
 					</div>
 					<div class="input-field col s12">
-						<input  id="in_descripcion" type="text" placeholder="ingrese telefono"  v-model="form_telefono"></input>
+						<input type="text" placeholder="ingrese telefono"  v-model="form_telefono"></input>
 						<label>TELEFONO</label>
 					</div>
 
@@ -96,8 +87,7 @@
 			</div>
 		</div>
 
-	</div>
-
+	</Soption>
 </div>
 
 <script type="text/javascript">
@@ -106,7 +96,6 @@
 		data: {
 			message_edit: 'Proceso de modificacion. Modifica un proveedor si estas seguro del proceso.',
 			message_new: 'Formulario de registro de proveedores. Recuerde, si su proveedor es una empresa terciaria debe registrar antes las marcas de los productos proveidos por esta',
-			searchItem: '',
 			proveedores: [],
 			isOpenForm: false,
 			isNewItem: true,
@@ -117,11 +106,6 @@
 			form_key: 0,
 			form_calificacion: 0,
 			onLoadProductos: true
-		},
-		watch: {
-			searchItem: function (val) {
-				this.orderItems(val)
-			}
 		},
 		methods: {
 			orderItems: function (val) {
@@ -152,7 +136,7 @@
 					$.post('<?= base_url() ?>/dadmin/proveedores/salvar', values, res => {
 						M.toast({html: 'PRODUCTO SALVADO', classes: 'bg-primary'});
 						this.loadItems()
-
+						this.isOpenForm = false
 					})
 				}
 				else {
@@ -162,8 +146,6 @@
 			loadItems: function () {
 				$.get( "<?= base_url()?>/dadmin/proveedores/recuperar", res => {
 				  this.proveedores = res
-				  this.searchItem = this.form_nombre
-				  this.orderItems(this.form_nombre)
 				});
 			},
 			addItem: function () {
@@ -174,7 +156,6 @@
 				this.clearForm()
 				this.isOpenForm = true
 				this.isNewItem = false
-				console.log(item);
 				this.form_key = item.Id_proveedores
 				this.form_nombre = item.Nombre
 				this.form_descripcion = item.Descripcion
