@@ -147,6 +147,9 @@ h1, h2, h3, h4{
 	background: var(--bg-primary);
 	opacity: 0.7;
 }
+.block{
+	display: block;
+}
 .w100{
 	width: 100%;
 }
@@ -159,7 +162,12 @@ h1, h2, h3, h4{
 	animation-name: open-module;
 	animation-timing-function: ease-out;
 }
-
+.p-32{
+	padding: 32px;
+}
+.p-16{
+	padding: 16px
+}
 @keyframes open-module {
 	0%{
 		transform: translateX(-16px);

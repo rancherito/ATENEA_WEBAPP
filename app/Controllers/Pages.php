@@ -35,7 +35,7 @@ class Pages extends BaseController
 		}
 
 	}
-	public function dadmin()
+	public function administrator()
 	{
 		echo  $this->layout_view('admin','pages/administrador');
 	}

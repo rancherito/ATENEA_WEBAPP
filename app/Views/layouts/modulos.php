@@ -115,7 +115,7 @@ $year = date("Y");
 			switch (res) {
 				case 'A':
 					console.log('ADMINSTRADOR');
-					location.href = '<?= base_url()?>/dadmin'
+					location.href = '<?= base_url()?>/administrator'
 				break;
 				case 'U':
 					console.log('USUARIO');

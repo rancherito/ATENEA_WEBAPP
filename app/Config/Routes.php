@@ -41,36 +41,36 @@ $routes->add('validar_acceso', 'Pages::validar_acceso');
 if ($_APPVARS['user'] == 'admin') {
 
 
-	$routes->get('dadmin', 'Pages::dadmin');
+	$routes->get('administrator', 'Pages::administrator');
 
-	$routes->get('dadmin/productos', 'AdmProductos::index');
-	$routes->post('dadmin/productos/listar', 'AdmProductos::serv_Productos_Listar');
-	$routes->post('dadmin/productos/salvar', 'AdmProductos::serv_Productos_Salvar');
-
-
-	$routes->get('dadmin/marcas', 'AdmMarcas::index');
-	$routes->get('dadmin/marcas/recuperar', 'AdmMarcas::serv_Marcas_Recuperar');
-	$routes->post('dadmin/marcas/salvar', 'AdmMarcas::serv_Marca_Salvar');
-
-	$routes->get('dadmin/proveedores', 'AdmProveedores::index');
-	$routes->get('dadmin/proveedores/recuperar', 'AdmProveedores::serv_Proveedores_Recuperar');
-	$routes->post('dadmin/proveedores/salvar', 'AdmProveedores::serv_Proveedores_Salvar');
+	$routes->get('administrator/productos', 'AdmProductos');
+	$routes->post('servicios/productos/listar', 'AdmProductos::serv_Productos_Listar');
+	$routes->post('servicios/productos/salvar', 'AdmProductos::serv_Productos_Salvar');
 
 
-	$routes->get('dadmin/almacen', 'AdmAlmacen::index');
-	$routes->get('dadmin/almacen/stock/consulta', 'AdmAlmacen::Stock_Consulta');
-	$routes->get('dadmin/almacen/stock/registro', 'AdmAlmacen::Stock_Registro');
-	$routes->post('dadmin/almacen/stock/salvar', 'AdmAlmacen::serv_StockPorProveedor_Salvar');
+	$routes->get('administrator/marcas', 'AdmMarcas');
+	$routes->get('servicios/marcas/recuperar', 'AdmMarcas::serv_Marcas_Recuperar');
+	$routes->post('servicios/marcas/salvar', 'AdmMarcas::serv_Marca_Salvar');
+
+	$routes->get('administrator/proveedores', 'AdmProveedores::index');
+	$routes->get('servicios/proveedores/recuperar', 'AdmProveedores::serv_Proveedores_Recuperar');
+	$routes->post('servicios/proveedores/salvar', 'AdmProveedores::serv_Proveedores_Salvar');
+
+
+	$routes->get('administrator/almacen', 'AdmAlmacen');
+	$routes->get('administrator/almacen/stock/consulta', 'AdmAlmacen::Stock_Consulta');
+	$routes->get('administrator/almacen/stock/registro', 'AdmAlmacen::Stock_Registro');
+	$routes->post('servicios/almacen/stock/salvar', 'AdmAlmacen::serv_StockPorProveedor_Salvar');
 	$routes->post('servicios/almacen/stock/transferir', 'AdmAlmacen::serv_StockProductos_Transferir');
 	$routes->post('servicios/almacen/stock/listar', 'AdmAlmacen::serv_StockProductos_Listar');
 
-	$routes->get('dadmin/reportes', 'Utils::void');
+	$routes->get('administrator/reportes', 'Utils::void');
 
-	$routes->get('dadmin/ventas', 'Utils::void');
+	$routes->get('administrator/ventas', 'AdmVentas');
 
-	$routes->get('dadmin/categorias', 'AdmCategorias::categorias');
-	$routes->get('dadmin/categorias/recuperar', 'AdmCategorias::serv_Categorias_Recuperar');
-	$routes->post('dadmin/categorias/salvar', 'AdmCategorias::serv_Categorias_Salvar');
+	$routes->get('administrator/categorias', 'AdmCategorias::categorias');
+	$routes->get('servicios/categorias/recuperar', 'AdmCategorias::serv_Categorias_Recuperar');
+	$routes->post('servicios/categorias/salvar', 'AdmCategorias::serv_Categorias_Salvar');
 
 }
 /**resultados

@@ -94,7 +94,7 @@
 				this.form_key = -1
 			},
 			getItems: function () {
-			   $.get('<?= base_url() ?>/dadmin/marcas/recuperar', res => {
+			   $.get('<?= base_url() ?>/servicios/marcas/recuperar', res => {
 				   this.marcas = res
 				   this.marca = this.form_nombre
 			   })
@@ -106,7 +106,7 @@
 						nombre: this.form_nombre.toUpperCase(),
 						id: this.form_key
 					}
-					$.post('<?= base_url() ?>/dadmin/marcas/salvar', values, r => {
+					$.post('<?= base_url() ?>/servicios/marcas/salvar', values, r => {
 						this.getItems()
 						this.isOpenCrud = false
 					})

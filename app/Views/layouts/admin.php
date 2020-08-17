@@ -38,29 +38,29 @@
 		<li><a><i class="fas fa-cog"></i>Configuracion 02</a></li>
 	</ul>
 	<aside>
-		<a id="logo" class="f-c" href="<?= base_url()?>/dadmin">
+		<a id="logo" class="f-c" href="<?= base_url()?>/administrator">
 			<img src="<?= base_url() ?>/public/images/icon_color.svg" alt="UNAMAD" id="logoapp">
 		</a>
 		<div id="menu-aside">
 
-			<a href="<?= base_url()?>/dadmin/ventas" class="aside-item-menu" data-tooltip="VENTAS" data-position="right"><i class="fal fa-shopping-cart"></i></a>
-			<a href="<?= base_url()?>/dadmin/productos" class="aside-item-menu" data-tooltip="PRODUCTOS" data-position="right">
+			<a href="<?= base_url()?>/administrator/ventas" class="aside-item-menu" data-tooltip="VENTAS" data-position="right"><i class="fal fa-shopping-cart"></i></a>
+			<a href="<?= base_url()?>/administrator/productos" class="aside-item-menu" data-tooltip="PRODUCTOS" data-position="right">
 				<i class="fal fa-store"></i>
 			</a>
-			<a href="<?= base_url()?>/dadmin/categorias" class="aside-item-menu" data-tooltip="CATEGORIAS" data-position="right">
+			<a href="<?= base_url()?>/administrator/categorias" class="aside-item-menu" data-tooltip="CATEGORIAS" data-position="right">
 				<i class="fal fa-ballot"></i>
 			</a>
-			<a href="<?= base_url()?>/dadmin/marcas" class="aside-item-menu" data-tooltip="MARCAS" data-position="right">
+			<a href="<?= base_url()?>/administrator/marcas" class="aside-item-menu" data-tooltip="MARCAS" data-position="right">
 				<i class="fal fa-tag"></i>
 			</a>
 
-			<a href="<?= base_url()?>/dadmin/proveedores" class="aside-item-menu" data-tooltip="PROVEEDORES" data-position="right">
+			<a href="<?= base_url()?>/administrator/proveedores" class="aside-item-menu" data-tooltip="PROVEEDORES" data-position="right">
 				<i class="fal fa-shipping-fast"></i>
 			</a>
-			<a href="<?= base_url()?>/dadmin/almacen" class="aside-item-menu" data-tooltip="ALMACEN" data-position="right">
+			<a href="<?= base_url()?>/administrator/almacen" class="aside-item-menu" data-tooltip="ALMACEN" data-position="right">
 				<i class="fal fa-box"></i>
 			</a>
-			<a href="<?= base_url()?>/dadmin/reportes" class="aside-item-menu" data-tooltip="REPORTES" data-position="right">
+			<a href="<?= base_url()?>/administrator/reportes" class="aside-item-menu" data-tooltip="REPORTES" data-position="right">
 				<i class="fal fa-file"></i>
 			</a>
 		</div>

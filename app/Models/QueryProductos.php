@@ -23,7 +23,7 @@ class QueryProductos
 		";
 		return query_database($sql);
 	}
-	public function Productos_Listar($Id_producto = '', $Categoria = '', $Marca = '', $Nombre = '', $Estado = '')
+	public function Productos_Listar($Id_producto = '', $Categoria = '', $Marca = '', $Nombre = '', $Estado = '', $limit)
 	{
         $sql = "
 			EXEC [dbo].[spu_Productos_Listar_por]
@@ -31,9 +31,15 @@ class QueryProductos
 			@Categoria = '$Categoria',
 			@Marca = '$Marca',
 			@Nombre = '$Nombre',
-			@Estado = '$Estado'
+			@Estado = '$Estado',
+			@Limit = '$limit'
 		";
-        return query_database($sql);
+        $list = query_database($sql);
+		foreach ($list as $key => $v) {
+			$file = 'public/images/products/' . $v['Id_marcaProducto'] .'.png';
+			$list[$key]['ImageUrl'] = file_exists($file) ? base_url() . '/' . $file . '?v=' . rand() : base_url() . '/public/images/products/default.svg';
+		}
+		return $list;
     }
 	public function CategoriaProductos_Recuperar($Categoria = '')
 	{

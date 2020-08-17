@@ -133,7 +133,7 @@
 						calificacion: this.form_calificacion
 					}
 
-					$.post('<?= base_url() ?>/dadmin/proveedores/salvar', values, res => {
+					$.post('<?= base_url() ?>/servicios/proveedores/salvar', values, res => {
 						M.toast({html: 'PRODUCTO SALVADO', classes: 'bg-primary'});
 						this.loadItems()
 						this.isOpenForm = false
@@ -144,7 +144,7 @@
 				}
 			},
 			loadItems: function () {
-				$.get( "<?= base_url()?>/dadmin/proveedores/recuperar", res => {
+				$.get( "<?= base_url()?>/servicios/proveedores/recuperar", res => {
 				  this.proveedores = res
 				});
 			},

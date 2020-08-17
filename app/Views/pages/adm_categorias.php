@@ -88,7 +88,7 @@
 				this.form_key = -1
 			},
 			loadItems: function () {
-				$.get('<?= base_url() ?>/dadmin/categorias/recuperar', data =>{
+				$.get('<?= base_url() ?>/servicios/categorias/recuperar', data =>{
 					//console.log(data);
 					this.categorias = data
 					this.categoria = this.form_nombre
@@ -106,7 +106,7 @@
 						nombre: this.form_nombre.toUpperCase(),
 						id: this.form_key
 					}
-					$.post('<?= base_url() ?>/dadmin/categorias/salvar', values, data => {
+					$.post('<?= base_url() ?>/servicios/categorias/salvar', values, data => {
 						M.toast({html: 'CATEGIRIA SALVADA', classes: 'bg-primary'});
 						this.loadItems()
 						this.isOpenCrud = false

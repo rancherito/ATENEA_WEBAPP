@@ -3,10 +3,6 @@
 	#filter_form{
 		width: 400px;
 	}
-	input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default),
-	textarea.materialize-textarea{
-		background-color: white
-	}
 </style>
 <div id="app" class="fill f-c">
 	<div style="max-width:400px" class="c" v-show="!onOpenRegistro">
@@ -65,8 +61,8 @@
 					<?php endforeach; ?>
 				</select>
 			</div>
-			<div class="input-field col s6">STOCK</div>
-			<div class="input-field col s6">
+			<div class="input-field col s8">STOCK</div>
+			<div class="input-field col s4">
 				<input ref="form_cantidad" id="form_cantidad" placeholder="ingrese cantidad" type="text" v-model.number="form_cantidad" maxlength="4">
 				<label class="active">CANTIDAD</label>
 			</div>
@@ -118,7 +114,7 @@ let app = new Vue({
 						id_almacen: this.form_almacen,
 						stock: this.form_cantidad
 					}
-					$.post('<?= base_url() ?>/dadmin/almacen/stock/salvar', values, e =>{
+					$.post('<?= base_url() ?>/servicios/almacen/stock/salvar', values, e =>{
 						M.toast({html: 'NUEVO LOTE SALVADO', classes: 'bg-primary'});
 						this.clear()
 					})
@@ -130,8 +126,8 @@ let app = new Vue({
 			onChangeIn: function (val) {
 
 				if (val.length) {
-					let values = {marca: this.marca, categoria: this.categoria, nombre: val};
-					$.post('<?= base_url()?>/dadmin/productos/listar', values, productos => {
+					let values = {marca: this.marca, categoria: this.categoria, nombre: val, limit: 10};
+					$.post('<?= base_url()?>/servicios/productos/listar', values, productos => {
 						let list = []
 						for (var p of productos) list.push({value: p.Id_Producto, text: p.Nombre+ ' - '+ p.Descripcion})
 						this.listItems = list;

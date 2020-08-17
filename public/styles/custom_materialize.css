@@ -1,3 +1,6 @@
+ nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav{
+	box-shadow: none
+}
 a{
 	color: var(--secondary)
 }
@@ -282,7 +285,13 @@ select:focus{
 .row .col{
 	margin-left: 0 !important;
 }
-
+.col{
+	display: flex;
+	align-items: center;
+}
+.col.block {
+	display: block;
+}
 .input-field-contrast {
 	margin-bottom: 14.4px;
 	position: relative;
@@ -383,10 +392,7 @@ select:focus{
 .switch-2 input[type="checkbox"]:checked ~ .level{
 	left: 50%;
 }
-.col{
-	display: flex;
-	align-items: center;
-}
+
 .modal{
 	top: 50% !important;
 	transform: translateY(-50%) !important;

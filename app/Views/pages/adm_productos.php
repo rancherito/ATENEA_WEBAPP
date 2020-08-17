@@ -56,7 +56,7 @@
 }
 
 </style>
-<div id="app" class="module">
+<div id="app" class="module opacity-0" :class="{'opacity-1': onLoad}">
 	<main-search :onsearch="onsearch" :additem="addProducto" :namemodule="'GESTION PRODUCTOS'">
 
 		<div class="wrapp-card-productos">
@@ -213,6 +213,7 @@ let app = new Vue({
 		this.getProductos()
 	},
 	data: {
+		onLoad: false,
 		productos : [],
 		categorias: categorias,
 		marcas: marcas,
@@ -248,6 +249,7 @@ let app = new Vue({
 				}
 			}
 		}).mask(this.$refs.input_precio)
+		this.onLoad = true
 	},
 	watch: {
 		filter_categoria: function (val) {
@@ -291,7 +293,7 @@ let app = new Vue({
 					precio: this.form_precio,
 					key: this.form_key
 				}
-				$.post('<?= base_url()?>/dadmin/productos/salvar', values, e => {
+				$.post('<?= base_url()?>/servicios/productos/salvar', values, e => {
 					M.toast({html: 'PRODUCTO SALVADO', classes: 'bg-primary'});
 
 					this.getProductos(values.nombre)
@@ -333,7 +335,7 @@ let app = new Vue({
 			this.clearForm()
 		},
 		getProductos: function (val) {
-			$.post('<?= base_url()?>/dadmin/productos/listar',{marca: this.getListCheckedMarcas(), categoria: this.getListCheckedCategorias()},productos => {
+			$.post('<?= base_url()?>/servicios/productos/listar',{marca: this.getListCheckedMarcas(), categoria: this.getListCheckedCategorias()},productos => {
 				this.productos = productos;
 			})
 		},

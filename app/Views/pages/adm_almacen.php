@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="col m6 l3">
-			<a class="dashbox" href="<?= base_url() ?>/dadmin/almacen/stock/consulta">
+			<a class="dashbox" href="<?= base_url() ?>/administrator/almacen/stock/consulta">
 				<i class="fal fa-store"></i>
 				<div class="dashbox-info">
 					<h4 class="dashbox-title">Stock</h4>
@@ -36,7 +36,7 @@
 			</a>
 		</div>
 		<div class="col m6 l3">
-			<a class="dashbox" href="<?= base_url() ?>/dadmin/almacen/stock/registro">
+			<a class="dashbox" href="<?= base_url() ?>/administrator/almacen/stock/registro">
 				<i class="fal fa-box"></i>
 				<div class="dashbox-info">
 					<h4 class="dashbox-title">Agregar Lote</h4>
