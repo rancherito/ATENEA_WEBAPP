@@ -40,7 +40,7 @@ $routes->add('validar_acceso', 'Pages::validar_acceso');
 //SECCION ADMINISTRADOR
 if ($_APPVARS['user'] == 'admin') {
 
-
+	//require 'Config/RoutesAdmin.php';
 	$routes->get('administrator', 'Pages::administrator');
 
 	$routes->get('administrator/productos', 'AdmProductos');
