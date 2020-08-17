@@ -36,6 +36,8 @@ $_APPVARS = $_SESSION['ateneaapp'];
 $routes->get('/', 'Pages::index');
 $routes->get('close', 'Utils::close_session');
 $routes->add('validar_acceso', 'Pages::validar_acceso');
+$routes->add('vercatalogo', 'Pages::vercatalogo');
+$routes->add('carrito','Pages::carrito');
 
 //SECCION ADMINISTRADOR
 if ($_APPVARS['user'] == 'admin') {

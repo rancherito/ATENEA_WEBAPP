@@ -6,7 +6,7 @@ $year = date("Y");
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>INVERSIONES ATENEA</title>
+	<title>ATENEA</title>
 	<link rel="stylesheet" href="<?= base_url()?>/public/styles/normalize.css">
 	<link rel="stylesheet" href="<?= base_url()?>/public/libs/animate/animate.min.css">
 	<link rel="icon" href="<?= base_url()?>/public/images/ICON.svg" type="image/svg" sizes="16x16">
@@ -14,7 +14,7 @@ $year = date("Y");
 	<!--JQUERY-->
 	<script src="<?= base_url()?>/public/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="<?= base_url()?>/public/libs/materialize/js/materialize.min.js"></script>
-
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<link rel="stylesheet" href="<?= base_url()?>/public/styles/colors.css">
 	<link rel="stylesheet" href="<?= base_url()?>/public/styles/custom_materialize.css">
@@ -39,6 +39,42 @@ $year = date("Y");
 			left: 0;
 			z-index: -1;
 		}
+		.footer-imgs-wrapper1 img{
+			vertical-align: middle;
+    		margin: 20px 14px!important;
+    		width: 65px;
+		}
+		.footer-top-text{
+			margin-top: 10px;
+		    margin-bottom: 0;
+		    margin-left: 20px;
+		    margin-right: 20px;
+		    color: #fff;
+		    font-size: 13px;
+		    line-height: 16px;
+		    font-weight: 400;
+		    text-align: center;
+		    letter-spacing: 0;
+		    text-transform: none;
+		    justify-content: center;
+    		align-items: center;
+		}	
+		.servicios{
+			margin-left: 20px;
+		    margin-right: 20px;
+			margin-top: 10px;
+		    margin-bottom: 0;
+		    color: #fff;
+		    font-size: 13px;
+		    line-height: 16px;
+		    font-weight: 400;
+		    text-align: center;
+		    letter-spacing: 0;
+		    text-transform: none;
+		    justify-content: center;
+    		align-items: center;
+		}
+		
 	</style>
 </head>
 <body>
@@ -85,6 +121,7 @@ $year = date("Y");
 			<a href="." id="content-title-web">
 				<img src="<?= base_url()?>/public/images/ICON.svg" alt="UNAMAD" class="logo-index">
 				<span><?= $_ENV['varialbe.webname']?></span>
+				
 			</a>
 			<div class="header-links">
 
@@ -101,10 +138,100 @@ $year = date("Y");
 	<section id="content-body"  style="min-height: 600px;">
 		<?= $body?>
 	</section>
+
+
 	<footer>
-		<div id="contato" class="#263238 blue-grey darken-4 white-text f-c" style="height: 300px;">PIE DE PAGINA</div>
-		<div id="copyright" class="black white-text f-c" style="height: 60px;">COPYRIGHT</div>
+
+		<div id="footer-top" class="#263238 blue-grey darken-2 white-text f-c" style="height: 150px;">
+			<div class="container">
+				<div class="servicios row">
+				<a href="" class="">
+					<img src="public/images/retiro_compra.svg" height="30px">
+					<h3 class="footer-top-text" style="line-height: 19px">
+						Retira tu compra en
+						<br>			
+						<b>76 tiendas</b>
+						en todo el pais
+					</h3>					
+				</a>
+				<a href="">
+					<img src="public/images/despachos.svg" height="30px">
+					<h3  class="footer-top-text" style="line-height: 19px">
+						Envios a todo el Perú.
+						<br>			
+						<b></b>
+						Más de 1800 distritos
+					</h3>					
+				</a>
+				<a href="">
+					<img src="public/images/servicios_esp.svg" height="30px">
+					<h3 class="footer-top-text" style="line-height: 19px">
+						Atencion al cliente 
+						<br>			
+						<b></b>
+						(01) 983-4734
+					</h3>					
+				</a>
+				<a href="">
+					<img src="public/images/libroreclam.svg" height="30px">
+					<h3 class="footer-top-text" style="line-height: 19px">
+						Servicios
+						<br>			
+						<b></b>
+						Especializados
+					</h3>					
+				</a>
+				<a href="">
+					<img src="public/images/atencion_cliente.svg" height="30px">
+					<h3 class="footer-top-text" style="line-height: 19px">
+						Libro de
+						<br>			
+						<b></b>
+						Reclamaciones
+					</h3>					
+				</a>
+				</div>
+				
+			</div>
+			
+		</div>
+		<!--<div id="copyright" class="black white-text f-c" style="height: 60px;">COPYRIGHT</div>-->
+		
+		<div id="contato" class="#263238 blue-grey darken-4 white-text f-c" style="height: 250px;">
+			<div class="container">
+				<div class="footer-pagos">
+					<br>
+					<h4 class="footer-h4" >Haz tus compras facilmente<br>
+					<span>Con total seguridad y privacidad</span>							
+					</h4>					
+				</div>
+				<div class="footer-imgs-wrapper1 row">
+					<img class="col-sm-2 col-xs-6" src="public/images/visa.svg" width="70" >	
+
+					<img class="col-sm-2 col-xs-6" src="public/images/mastercard.svg" width="70">						
+					<img class="col-sm-2 col-xs-6" src="public/images/americanexpress.svg" width="70">			
+				
+					<img class="col-sm-2 col-xs-6" src="public/images/dinnersclub.svg" width="70">			
+				
+					<img class="col-sm-2 col-xs-6" src="public/images/pagoefectivo.svg" width="110">			
+				
+					<img class="col-sm-2 col-xs-6" src="public/images/secure1.png" width="90">			
+				</div>
+				
+				<div class="social-media">
+					<h3>Siguenos en</h3>
+					<ul class="row">
+						<i class="material-icons" >facebook</i>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		
 	</footer>
+
+
+
 	<script type="text/javascript">
 	const modalLogin = $('#modal-login').modal()
 	const form_acceso = $('#form-acceso');
@@ -115,7 +242,7 @@ $year = date("Y");
 			switch (res) {
 				case 'A':
 					console.log('ADMINSTRADOR');
-					location.href = '<?= base_url()?>/administrator'
+					location.href = '<?= base_url()?>/dadmin'
 				break;
 				case 'U':
 					console.log('USUARIO');

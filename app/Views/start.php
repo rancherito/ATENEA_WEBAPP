@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="<?= base_url()?>/public/libs/swiper/swiper-bundle.min.css">
-
 <script src="<?= base_url()?>/public/libs/swiper/swiper-bundle.min.js"></script>
 <style media="screen">
 :root {
@@ -14,6 +13,31 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+#categorias {
+	max-width: 1480px;
+    margin: 30px auto !important;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5d5d5d;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: bold;
+
+}
+#categorias li img {
+	width: 60px;
+    opacity: .9;
+   
+}
+#categorias li{
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
 }
 </style>
 <div id="presentacion">
@@ -38,6 +62,69 @@
 		<div class="swiper-button-prev"></div>
 	</div>
 </div>
+
+<div class="container">
+	<div  id="cate" >
+			<ul class="row" id="categorias">
+				<li>
+					<a href="">
+						<img src="public/images/Televisores.svg">
+						<p>Televisores</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="public/images/Audio.svg">
+						<p>Audio</p>
+					</a>
+				</li>		
+				<li>
+					<a href="">
+						<img src="public/images/computo.svg">
+						<p>Cómputo</p>
+					</a>
+				</li>			
+				<li>
+					<a href="">
+						<img src="public/images/linea-blanca.svg">
+						<p>Línea Blanca</p>
+					</a>
+				</li>			
+				<li>
+					<a href="">
+						<img src="public/images/electrodomesticos.svg">
+						<p>Electrodomésticos</p>
+					</a>
+				</li>			
+				<li>
+					<a href="">
+						<img src="public/images/celulares.svg">
+						<p>Celulares</p>
+					</a>
+				</li>			
+				<li>
+					<a href="">
+						<img src="public/images/hogar.svg">
+						<p>Hogar</p>
+					</a>
+				</li>			
+				<li>
+					<a href="">
+						<img src="public/images/deporte.svg">
+						<p>Deporte</p>
+					</a>
+				</li>
+			</ul>
+
+	</div>
+</div>
+
+
+
+
+
+
+
 <div id="content" class="f-c">
 	<div class="container padding">
 		<div class="head-container">

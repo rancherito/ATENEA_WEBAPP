@@ -39,5 +39,13 @@ class Pages extends BaseController
 	{
 		echo  $this->layout_view('admin','pages/administrador');
 	}
+	
+	public function vercatalogo(){
+		echo $this->layout_view('modulos','pages/public_catalogo');
+	}
+
+	public function carrito(){
+		echo $this->layout_view('modulos','pages/public_carrito');
+	}
 
 }
