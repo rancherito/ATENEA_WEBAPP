@@ -38,6 +38,7 @@ $routes->get('close', 'Utils::close_session');
 $routes->add('validar_acceso', 'Pages::validar_acceso');
 $routes->add('vercatalogo', 'Pages::vercatalogo');
 $routes->add('carrito','Pages::carrito');
+$routes->add('detalles','Pages::detalles');
 
 //SECCION ADMINISTRADOR
 if ($_APPVARS['user'] == 'admin') {

@@ -14,6 +14,7 @@ $year = date("Y");
 	<!--JQUERY-->
 	<script src="<?= base_url()?>/public/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="<?= base_url()?>/public/libs/materialize/js/materialize.min.js"></script>
+	<script src="<?= base_url() ?>/public/libs/vue/vue.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<link rel="stylesheet" href="<?= base_url()?>/public/styles/colors.css">

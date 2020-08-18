@@ -48,4 +48,8 @@ class Pages extends BaseController
 		echo $this->layout_view('modulos','pages/public_carrito');
 	}
 
+	public function detalles(){
+		echo $this->layout_view('modulos','pages/detalles');
+	}
+
 }

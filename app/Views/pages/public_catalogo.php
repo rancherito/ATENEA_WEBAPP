@@ -410,51 +410,7 @@ background-color:#EB0429;
 
 
         
-    <div class="container">
-        
-              <table class="responsive-table highlight centered">
-                <thead>
-                  <tr>
-                    <th class="product-image">Imagen</th>
-                    <th class="product-name">Producto</th>
-                    <th class="product-price">Precio</th>
-                    <th class="product-quantity">Cantidad</th>
-                    <th class="product-total">Total</th>
-                    <th class="product-remove">Remover</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="product-image">
-                      <img src="public/images/celular.jpg" alt="Image" >
-                    </td>
-                    <td class="product-name">
-                      <h2 class="h5 text-black">Smartphone</h2>
-                    </td>
-                    <td>$49.00</td>
-                    <td>
-                         <div class="row">
-                            <div class="col s3">
-                                <button class="btn ">-</button>   
-                            </div>   
-                            <div class="col s6 ">                 
-                                <input type="text" class="text-center" value="1"  >  
-                                </div> 
-                            <div class="col s3">                      
-                            <button class="btn">+</button>
-                            </div> 
-                        </div>
-                    </td>
-                    <td>$49.00</td>
-                    <td><a href="#" class="btn">X</a></td>
-                  </tr>
-
-                  
-                </tbody>
-              </table>
-            
-        </div>
-
+    
         
 
 
