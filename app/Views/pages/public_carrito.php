@@ -1,7 +1,24 @@
-
-<div class="container">
-        
-              <table class="responsive-table highlight centered">
+<style>
+  #unatable{
+    
+  }
+  table.highlight>tbody>tr:hover{
+    background: white
+  }
+  
+  .input-number{
+    display: flex;
+  }
+  .input-number input{
+    padding: 8px !important;
+    margin: 0px !important;
+    height: 36px !important;
+    width: 42px !important;
+  }
+</style>
+<div class="white">
+  <div class="container">
+    <table id="unatable" class="responsive-table highlight centered">
                 <thead>
                   <tr>
                     <th class="product-image">Imagen</th>
@@ -21,26 +38,26 @@
                       <h2 class="h5 text-black">Smartphone</h2>
                     </td>
                     <td>$49.00</td>
-                    <td class="centered">
-                         <div class="row">
-                            <div class="col s2">
-                                <button class="btn ">-</button>   
-                            </div>   
-                            <div class="col s2 ">                 
-                                <input type="text" class="text-center" value="1">  
-                            </div> 
-                            <div class="col s2">                      
-                            <button class="btn">+</button>
-                            </div> 
-                        </div>
+                    <td class="c">
+                      <div class="input-number">
+                        <button class="btn btn-mas"> <i class="fal fa-minus"></i> </button>
+                        <input type="text" class="c" value="1"> 
+                        <button class="btn btn-menos"> <i class="fal fa-plus"></i> </button>
+                      </div>
+                        
                     </td>
                     <td>$49.00</td>
-                    <td><a href="#" class="btn">X</a></td>
+                    <td><a href="#" class="btn"><i class="fal fa-trash-alt"></i> </a></td>
                   </tr>
 
                   
                 </tbody>
               </table>
+  </div>
+</div>
+<div class="container">
+        
+              
               <br>
               <div class="row">
                 <div clas="col s3">
