@@ -5,7 +5,7 @@ justify-content: center;
 
 }
 #imagen_central img{
-    width: 300px;
+    width: 300px;   
 }
 .cuadro_detalle{
     margin:40px;

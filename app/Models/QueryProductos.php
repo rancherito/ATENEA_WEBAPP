@@ -3,12 +3,14 @@
 
 class QueryProductos
 {
-	public function StockProductos_Listar($IdProducto = '', $IdAlmacen = '')
+	public function StockProductos_Listar($IdProducto = '', $IdAlmacen = '', $Nombre, $Limit)
 	{
 		$sql = "
 		EXEC [dbo].[spu_StockProductos_Listar_por]
 		@IdProducto = '$IdProducto',
-		@IdAlmacen = '$IdAlmacen'
+		@IdAlmacen = '$IdAlmacen',
+		@Nombre  = '$Nombre',
+		@Limit = '$Limit'
 		";
 		return query_database($sql);
 	}
