@@ -42,11 +42,13 @@ class AdmAlmacen extends BaseController
 	{
 		$_v = [
 			'id_almacen' => '',
-			'id_producto' => ''
+			'id_producto' => '',
+			'nombre' => '',
+			'limit' => ''
 		];
 		$_v = array_merge($_v, $_POST);
 		$Productos = new QueryProductos();
-		$res = $Productos->StockProductos_Listar($_v['id_almacen'], $_v['id_producto']);
+		$res = $Productos->StockProductos_Listar($_v['id_almacen'], $_v['id_producto'], $_v['nombre'], $_v['limit']);
 		return $this->response->setJSON($res);
 	}
 	public function serv_StockProductos_Transferir()

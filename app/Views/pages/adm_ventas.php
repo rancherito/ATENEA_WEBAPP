@@ -1,27 +1,87 @@
 <style media="screen">
+	#app{
+		display: flex;
+	}
+	#colright{
+		width: calc(100% - 600px)
+	}
+	#colleft{
+		padding: 32px;
+		width: 600px;
+	}
 	.search{
 		padding: 0 16px !important;
 		margin: 0 !important;
 		height: 42px !important;
 	}
+	#content-productos-elegir{
+		height: calc(100% - 82px);
+		position: relative;
+		overflow: auto;
+	}
+	
 </style>
-<div id="app" class="fill p-32">
-	<div class="row">
-		<div class="col m8">hola</div>
-		<div class="col m4 block">
-			<input type="text" class="search" placeholder="BUSQUE UN PRODUCTO">
+<div id="app" class="fill">
+		<div id="colright">hola</div>
+		<div id="colleft">
+			<input type="text" class="search" placeholder="BUSQUE UN PRODUCTO" v-model="searchItem">
 			<div class="space-32"></div>
-			<div id="content-productos-elegir">
-				<div class="card-panel" v-for="n in 2">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<div ref="content-elegir" id="content-productos-elegir">
+				<div class="">
+					<div class="card-panel f-b" v-for="n in productos">
+						<div class="">
+							{{updatecur()}}
+							<div class="title-4">{{n.Nombre}}</div>
+							<span>{{n.Descripcion}}</span>
+							<div style="color: var(--primary)">ALMACEN: {{n.Nombre_Almacen}}</div>
+							<div style="color: var(--secondary)">STOCK: {{n.Stock}}</div>
+						</div>
+						<div class="">
+							<span class="btn">
+								<i class="fal fa-plus"></i>
+							</span>
+						</div>
+					</div>
 				</div>
+
+
 			</div>
 		</div>
-	</div>
 </div>
 
 <script type="text/javascript">
+	let ps = null
 	new Vue({
-		el: '#app'
+		el: '#app',
+		data: {
+			searchItem: '',
+			productos: []
+		},
+		created: function () {
+			this.loadItems()
+		},
+		mounted: function () {
+			//console.log();
+			new SimpleBar( this.$refs['content-elegir'], {autoHide: false});
+			//ps = new PerfectScrollbar(this.$refs['content-elegir']);
+
+		},
+		watch: {
+			searchItem: function (val) {
+			},
+			productos: function () {
+				//ps.update()
+			}
+		},
+		methods: {
+			updatecur: function () {
+				//ps.update()
+			},
+			loadItems: function () {
+				$.post('<?= base_url()?>/servicios/almacen/stock/listar', {}, data => {
+					this.productos = data
+				})
+			}
+		}
 	})
 </script>
