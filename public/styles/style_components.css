@@ -1,3 +1,14 @@
+.simplebar-scrollbar.simplebar-visible:before{
+	border-radius: 1px;
+	opacity: .1;
+	transform: scaleX(.8);
+	transition: linear all .2s
+}
+.simplebar-scrollbar.simplebar-visible.simplebar-hover::before{
+	transform: scaleX(1.2);
+	transition: linear all .2s;
+	opacity: .3;
+}
 .stockproducto{
 	background: white;
 	width: 100%;
