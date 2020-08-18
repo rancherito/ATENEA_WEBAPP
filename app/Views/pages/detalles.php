@@ -30,30 +30,24 @@ justify-content: center;
                 <h6>Precio:</h6><p>$50</p>
                 <form action="#">
                 <div class="row">
-                    
                         <p>
                             <label>
                                 <input type="radio" name="opcion"class="with-gap"/>
                                 <span>Black</span>
                             </label>
                         </p>
-                    
-                    
                         <p>
                             <label>
                                 <input type="radio" name="opcion"class="with-gap"/>
                                 <span>White</span>
                             </label>
                         </p>
-                    
-                    
                         <p>
                             <label>
                                 <input type="radio" name="opcion"class="with-gap"/>
                                 <span>Electric Purpple</span>
                             </label>
                         </p>
-                    
                 
                 </div>
                 </form>
