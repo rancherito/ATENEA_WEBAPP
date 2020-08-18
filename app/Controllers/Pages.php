@@ -52,4 +52,8 @@ class Pages extends BaseController
 		echo $this->layout_view('modulos','pages/detalles');
 	}
 
+	public function venta(){
+		echo $this->layout_view('modulos','pages/venta');
+	}
+
 }
