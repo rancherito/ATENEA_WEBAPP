@@ -144,7 +144,7 @@ $year = date("Y");
 	<footer>
 
 		<div id="footer-top" class="#263238 blue-grey darken-2 white-text f-c" style="height: 150px;">
-			<div class="container">
+			<div class="container" style="display: block">
 				<div class="servicios row">
 				<a href="" class="">
 					<img src="public/images/retiro_compra.svg" height="30px">
@@ -155,7 +155,7 @@ $year = date("Y");
 						en todo el pais
 					</h3>					
 				</a>
-				<a href="">
+				<a href="" class="">
 					<img src="public/images/despachos.svg" height="30px">
 					<h3  class="footer-top-text" style="line-height: 19px">
 						Envios a todo el Perú.
@@ -164,7 +164,7 @@ $year = date("Y");
 						Más de 1800 distritos
 					</h3>					
 				</a>
-				<a href="">
+				<a href="" class="">
 					<img src="public/images/servicios_esp.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Atencion al cliente 
@@ -173,7 +173,7 @@ $year = date("Y");
 						(01) 983-4734
 					</h3>					
 				</a>
-				<a href="">
+				<a href="" class="">
 					<img src="public/images/libroreclam.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Servicios
@@ -182,7 +182,7 @@ $year = date("Y");
 						Especializados
 					</h3>					
 				</a>
-				<a href="">
+				<a href="" class="">
 					<img src="public/images/atencion_cliente.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Libro de
@@ -207,16 +207,16 @@ $year = date("Y");
 					</h4>					
 				</div>
 				<div class="footer-imgs-wrapper1 row">
-					<img class="col-sm-2 col-xs-6" src="public/images/visa.svg" width="70" >	
+					<img class="col s1 " src="public/images/visa.svg" width="4" >	
 
-					<img class="col-sm-2 col-xs-6" src="public/images/mastercard.svg" width="70">						
-					<img class="col-sm-2 col-xs-6" src="public/images/americanexpress.svg" width="70">			
+					<img class="col s1 " src="public/images/mastercard.svg" width="4">						
+					<img class="col s1" src="public/images/americanexpress.svg" width="4">			
 				
-					<img class="col-sm-2 col-xs-6" src="public/images/dinnersclub.svg" width="70">			
+					<img class="col s1" src="public/images/dinnersclub.svg" width="4">			
 				
-					<img class="col-sm-2 col-xs-6" src="public/images/pagoefectivo.svg" width="110">			
+					<img class="col s1" src="public/images/pagoefectivo.svg" width="4">			
 				
-					<img class="col-sm-2 col-xs-6" src="public/images/secure1.png" width="90">			
+					<img class="col s1" src="public/images/secure1.png" width="4">			
 				</div>
 				
 				<div class="social-media">
