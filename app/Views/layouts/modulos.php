@@ -198,10 +198,10 @@ $year = date("Y");
 		</div>
 		<!--<div id="copyright" class="black white-text f-c" style="height: 60px;">COPYRIGHT</div>-->
 		
-		<div id="contato" class="#263238 blue-grey darken-4 white-text f-c" style="height: 250px;">
-			<div class="container">
+		<div id="contato" class="#263238 blue-grey darken-4 white-text f-c" style="height: 350px;">
+			<div class="container" style="display: block">
 				<div class="footer-pagos">
-					<br>
+					<br><br>
 					<h4 class="footer-h4" >Haz tus compras facilmente<br>
 					<span>Con total seguridad y privacidad</span>							
 					</h4>					
