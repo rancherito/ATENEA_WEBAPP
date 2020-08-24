@@ -45,6 +45,9 @@ $year = date("Y");
     		margin: 20px 14px!important;
     		width: 65px;
 		}
+		header div.header_content{
+			background-color: #263238;
+		}
 		.footer-top-text{
 			margin-top: 10px;
 		    margin-bottom: 0;
@@ -139,7 +142,16 @@ $year = date("Y");
 	<section id="content-body"  style="min-height: 600px;">
 		<?= $body?>
 	</section>
-
+	<body>
+		 <div class="carousel">
+		 	<h1 class="c">Productos más vendidos</h1>
+		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="public/images/lavadora.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="public/images/lavadora.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
+ 		 </div>
+	</body>
 
 	<footer>
 
@@ -254,6 +266,24 @@ $year = date("Y");
 		})
 	})
 	//modalLogin.modal('open')
+
+	document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems,{
+    	duration:300,
+    	shift:100,
+    	dist:10,
+    	fullWidth:false
+    	});
+    
+    });
+
+	  // Or with jQuery
+
+	  // $(document).ready(function(){
+	  //   $('.carousel').carousel();
+	  // });
+      
 	</script>
 </body>
 </html>

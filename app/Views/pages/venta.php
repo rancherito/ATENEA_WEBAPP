@@ -1,9 +1,11 @@
 <style media="screen">
+	
 #botones_pago button{
+
 	
 	margin: 10px;
 	transition-duration: 0.4s;
-	background-color: #383838 !important;
+	background-color: #ffffff !important;
   	border: 2px solid #494949; 
 
 }
@@ -135,7 +137,7 @@
 	          			</table>
           			</div>
           			<div id="botones_pago" class="input-field col 12">
-          				<button class="btn"><img src="public/images/visa.svg" width="50"></button>
+          				<button class="btn red"><img src="public/images/visa.svg" width="50"></button>
           				<button class="btn"><img src="public/images/mastercard.svg" width="40"></button>
           				<button class="btn"><img src="public/images/pagoefectivo.svg" width="70"></button>
           				<button class="btn"><img src="public/images/dinnersclub.svg" width="50"></button>

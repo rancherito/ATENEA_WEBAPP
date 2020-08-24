@@ -26,7 +26,7 @@ justify-content: center;
     <div class="row ">
         <div id="imagen_central" class="col s6">
             
-            <img src="public/images/celular.jpg" alt="">
+            <img class="materialboxed" src="public/images/celular.jpg" alt="">
 
         </div>
         <div class="col s6">
@@ -83,3 +83,18 @@ justify-content: center;
     </div>
     </div>
 </div>
+<script>
+    
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+       
+    
+</script>
