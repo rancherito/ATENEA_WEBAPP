@@ -2,7 +2,16 @@
 #botones_pago button{
 	
 	margin: 10px;
+	transition-duration: 0.4s;
+	background-color: #383838 !important;
+  	border: 2px solid #494949; 
 
+}
+#r_pedido button{
+	margin: 10px;
+	transition-duration: 0.4s;
+	background-color: white !important;
+  	border: 2px solid #494949; 
 }
 
 
@@ -95,7 +104,7 @@
           			<div class="col s12">
           				<h2>Tu compra</h2>
           			</div>
-          			<div class=" col s12">
+          			<div class="input-field col s12">
 	          			<table class="">
 	          				<thead>
 	          					<tr>
@@ -131,7 +140,7 @@
           				<button class="btn"><img src="public/images/pagoefectivo.svg" width="70"></button>
           				<button class="btn"><img src="public/images/dinnersclub.svg" width="50"></button>
           			</div>
-          			<div class="input-field col 12"> 
+          			<div id="r_pedido" class="input-field col 12"> 
           				<button class="btn-large">Realizar Pedido</button>
           			</div>
 
