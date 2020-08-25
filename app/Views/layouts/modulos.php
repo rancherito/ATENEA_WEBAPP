@@ -45,9 +45,7 @@ $year = date("Y");
     		margin: 20px 14px!important;
     		width: 65px;
 		}
-		header div.header_content{
-			background-color: #263238;
-		}
+		
 		.footer-top-text{
 			margin-top: 10px;
 		    margin-bottom: 0;
@@ -137,7 +135,7 @@ $year = date("Y");
 				</a>
 			</div>
 		</div>
-		<div class="blue darken-3" style="height: 4px"></div>
+		<div class="" style="height: 4px"></div>
 	</header>
 	<section id="content-body"  style="min-height: 600px;">
 		<?= $body?>

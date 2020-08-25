@@ -1,6 +1,9 @@
 <style>
   #unatable{
-    
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+
   }
   table.highlight>tbody>tr:hover{
     background: white
@@ -15,6 +18,11 @@
     height: 36px !important;
     width: 42px !important;
   }
+  #btn_bc button{
+    margin: 10px;
+
+  }
+  
 </style>
 <div class="white">
   <div class="container">
@@ -39,38 +47,29 @@
                     </td>
                     <td>$49.00</td>
                     <td class="c">
-                      <div class="input-number">
+                      <div class="input-number c">
                         <button class="btn btn-mas"> <i class="fal fa-minus"></i> </button>
                         <input type="text" class="c" value="1"> 
                         <button class="btn btn-menos"> <i class="fal fa-plus"></i> </button>
                       </div>
-                        
                     </td>
                     <td>$49.00</td>
                     <td><a href="#" class="btn"><i class="fal fa-trash-alt"></i> </a></td>
                   </tr>
-
-                  
                 </tbody>
               </table>
   </div>
 </div>
-<div class="container">
-        
-              
-              <br>
-              <div class="row">
+<div class="container">    
+              <div id="btn_bc" class="row right">
                 <div clas="col s3">
-                    <button class="btn">Borrar Todo</button>
+                    <button class="btn-large">Borrar Todo</button>
                 </div>
-                
                 <div clas="col s3">
-                    <button class="btn">Comprar</button>
+                    <button class="btn-large">Comprar</button>
                 </div>
-                
               </div>
-            
-        </div>
+</div>
 
 
 

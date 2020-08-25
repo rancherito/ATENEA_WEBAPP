@@ -1,21 +1,21 @@
 <style media="screen">
 	
 #botones_pago button{
-
-	
 	margin: 10px;
-	transition-duration: 0.4s;
-	background-color: #ffffff !important;
-  	border: 2px solid #494949; 
-
+	
 }
 #r_pedido button{
-	margin: 10px;
-	transition-duration: 0.4s;
-	background-color: white !important;
-  	border: 2px solid #494949; 
-}
 
+	margin: 10px;
+	
+	
+
+}
+#btn_cupon{
+	display: flex; 
+	margin-bottom: 21px;
+	background-color: red !important;
+}
 
 	
 </style>
@@ -81,7 +81,7 @@
           			<input type="text" id="mensaje" placeholder="Agregar mensaje a la compra" class="validate" required name="">
           		</div>
           		
-          		<button class="btn" type="submit">Comprar</button>
+          		<!-- <button class="btn" type="submit">Comprar</button> -->
           	</div>
 
           	
@@ -97,7 +97,7 @@
 	          			<input type="text" placeholder="Ingresa tu Código promocional aquí" id="cupon" class="validate" name="">
           			</div>
           			<div class="col s3">
-          				<button class="btn">Aplicar</button>
+          				<button id="btn_cupon" class="btn">Aplicar</button>
           				
           			</div>
 
@@ -136,14 +136,14 @@
 	          				
 	          			</table>
           			</div>
-          			<div id="botones_pago" class="input-field col 12">
+          			<div id="botones_pago" class="input-field col s12">
           				<button class="btn red"><img src="public/images/visa.svg" width="50"></button>
           				<button class="btn"><img src="public/images/mastercard.svg" width="40"></button>
           				<button class="btn"><img src="public/images/pagoefectivo.svg" width="70"></button>
           				<button class="btn"><img src="public/images/dinnersclub.svg" width="50"></button>
           			</div>
-          			<div id="r_pedido" class="input-field col 12"> 
-          				<button class="btn-large">Realizar Pedido</button>
+          			<div id="r_pedido" class="input-field col s12"> 
+          				<button class="btn-large blue-grey darken-3">Realizar Pedido</button>
           			</div>
 
           		</div>

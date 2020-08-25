@@ -33,6 +33,7 @@
 .product-box-offer img{
     width: 180px;
 }
+
 .product-box img{
     width: 120px;
 }
@@ -57,6 +58,7 @@ font-size:16px;
 .listapro{
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 .paginacion{
     justify-content: center;
@@ -93,10 +95,19 @@ background-color:#EB0429;
 .oferta{
     justify-content:center;
 }
+.btn{
+    margin: 3px;
+}
+.pagination li.active a{
+    background-color: #37474f;
+}
+#ofer_letras a{
+    color: #455a64;
 
+}
 </style>
 <div class="container">
-        <div class="oferta row">
+        <div id="ofer_letras" class="oferta row">
             
           
                 <div class=" boxs col s6 text-center m4 l3 ">
@@ -155,7 +166,7 @@ background-color:#EB0429;
     <div class="container">
       
         <div class="row">
-            <div class="col m3" style="display: block">
+            <div class="col s3 m2" style="display: block">
                 <div>
                     <a href="#" class="list-group-item active">Electronicos
                     </a>
@@ -235,7 +246,7 @@ background-color:#EB0429;
               
             </div>
         
-            <div class="col m9 "  style="display: block">
+            <div class="col s9 m10 "  style="display: block">
                 <div class="r">
                     <a class="dropdown-trigger btn" data-target="barraorder">
                         Order By
