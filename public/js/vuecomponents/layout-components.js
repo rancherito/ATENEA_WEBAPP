@@ -26,7 +26,7 @@ Vue.component('main-search',{
 			<div ref="cmain" id="content-main">
 				<div class="container">
 					<div id='barsearch'>
-						<div id='content-barsearch'>
+						<div id='content-barsearch' v-if="cansearch">
 							<input id='search' class='searchinput' :placeholder="placeholder" v-model="search">
 							<a id='add-item' class='f-c waves-effect waves-light' @click="add" v-if="canadd"><i class='fal fa-plus'></i></a>
 						</div>
@@ -58,8 +58,11 @@ Vue.component('main-search',{
 		canadd: {
 			type: Boolean,
 			default: true
+		},
+		cansearch: {
+			type: Boolean,
+			default: true
 		}
-
 	},
 	watch: {
 			search: function (val) {

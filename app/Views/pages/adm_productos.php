@@ -68,6 +68,7 @@
 						<th>DESCRIPCION</th>
 						<th class="c">MARCA</th>
 						<th class="c">CATEGORIA</th>
+						<th class="c">PRECIO</th>
 						<th class="c" style="width: 1px">ESTADO</th>
 					</tr>
 				</thead>
@@ -78,6 +79,7 @@
 						<td>{{producto.Descripcion}}</td>
 						<td class="c">{{producto.Marca_Nombre}}</td>
 						<td class="c">{{producto.Categoria_Nombre}}</td>
+						<td class="c">{{producto.PrecioRegular}}</td>
 						<td class="c f-c">
 							<div class="state" :class="{'state-off': !producto.Estado}"></div>
 						</td>

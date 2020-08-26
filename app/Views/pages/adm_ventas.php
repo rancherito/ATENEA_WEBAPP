@@ -1,16 +1,10 @@
 <style media="screen">
-	#app{
-		display: flex;
-	}
-	#colright{
-		width: calc(100% - 600px);
-		padding: 32px;
-		margin-right: -32px;
-	}
-	#colleft{
-		padding: 32px;
-		width: 600px;
-	}
+#divider-option{
+	width: 500px;
+}
+#divider-main{
+	width: calc(100% - 500px)
+}
 	.search{
 		padding: 0 16px !important;
 		margin: 0 !important;
@@ -22,7 +16,12 @@
 		overflow: auto;
 	}
 	.addproductcar{
-		display: inline-flex;
+		display: flex;
+		background: var(--gray-light);
+		padding: 16px;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
 	}
 	.addproductcar input{
 		padding: 0 8px !important;
@@ -32,39 +31,72 @@
 		margin-right: 2px !important;
 
 	}
+	.product-car{
+		background: white;
+		margin-bottom: 16px
+	}
+	.product-car-description{
+		padding: 16px;
+	}
 </style>
-<div id="app" class="fill">
-		<div id="colright">
-			<h3>VENTAS</h3>
-			<div class="space-32"></div>
+<div id="app" class="module opacity-0" :class="{'opacity-1': isLoad}">
+		<main-search :cansearch="false" :namemodule="'REGISTRO DE VENTAS'">
 			<div class="row">
-				<div class="input-field col s4">
+				<div class="input-field col m12 l4">
 		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
-		          <label for="first_name">NOMBRES</label>
+		          <label for="first_name">DNI*</label>
 		        </div>
-				<div class="input-field col s8">
-		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
-		          <label for="first_name">APELLIDOS</label>
-		        </div>
-				<div class="input-field col s4">
-		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
-		          <label for="first_name">DNI</label>
-		        </div>
-				<div class="input-field col s4">
+				<div class="input-field col m12 l8">
 		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
 		          <label for="first_name">RUC</label>
 		        </div>
-				<div class="input-field col s4">
+				<div class="input-field col m12 l4">
+		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
+		          <label for="first_name">NOMBRES*</label>
+		        </div>
+				<div class="input-field col m12 l8">
+		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
+		          <label for="first_name">APELLIDOS*</label>
+		        </div>
+
+				<div class="input-field col m12 l4">
 		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
 		          <label for="first_name">TELEFONO</label>
 		        </div>
+				<div class="input-field col m12 l8">
+		          <input placeholder="ingrese nombre" type="text" trim="form_email">
+		          <label for="first_name">EMAIL</label>
+		        </div>
 			</div>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</div>
-		<div id="colleft">
+			<h2>DETALLE VENTA</h2>
+			<div class="space-32"></div>
+			<table class="white" v-if="carrito.length">
+				<thead>
+					<tr>
+						<th class="index">#</th>
+						<th>Nombre</th>
+						<th>Descripcion</th>
+						<th class="index">Unidades</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(producto, i) in carrito">
+						<td>{{i+1}}</td>
+						<td>{{producto.nombre}}</td>
+						<td>{{producto.descripcion}}</td>
+						<td class="a-c">{{producto.unidades}}</td>
+					</tr>
+				</tbody>
+
+			</table>
+			<div class="card-panel" v-if="carrito.length == 0">
+				<div class="title-3 grey-text f-c" style="height: 100px">Ningun Producto cargado</div>
+			</div>
+		</main-search>
+		<Soption>
 			<input type="text" class="search" placeholder="BUSQUE UN PRODUCTO" v-model="searchItem">
 			<div class="space-32"></div>
-			<div ref="content-elegir" id="content-productos-elegir">
+			<div ref="content-elegir" id="content-productos-elegir" class="w100">
 				<div class="">
 					<product-car
 						v-for="n in productos"
@@ -78,24 +110,29 @@
 					</product-car>
 				</div>
 			</div>
-		</div>
+		</Soption>
+
 </div>
 
 <script type="text/javascript">
 	Vue.component('product-car',{
 		'template': `
-			<div class="card-panel f-b">
-				<div class="">
+			<div class="product-car">
+				<div class="product-car-description">
 					<div class="title-4">{{nombre}}</div>
 					<span>{{descripcion}}</span>
 					<div style="color: var(--primary)">ALMACEN: {{almacen}}</div>
 					<div style="color: var(--secondary)">STOCK: {{calc_stock}}</div>
 				</div>
 				<div class="addproductcar">
-					<input maxlength="2" placeholder="unid." ref="input" type="text" v-model.number="stock_add">
-					<span @click="addcar" ref="tooltip" class="btn ttaddcar" data-position="bottom" data-tooltip="Añadir al carro">
-						<i class="fal fa-shopping-basket"></i>
-					</span>
+					<div>AGREGAR AL CARRO</div>
+					<div style="display: inline-flex">
+						<input maxlength="2" placeholder="unid." ref="input" type="text" v-model.number="stock_add">
+						<span @click="addcar" ref="tooltip" class="btn ttaddcar" data-position="bottom" data-tooltip="Añadir al carro">
+							<i class="fal fa-shopping-basket"></i>
+						</span>
+					</div>
+
 				</div>
 			</div>
 		`,
@@ -125,6 +162,7 @@
 					if (this.stock_add > 0 && this.stock_add <= this.calc_stock) {
 						this.onadd(this.data, this.stock_add)
 						this.rest_stock += this.stock_add;
+						this.stock_add = 0;
 					}
 					else M.toast({html: 'UNIDADES FUERA DE RANGO', classes: 'bg-alert'});
 				}
@@ -135,28 +173,37 @@
 		el: '#app',
 		data: {
 			searchItem: '',
-			productos: []
+			productos: [],
+			carrito: [],
+			isLoad: false
 		},
 		created: function () {
 			this.loadItems()
 		},
 		mounted: function () {
-			//console.log();
-			new SimpleBar( this.$refs['content-elegir'], {autoHide: false});
-			this.$nextTick(function () {
-
-			});
-
+			this.isLoad = true
+			new SimpleBar( this.$refs['content-elegir']);
 		},
-		updated: function () {
-		  this.$nextTick(function () {
-
-		  })
-	  	},
 		methods: {
 			addproduct: function (data, unidades) {
 				console.log(unidades);
 				console.log(data);
+				//this.carrito.push(data)
+				let flag = false
+				for (var producto of this.carrito) {
+					//console.log(producto.id == data.IdProducto);
+					if (flag = producto.id == data.IdProducto) {
+						producto.unidades += unidades;
+					}
+				}
+				if (!flag) {
+					this.carrito.push({
+						id: data.IdProducto,
+						nombre: data.Nombre,
+						descripcion: data.Descripcion,
+						unidades: unidades
+					})
+				}
 			},
 			loadItems: function () {
 				$.post('<?= base_url()?>/servicios/almacen/stock/listar', {}, data => {
