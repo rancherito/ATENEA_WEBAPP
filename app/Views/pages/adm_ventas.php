@@ -74,8 +74,10 @@
 				<thead>
 					<tr>
 						<th class="index">#</th>
-						<th>Nombre</th>
-						<th>Descripcion</th>
+						<th>NOMBRE</th>
+						<th>DESCRIPCION</th>
+						<th width="100">P. UNIT.</th>
+						<th width="100">p. TOTAL</th>
 						<th class="index">Unidades</th>
 					</tr>
 				</thead>
@@ -84,6 +86,8 @@
 						<td>{{i+1}}</td>
 						<td>{{producto.nombre}}</td>
 						<td>{{producto.descripcion}}</td>
+						<td>{{producto.precio_unitario}}</td>
+						<td>{{producto.precio_total}}</td>
 						<td class="a-c">{{producto.unidades}}</td>
 					</tr>
 				</tbody>
@@ -104,6 +108,7 @@
 						:descripcion="n.Descripcion"
 						:almacen="n.Nombre_Almacen"
 						:stock="n.Stock"
+						:precio="n.PrecioRegular"
 						:data="n"
 						:onadd="addproduct"
 					>
@@ -121,13 +126,13 @@
 				<div class="product-car-description">
 					<div class="title-4">{{nombre}}</div>
 					<span>{{descripcion}}</span>
-					<div style="color: var(--primary)">ALMACEN: {{almacen}}</div>
-					<div style="color: var(--secondary)">STOCK: {{calc_stock}}</div>
+					<div><span style="color: var(--primary)">UBICACION:</span> {{almacen}}</div>
+					<div><span style="color: var(--secondary)">COSTO:</span> {{precio}} </div>
 				</div>
 				<div class="addproductcar">
-					<div>AGREGAR AL CARRO</div>
+					<div>UNIDADES [ {{calc_stock}} ]</div>
 					<div style="display: inline-flex">
-						<input maxlength="2" placeholder="unid." ref="input" type="text" v-model.number="stock_add">
+						<input v-on:keyup.enter="addcar" maxlength="2" placeholder="unid." ref="input" type="text" v-model.number="stock_add">
 						<span @click="addcar" ref="tooltip" class="btn ttaddcar" data-position="bottom" data-tooltip="Añadir al carro">
 							<i class="fal fa-shopping-basket"></i>
 						</span>
@@ -136,7 +141,7 @@
 				</div>
 			</div>
 		`,
-		props: ['nombre', 'almacen', 'stock', 'data', 'descripcion', 'onadd'],
+		props: ['nombre', 'almacen', 'stock', 'data', 'descripcion', 'onadd', 'precio'],
 		data: function () {
 			return {
 				stock_add: 0,
@@ -177,6 +182,13 @@
 			carrito: [],
 			isLoad: false
 		},
+		watch: {
+			searchItem: function (val) {
+				for (var producto of this.productos) producto.order = JaroWrinker(val.toLowerCase(), producto.Nombre.toLowerCase())
+				this.productos.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
+				//console.log(val);
+			}
+		},
 		created: function () {
 			this.loadItems()
 		},
@@ -201,7 +213,9 @@
 						id: data.IdProducto,
 						nombre: data.Nombre,
 						descripcion: data.Descripcion,
-						unidades: unidades
+						unidades: unidades,
+						precio_unitario: data.PrecioRegular,
+						precio_total: data.PrecioRegular * unidades
 					})
 				}
 			},
