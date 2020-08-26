@@ -3,7 +3,7 @@
 
 class QueryProductos
 {
-	public function StockProductos_Listar($IdProducto = '', $IdAlmacen = '', $Nombre, $Limit)
+	public function StockProductos_Listar($IdProducto = '', $IdAlmacen = '', $Nombre = '', $Limit = '')
 	{
 		$sql = "
 		EXEC [dbo].[spu_StockProductos_Listar_por]
@@ -38,7 +38,7 @@ class QueryProductos
 		";
         $list = query_database($sql);
 		foreach ($list as $key => $v) {
-			$file = 'public/images/products/' . $v['Id_marcaProducto'] .'.png';
+			$file = 'public/images/products/' . $v['Id_Producto'] .'.png';
 			$list[$key]['ImageUrl'] = file_exists($file) ? base_url() . '/' . $file . '?v=' . rand() : base_url() . '/public/images/products/default.svg';
 		}
 		return $list;
