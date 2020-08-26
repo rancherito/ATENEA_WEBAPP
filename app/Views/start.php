@@ -66,48 +66,48 @@
 <div class="container">
 	<div  id="cate" >
 			<ul class="row" id="categorias">
-				<li>
+				<li class="col s1">
 					<a href="">
 						<img src="public/images/Televisores.svg">
 						<p>Televisores</p>
 					</a>
 				</li>
-				<li>
+				<li class="col s1">
 					<a href="">
 						<img src="public/images/Audio.svg">
 						<p>Audio</p>
 					</a>
 				</li>		
-				<li>
+				<li class="col s1">
 					<a href="">
 						<img src="public/images/computo.svg">
 						<p>Cómputo</p>
 					</a>
 				</li>			
-				<li>
+				<li class="col s1">
 					<a href="">
 						<img src="public/images/linea-blanca.svg">
 						<p>Línea Blanca</p>
 					</a>
 				</li>			
-				<li>
+				<li class="col s1">
 					<a href="">
 						<img src="public/images/electrodomesticos.svg">
 						<p>Electrodomésticos</p>
 					</a>
 				</li>			
-				<li>
+				<li class="col s1">
 					<a href="">
 						<img src="public/images/celulares.svg">
 						<p>Celulares</p>
 					</a>
 				</li>			
-				<li>
+				<li class="col s1">
 					<a href="">
 						<img src="public/images/hogar.svg">
 						<p>Hogar</p>
 					</a>
-				</li>			
+				</li class="col s1">			
 				<li>
 					<a href="">
 						<img src="public/images/deporte.svg">

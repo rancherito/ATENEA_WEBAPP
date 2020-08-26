@@ -45,6 +45,7 @@ $year = date("Y");
     		margin: 20px 14px!important;
     		width: 65px;
 		}
+		
 		.footer-top-text{
 			margin-top: 10px;
 		    margin-bottom: 0;
@@ -134,17 +135,26 @@ $year = date("Y");
 				</a>
 			</div>
 		</div>
-		<div class="blue darken-3" style="height: 4px"></div>
+		<div class="" style="height: 4px"></div>
 	</header>
 	<section id="content-body"  style="min-height: 600px;">
 		<?= $body?>
 	</section>
-
+	<body>
+		 <div class="carousel">
+		 	<h1 class="c">Productos más vendidos</h1>
+		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="public/images/lavadora.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="public/images/lavadora.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
+ 		 </div>
+	</body>
 
 	<footer>
 
 		<div id="footer-top" class="#263238 blue-grey darken-2 white-text f-c" style="height: 150px;">
-			<div class="container">
+			<div class="container" style="display: block">
 				<div class="servicios row">
 				<a href="" class="">
 					<img src="public/images/retiro_compra.svg" height="30px">
@@ -155,7 +165,7 @@ $year = date("Y");
 						en todo el pais
 					</h3>					
 				</a>
-				<a href="">
+				<a href="" class="">
 					<img src="public/images/despachos.svg" height="30px">
 					<h3  class="footer-top-text" style="line-height: 19px">
 						Envios a todo el Perú.
@@ -164,7 +174,7 @@ $year = date("Y");
 						Más de 1800 distritos
 					</h3>					
 				</a>
-				<a href="">
+				<a href="" class="">
 					<img src="public/images/servicios_esp.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Atencion al cliente 
@@ -173,7 +183,7 @@ $year = date("Y");
 						(01) 983-4734
 					</h3>					
 				</a>
-				<a href="">
+				<a href="" class="">
 					<img src="public/images/libroreclam.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Servicios
@@ -182,7 +192,7 @@ $year = date("Y");
 						Especializados
 					</h3>					
 				</a>
-				<a href="">
+				<a href="" class="">
 					<img src="public/images/atencion_cliente.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Libro de
@@ -198,25 +208,25 @@ $year = date("Y");
 		</div>
 		<!--<div id="copyright" class="black white-text f-c" style="height: 60px;">COPYRIGHT</div>-->
 		
-		<div id="contato" class="#263238 blue-grey darken-4 white-text f-c" style="height: 250px;">
-			<div class="container">
+		<div id="contato" class="#263238 blue-grey darken-4 white-text f-c" style="height: 350px;">
+			<div class="container" style="display: block">
 				<div class="footer-pagos">
-					<br>
+					<br><br>
 					<h4 class="footer-h4" >Haz tus compras facilmente<br>
 					<span>Con total seguridad y privacidad</span>							
 					</h4>					
 				</div>
 				<div class="footer-imgs-wrapper1 row">
-					<img class="col-sm-2 col-xs-6" src="public/images/visa.svg" width="70" >	
+					<img class="col s1 " src="public/images/visa.svg" width="4" >	
 
-					<img class="col-sm-2 col-xs-6" src="public/images/mastercard.svg" width="70">						
-					<img class="col-sm-2 col-xs-6" src="public/images/americanexpress.svg" width="70">			
+					<img class="col s1 " src="public/images/mastercard.svg" width="4">						
+					<img class="col s1" src="public/images/americanexpress.svg" width="4">			
 				
-					<img class="col-sm-2 col-xs-6" src="public/images/dinnersclub.svg" width="70">			
+					<img class="col s1" src="public/images/dinnersclub.svg" width="4">			
 				
-					<img class="col-sm-2 col-xs-6" src="public/images/pagoefectivo.svg" width="110">			
+					<img class="col s1" src="public/images/pagoefectivo.svg" width="4">			
 				
-					<img class="col-sm-2 col-xs-6" src="public/images/secure1.png" width="90">			
+					<img class="col s1" src="public/images/secure1.png" width="4">			
 				</div>
 				
 				<div class="social-media">
@@ -254,6 +264,24 @@ $year = date("Y");
 		})
 	})
 	//modalLogin.modal('open')
+
+	document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems,{
+    	duration:300,
+    	shift:100,
+    	dist:10,
+    	fullWidth:false
+    	});
+    
+    });
+
+	  // Or with jQuery
+
+	  // $(document).ready(function(){
+	  //   $('.carousel').carousel();
+	  // });
+      
 	</script>
 </body>
 </html>
