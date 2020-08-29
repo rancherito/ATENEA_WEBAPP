@@ -76,7 +76,17 @@ $year = date("Y");
 		    justify-content: center;
     		align-items: center;
 		}
+		#search{
+			height: 30px;
+			width: 500px;
+			padding: 10px;
+			margin: auto;
+			border-radius:  19px 19px 19px 19px;
+		}
+
 		
+
+
 	</style>
 </head>
 <body>
@@ -120,11 +130,60 @@ $year = date("Y");
 	</div>
 	<header>
 		<div class="container header_content">
+			
+			<a href="#" data-target="menu-responsive" class="sidenav-trigger">
+				<i  class="fal fa-bars"></i>
+			</a>
+			
+			<ul class="sidenav" id="menu-responsive">
+				<li>
+					<div class="user-view">
+						<div class="background">
+							<img src="public/images/fondo.jpg" alt="">
+							
+						</div>
+						<a href="" >
+							<img src="public/images/avatar_hombre.png" class="circle">
+						</a>
+						<a href="">
+							<span class="name white-text">Nickie</span>
+						</a>
+						<a href="">
+							<span class="email white-text">nickietubebito@hotmail.com</span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<a href="">
+						Categorias
+					</a>
+				</li>
+				<li>
+					<div class="divider"></div>
+				</li>
+				<li>
+					<a href="">
+						<i class="fas fa-question-circle"></i>
+						Ayuda
+					</a>
+				</li>
+				
+			</ul>	
+
+
+
 			<a href="." id="content-title-web">
 				<img src="<?= base_url()?>/public/images/ICON.svg" alt="UNAMAD" class="logo-index">
 				<span><?= $_ENV['varialbe.webname']?></span>
 				
 			</a>
+			
+				<div  class="buscar1">
+					<input id='search' placeholder="Buscar..." v-model="categoria">
+
+					<a id='' class='f-c waves-effect waves-light' ></a>
+
+				</div>		
 			<div class="header-links">
 
 				<a class="btn btn-large">
@@ -135,6 +194,7 @@ $year = date("Y");
 				</a>
 			</div>
 		</div>
+		
 		<div class="" style="height: 4px"></div>
 	</header>
 	<section id="content-body"  style="min-height: 600px;">
@@ -274,8 +334,12 @@ $year = date("Y");
     	fullWidth:false
     	});
     
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
     });
 
+	
+  
 	  // Or with jQuery
 
 	  // $(document).ready(function(){
