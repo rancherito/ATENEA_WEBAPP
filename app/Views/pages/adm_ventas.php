@@ -68,6 +68,10 @@
 		          <label for="first_name">EMAIL</label>
 		        </div>
 			</div>
+			<div class="r">
+				<a class="btn waves-effect waves-light"><i class="left fal fa-shopping-cart"></i>SALVAR VENTA</a>
+			</div>
+			<div class="space-32"></div>
 			<h2>DETALLE VENTA</h2>
 			<div class="space-32"></div>
 			<table class="white" v-if="carrito.length">
@@ -77,7 +81,7 @@
 						<th>NOMBRE</th>
 						<th>DESCRIPCION</th>
 						<th width="100">P. UNIT.</th>
-						<th width="100">p. TOTAL</th>
+						<th width="100">P. TOTAL</th>
 						<th class="index">Unidades</th>
 					</tr>
 				</thead>
@@ -86,9 +90,9 @@
 						<td>{{i+1}}</td>
 						<td>{{producto.nombre}}</td>
 						<td>{{producto.descripcion}}</td>
-						<td>{{producto.precio_unitario}}</td>
-						<td>{{producto.precio_total}}</td>
-						<td class="a-c">{{producto.unidades}}</td>
+						<td>S/{{numeral(producto.precio_unitario).format('0.00')}}</td>
+						<td>S/{{numeral(producto.precio_total).format('0.00')}}</td>
+						<td class="c">{{producto.unidades}}</td>
 					</tr>
 				</tbody>
 
@@ -133,7 +137,7 @@
 					<div>UNIDADES [ {{calc_stock}} ]</div>
 					<div style="display: inline-flex">
 						<input v-on:keyup.enter="addcar" maxlength="2" placeholder="unid." ref="input" type="text" v-model.number="stock_add">
-						<span @click="addcar" ref="tooltip" class="btn ttaddcar" data-position="bottom" data-tooltip="Añadir al carro">
+						<span @click="addcar" ref="tooltip" class="btn ttaddcar waves-effect waves-light" data-position="bottom" data-tooltip="Añadir al carro">
 							<i class="fal fa-shopping-basket"></i>
 						</span>
 					</div>
@@ -180,7 +184,8 @@
 			searchItem: '',
 			productos: [],
 			carrito: [],
-			isLoad: false
+			isLoad: false,
+			numeral: numeral
 		},
 		watch: {
 			searchItem: function (val) {
@@ -200,15 +205,15 @@
 			addproduct: function (data, unidades) {
 				console.log(unidades);
 				console.log(data);
-				//this.carrito.push(data)
+
+				//AGREGAR AL CARRO DE VENTAS
 				let flag = false
-				for (var producto of this.carrito) {
-					//console.log(producto.id == data.IdProducto);
+				for (var producto of this.carrito)
 					if (flag = producto.id == data.IdProducto) {
 						producto.unidades += unidades;
+						producto.precio_total = producto.unidades * data.PrecioRegular
 					}
-				}
-				if (!flag) {
+				if (!flag)
 					this.carrito.push({
 						id: data.IdProducto,
 						nombre: data.Nombre,
@@ -217,7 +222,7 @@
 						precio_unitario: data.PrecioRegular,
 						precio_total: data.PrecioRegular * unidades
 					})
-				}
+				//AGREGAR AL CARRO DE VENTAS
 			},
 			loadItems: function () {
 				$.post('<?= base_url()?>/servicios/almacen/stock/listar', {}, data => {
