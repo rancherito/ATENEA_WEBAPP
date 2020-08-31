@@ -146,9 +146,9 @@
 					echo '
 						<div class="col s6 m3">
 							<div class="card-panel f-c" style="width: 100%; height: 300px;">
-								<i class="fal fa-shopping-cart grey-text text-gray-2" style="font-size: 3rem"></i>
-								<br>
-								UN PRODUCTO
+								<h4>Lavadora</h4>
+								
+								<img src="public/images/lavadora.jpg" alt="" />
 							</div>
 						</div>
 
