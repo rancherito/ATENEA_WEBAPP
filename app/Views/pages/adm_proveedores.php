@@ -34,9 +34,6 @@
 					</tr>
 			</tbody>
 		</table>
-		<?php
-			print_r($_SERVER);
-		?>
 	</main-search>
 	<Soption>
 		<div class="f-c" v-show="!isOpenForm">

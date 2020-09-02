@@ -5,7 +5,7 @@ class QueryProductos
 {
 
 
-	public function Venta_Salvar($Id_venta,$cliente_dni,$Descripcion,$Descuento,$Estado,$subtotal,$total)
+	public function Venta_Salvar($Id_venta,$cliente_dni,$Descripcion,$Descuento,$Estado)
 	{
 		$sql = "
 			EXEC [dbo].[spu_Venta_Guardar]
@@ -13,13 +13,25 @@ class QueryProductos
 			@cliente_dni = '$cliente_dni',
 			@Descripcion = '$Descripcion',
 			@Descuento = '$Descuento',
-			@Estado = '$Estado',
-			@subtotal = '$subtotal',
-			@total = '$total'
+			@Estado = '$Estado'
 		";
-		return query_database($sql);
+		$res = query_database($sql);
+		if ($res) $res = $res[0];
+		return $res;
 	}
 
+	public function DetalleVenta_Salvar($IdProducto, $DescuentoItem, $Unidades, $IdVenta, $local)
+	{
+		$sql = "
+		EXEC [dbo].[spu_DetalleVenta_Guardar]
+		@IdProducto = '$IdProducto',
+		@DescuentoItem = '$DescuentoItem',
+		@Unidades = '$Unidades',
+		@IdVenta = '$IdVenta',
+		@local = '$local'
+		";
+		query_database($sql);
+	}
 	public function StockProductos_Listar($IdProducto = '', $IdAlmacen = '', $Nombre = '', $Limit = '')
 	{
 		$sql = "

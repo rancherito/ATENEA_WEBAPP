@@ -95,8 +95,8 @@
 						<td>{{producto.nombre}}</td>
 						<td>{{producto.descripcion}}</td>
 						<td class="c">{{producto.unidades}}</td>
-						<td>S/{{numeral(producto.precio_unitario).format('0.00')}}</td>
-						<td>S/{{numeral(producto.precio_total).format('0.00')}}</td>
+						<td class="r">S/{{numeral(producto.precio_unitario).format('0.00')}}</td>
+						<td class="r">S/{{numeral(producto.precio_total).format('0.00')}}</td>
 					</tr>
 					<td></td>
 					<td></td>
@@ -198,10 +198,10 @@
 			quitar_stock: [],
 			isLoad: false,
 			numeral: numeral,
-			form_dni: '75258274',
+			form_dni: '75258279',
 			form_ruc: '',
-			form_nombre: 'DAVID',
-			form_apellidos: 'LARICO AQUINO',
+			form_nombre: 'ADRIANO',
+			form_apellidos: 'ROMEROZ AQUINO',
 			form_telefono: '',
 			form_email: ''
 		},
@@ -230,23 +230,41 @@
 			new SimpleBar( this.$refs['content-elegir']);
 		},
 		methods: {
+			clear: function () {
+				this.productos = []
+				this.carrito = []
+				this.quitar_stock = []
+				this.form_dni = ''
+				this.form_ruc = ''
+				this.form_nombre = ''
+				this.form_apellidos = ''
+				this.form_telefono = ''
+				this.form_email = ''
+			},
 			saveVenta: function () {
 				if (
 					(this.form_email == '' || v_email(this.form_email)) &&
 					v_DNI(this.form_dni)
 				) {
-					if (this.carrito.length) {
-						console.log(this.carrito);
-						console.log(this.quitar_stock);
+					if (this.quitar_stock.length) {
 						const cliente = {
-							form_dni: this.form_dni,
-							form_ruc: this.form_ruc,
-							form_nombre: this.form_nombre.toUpperCase(),
-							form_apellidos: this.form_apellidos.toUpperCase(),
-							form_telefono: this.form_telefono,
-							form_email: this.form_email.toUpperCase()
+							dni: this.form_dni,
+							ruc: this.form_ruc,
+							nombre: this.form_nombre.toUpperCase(),
+							apellidos: this.form_apellidos.toUpperCase(),
+							telefono: this.form_telefono,
+							email: this.form_email.toUpperCase()
 						}
-						console.log(cliente);
+
+						const datos = {
+							cliente: cliente,
+							detalles: this.quitar_stock
+						}
+						$.post('<?= base_url() ?>/servicios/ventas/salvar', datos, res => {
+							this.clear()
+							this.loadItems()
+							M.toast({html: 'Venta Registrada', classes: 'bg-primary'});
+						})
 					}
 					else M.toast({html: 'Carro de venta vacio', classes: 'bg-alert'});
 				}
