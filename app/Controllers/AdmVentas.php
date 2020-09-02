@@ -17,8 +17,6 @@ class AdmVentas extends BaseController
 		$_usuarios->Usuarios_Salvar($cliente['dni'], $cliente['ruc'], $cliente['nombre'], $cliente['apellidos'], 4, $cliente['dni'], '', $Usuario['telefono'], $Usuario['email'], 1);
 		$id_venta = $_productos->Venta_Salvar('-1',$cliente['dni'],'',0,1);
 		//DetalleVenta_Salvar($IdProducto, $DescuentoItem, $Unidades, $IdVenta, $local)
-
-		print_r($detalles);
 		foreach ($detalles as $key => $producto) {
 			$_productos->DetalleVenta_Salvar($producto['id'], 0, $producto['unidades'], $id_venta['id_venta'], $producto['id_almacen']);
 		}

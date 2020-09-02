@@ -13,16 +13,17 @@
 <div class="container opm">
 
 	<div class="row dashbox-container">
+
 		<div class="col m6 l3">
-			<div class="dashbox disable">
-				<i class="fal fa-map-marker-check"></i>
+			<a class="dashbox" href="<?= base_url()?>/administrator/productos" >
+				<i class="fal fa-store"></i>
 				<div class="dashbox-info">
-					<h4 class="dashbox-title">Locacion</h4>
+					<h4 class="dashbox-title">Productos</h4>
 					<div class="dashbox-description">
-						Idique los puntos de ubicacion de sus almacenes.
+						Gestion y listado de productos del sistema, por categorias y marcas
 					</div>
 				</div>
-			</div>
+			</a>
 		</div>
 		<div class="col m6 l3">
 			<a class="dashbox" href="<?= base_url() ?>/administrator/almacen/stock/consulta">
@@ -48,11 +49,11 @@
 		</div>
 		<div class="col m6 l3">
 			<div class="dashbox disable">
-				<i class="fal fa-truck-container"></i>
+				<i class="fal fa-map-marker-check"></i>
 				<div class="dashbox-info">
-					<h4 class="dashbox-title">Despacho</h4>
+					<h4 class="dashbox-title">Locacion</h4>
 					<div class="dashbox-description">
-						Vea si sus productos estan listos para entregar.
+						Idique los puntos de ubicacion de sus almacenes.
 					</div>
 				</div>
 			</div>

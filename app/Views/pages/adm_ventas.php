@@ -261,6 +261,7 @@
 							detalles: this.quitar_stock
 						}
 						$.post('<?= base_url() ?>/servicios/ventas/salvar', datos, res => {
+							console.log(res);
 							this.clear()
 							this.loadItems()
 							M.toast({html: 'Venta Registrada', classes: 'bg-primary'});

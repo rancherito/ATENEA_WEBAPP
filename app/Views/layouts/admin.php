@@ -45,9 +45,8 @@
 		</a>
 		<div id="menu-aside">
 
-			<a href="<?= base_url()?>/administrator/ventas" class="aside-item-menu" data-tooltip="VENTAS" data-position="right"><i class="fal fa-shopping-cart"></i></a>
-			<a href="<?= base_url()?>/administrator/productos" class="aside-item-menu" data-tooltip="PRODUCTOS" data-position="right">
-				<i class="fal fa-store"></i>
+			<a href="<?= base_url()?>/administrator/ventas" class="aside-item-menu" data-tooltip="VENTAS" data-position="right">
+				<i class="fal fa-shopping-cart"></i>
 			</a>
 			<a href="<?= base_url()?>/administrator/categorias" class="aside-item-menu" data-tooltip="CATEGORIAS" data-position="right">
 				<i class="fal fa-ballot"></i>
