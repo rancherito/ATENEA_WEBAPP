@@ -238,6 +238,15 @@
 					if (this.carrito.length) {
 						console.log(this.carrito);
 						console.log(this.quitar_stock);
+						const cliente = {
+							form_dni: this.form_dni,
+							form_ruc: this.form_ruc,
+							form_nombre: this.form_nombre.toUpperCase(),
+							form_apellidos: this.form_apellidos.toUpperCase(),
+							form_telefono: this.form_telefono,
+							form_email: this.form_email.toUpperCase()
+						}
+						console.log(cliente);
 					}
 					else M.toast({html: 'Carro de venta vacio', classes: 'bg-alert'});
 				}

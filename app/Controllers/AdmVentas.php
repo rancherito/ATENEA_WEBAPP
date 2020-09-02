@@ -7,4 +7,8 @@ class AdmVentas extends BaseController
 	{
 		echo $this->layout_view('admin', 'pages/adm_ventas');
 	}
+	public function serv_Categorias_Salvar()
+	{
+		print_r($_POST);
+	}
 }
