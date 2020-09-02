@@ -3,6 +3,24 @@
 
 class QueryProductos
 {
+
+
+	public function Venta_Salvar($Id_venta,$cliente_dni,$Descripcion,$Descuento,$Estado,$subtotal,$total)
+	{
+		$sql = "
+			EXEC [dbo].[spu_Venta_Guardar]
+			@Id_venta = '$Id_venta',
+			@cliente_dni = '$cliente_dni',
+			@Descripcion = '$Descripcion',
+			@Descuento = '$Descuento',
+			@Estado = '$Estado',
+			@subtotal = '$subtotal',
+			@total = '$total',
+			@IGV = NULL
+		";
+		return query_database($sql);
+	}
+
 	public function StockProductos_Listar($IdProducto = '', $IdAlmacen = '', $Nombre = '', $Limit = '')
 	{
 		$sql = "

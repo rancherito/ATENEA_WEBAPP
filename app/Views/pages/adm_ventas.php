@@ -67,9 +67,10 @@
 		          <input placeholder="ingrese nombre" type="text" trim="form_email">
 		          <label for="first_name">EMAIL</label>
 		        </div>
+
 			</div>
 			<div class="r">
-				<a class="btn waves-effect waves-light"><i class="left fal fa-shopping-cart"></i>SALVAR VENTA</a>
+				<a class="btn waves-effect waves-light" @click="saveVenta"><i class="left fal fa-shopping-cart"></i>SALVAR VENTA</a>
 			</div>
 			<div class="space-32"></div>
 			<h2>DETALLE VENTA</h2>
@@ -90,10 +91,16 @@
 						<td>{{i+1}}</td>
 						<td>{{producto.nombre}}</td>
 						<td>{{producto.descripcion}}</td>
+						<td class="c">{{producto.unidades}}</td>
 						<td>S/{{numeral(producto.precio_unitario).format('0.00')}}</td>
 						<td>S/{{numeral(producto.precio_total).format('0.00')}}</td>
-						<td class="c">{{producto.unidades}}</td>
 					</tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><b>TOTAL</b> </td>
+					<td class="c">S/{{numeral(form_total).format('0.00')}}</td>
 				</tbody>
 
 			</table>
@@ -184,8 +191,16 @@
 			searchItem: '',
 			productos: [],
 			carrito: [],
+			quitar_stock: [],
 			isLoad: false,
 			numeral: numeral
+		},
+		computed: {
+			form_total: function () {
+				let total = 0
+				for (var producto of this.carrito) total += producto.precio_total
+				return total
+			}
 		},
 		watch: {
 			searchItem: function (val) {
@@ -202,10 +217,11 @@
 			new SimpleBar( this.$refs['content-elegir']);
 		},
 		methods: {
+			saveVenta: function () {
+				console.log(this.carrito);
+				console.log(this.quitar_stock);
+			},
 			addproduct: function (data, unidades) {
-				console.log(unidades);
-				console.log(data);
-
 				//AGREGAR AL CARRO DE VENTAS
 				let flag = false
 				for (var producto of this.carrito)
@@ -222,12 +238,25 @@
 						precio_unitario: data.PrecioRegular,
 						precio_total: data.PrecioRegular * unidades
 					})
-				//AGREGAR AL CARRO DE VENTAS
+
+
+				//DESCONTAR STOCK
+				let flag2 = false
+				for (var producto of this.quitar_stock)
+					if (flag2 = (producto.id == data.IdProducto && producto.id_almacen == data.IdAlmacen)) {
+						producto.unidades += unidades;
+					}
+				if (!flag2)
+					this.quitar_stock.push({
+						id_almacen: data.IdAlmacen,
+						id: data.IdProducto,
+						unidades: unidades,
+					})
+
 			},
 			loadItems: function () {
 				$.post('<?= base_url()?>/servicios/almacen/stock/listar', {}, data => {
 					this.productos = data
-
 				})
 			}
 		}
