@@ -24,7 +24,7 @@
 					</div>
 				</a>
 			</div>
-			<?php for($i = 0; $i< 10; $i++): ?>
+			<?php for($i = 0; $i< 6; $i++): ?>
 				<div class="col m6 l3">
 					<div class="dashbox">
 						<i class="fal fa-box"></i>
@@ -48,8 +48,13 @@
 		data: {
 			isLoad: false,
 			listAccess: [
-				{name: 'VENTAS', description: 'Modulo de verificacion de pedidos y registro de ventas', link: '<?= base_url()?>/administrator/ventas', icon: 'fa-shopping-cart'},
-				{name: 'PRODUCTOS', description: 'Modulo de consulta de productos, registro y modificación', link: '<?= base_url()?>/administrator/productos', icon: 'fa-store'}
+				{name: 'Ventas', description: 'Modulo de verificacion de pedidos y registro de ventas', link: '<?= base_url()?>/administrator/ventas', icon: 'fa-shopping-cart'},
+				{name: 'Productos', description: 'Modulo de consulta de productos, registro y modificación', link: '<?= base_url()?>/administrator/productos', icon: 'fa-store'},
+				{name: 'Stock', description: 'Consulte el stock de productos de sus almacenes', link: '<?= base_url()?>/administrator/almacen/stock/consulta', icon: 'fa-hand-holding-box'},
+				{name: 'Categorias', description: 'Modulo de consulta de categorias, registro y modificación', link: '<?= base_url()?>/administrator/categorias', icon: 'fa-ballot'},
+				{name: 'Marcas', description: 'Modulo de consulta de marcas, registro y modificación', link: '<?= base_url()?>/administrator/marcas', icon: 'fa-tag'},
+				{name: 'Proveedores', description: 'Modulo de consulta de proveedores, registro y modificación', link: '<?= base_url()?>/administrator/proveedores', icon: 'fa-shipping-fast'},
+				{name: 'Agregar lote', description: 'Gestione de productos adquiridos a traves de sus proveedores', link: '<?= base_url()?>/administrator/almacen/stock/registro', icon: 'fa-box'}
 			]
 		},
 		mounted: function () {
