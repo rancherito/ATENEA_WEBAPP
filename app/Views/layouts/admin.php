@@ -22,6 +22,7 @@
 	<script src="<?= base_url() ?>/public/libs/JaroWrinker/JaroWrinker.js"></script>
 	<script src="<?= base_url()?>/public/libs/inputmask/inputmask.min.js" charset="utf-8"></script>
 	<script src="<?= base_url()?>/public/libs/numeral/numeral.min.js" charset="utf-8"></script>
+	<script src="<?= base_url()?>/public/js/script.js"  charset="utf-8"></script>
 
 	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/colors.css">
 	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/custom_materialize.css">

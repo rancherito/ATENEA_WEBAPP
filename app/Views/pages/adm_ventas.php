@@ -41,37 +41,40 @@
 </style>
 <div id="app" class="module opacity-0" :class="{'opacity-1': isLoad}">
 		<main-search :cansearch="false" :namemodule="'REGISTRO DE VENTAS'">
-			<div class="row">
-				<div class="input-field col m12 l4">
-		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
-		          <label for="first_name">DNI*</label>
-		        </div>
-				<div class="input-field col m12 l8">
-		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
-		          <label for="first_name">RUC</label>
-		        </div>
-				<div class="input-field col m12 l4">
-		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
-		          <label for="first_name">NOMBRES*</label>
-		        </div>
-				<div class="input-field col m12 l8">
-		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
-		          <label for="first_name">APELLIDOS*</label>
-		        </div>
 
-				<div class="input-field col m12 l4">
-		          <input placeholder="ingrese nombre" type="text" trim="form_nombre">
-		          <label for="first_name">TELEFONO</label>
-		        </div>
-				<div class="input-field col m12 l8">
-		          <input placeholder="ingrese nombre" type="text" trim="form_email">
-		          <label for="first_name">EMAIL</label>
-		        </div>
+			<form @submit.prevent="saveVenta">
+				<div class="row">
+					<div class="input-field col m12 l4">
+			          <input ref="form_dni" required maxlength="12" minlength="8" placeholder="ingrese nombre" type="text" v-model.trim="form_dni">
+			          <label>DNI*</label>
+			        </div>
+					<div class="input-field col m12 l8">
+			          <input maxlength="13" minlength="11" placeholder="ingrese nombre" type="text" v-model.trim="form_ruc">
+			          <label>RUC</label>
+			        </div>
+					<div class="input-field col m12 l4">
+			          <input required placeholder="ingrese nombre" type="text" v-model.trim="form_nombre">
+			          <label>NOMBRES*</label>
+			        </div>
+					<div class="input-field col m12 l8">
+			          <input required placeholder="ingrese aprellidos" type="text" v-model.trim="form_apellidos">
+			          <label>APELLIDOS*</label>
+			        </div>
 
-			</div>
-			<div class="r">
-				<a class="btn waves-effect waves-light" @click="saveVenta"><i class="left fal fa-shopping-cart"></i>SALVAR VENTA</a>
-			</div>
+					<div class="input-field col m12 l4">
+			          <input ref="form_telefono" placeholder="ingrese telefono" type="text" v-model.trim="form_telefono">
+			          <label>TELEFONO</label>
+			        </div>
+					<div class="input-field col m12 l8">
+			          <input ref="form_email" placeholder="ingrese email" type="text" v-model.trim="form_email">
+			          <label>EMAIL</label>
+			        </div>
+
+				</div>
+				<div class="r">
+					<button class="btn waves-effect waves-light"><i class="left fal fa-shopping-cart"></i>SALVAR VENTA</button>
+				</div>
+			</form>
 			<div class="space-32"></div>
 			<h2>DETALLE VENTA</h2>
 			<div class="space-32"></div>
@@ -165,6 +168,7 @@
 			}
 		},
 		mounted: function () {
+			//
 			M.Tooltip.init(this.$refs.tooltip);
 			Inputmask("numeric", {
 				allowMinus: false,
@@ -193,7 +197,13 @@
 			carrito: [],
 			quitar_stock: [],
 			isLoad: false,
-			numeral: numeral
+			numeral: numeral,
+			form_dni: '75258274',
+			form_ruc: '',
+			form_nombre: 'DAVID',
+			form_apellidos: 'LARICO AQUINO',
+			form_telefono: '',
+			form_email: ''
 		},
 		computed: {
 			form_total: function () {
@@ -213,13 +223,27 @@
 			this.loadItems()
 		},
 		mounted: function () {
+			Inputmask("email").mask(this.$refs.form_email);
+			Inputmask( "999 999 999").mask(this.$refs.form_telefono);
+			Inputmask( "9", {repeat: 12}).mask(this.$refs.form_dni);
 			this.isLoad = true
 			new SimpleBar( this.$refs['content-elegir']);
 		},
 		methods: {
 			saveVenta: function () {
-				console.log(this.carrito);
-				console.log(this.quitar_stock);
+				if (
+					(this.form_email == '' || v_email(this.form_email)) &&
+					v_DNI(this.form_dni)
+				) {
+					if (this.carrito.length) {
+						console.log(this.carrito);
+						console.log(this.quitar_stock);
+					}
+					else M.toast({html: 'Carro de venta vacio', classes: 'bg-alert'});
+				}
+				else M.toast({html: 'Datos cliente incorrectos', classes: 'bg-alert'});
+
+
 			},
 			addproduct: function (data, unidades) {
 				//AGREGAR AL CARRO DE VENTAS

@@ -15,8 +15,7 @@ class QueryProductos
 			@Descuento = '$Descuento',
 			@Estado = '$Estado',
 			@subtotal = '$subtotal',
-			@total = '$total',
-			@IGV = NULL
+			@total = '$total'
 		";
 		return query_database($sql);
 	}
