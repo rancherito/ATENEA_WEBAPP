@@ -61,8 +61,8 @@
 			<a href="<?= base_url()?>/administrator/almacen" class="aside-item-menu" data-tooltip="ALMACEN" data-position="right">
 				<i class="fal fa-box"></i>
 			</a>
-			<a href="<?= base_url()?>/administrator/reportes" class="aside-item-menu" data-tooltip="REPORTES" data-position="right">
-				<i class="fal fa-file"></i>
+			<a href="<?= base_url()?>/administrator/usuarios" class="aside-item-menu" data-tooltip="USUARIOS" data-position="right">
+				<i class="fal fa-user"></i>
 			</a>
 		</div>
 		<div id="options-aside">

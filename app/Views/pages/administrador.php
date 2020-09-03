@@ -24,19 +24,6 @@
 					</div>
 				</a>
 			</div>
-			<?php for($i = 0; $i< 6; $i++): ?>
-				<div class="col m6 l3">
-					<div class="dashbox">
-						<i class="fal fa-box"></i>
-						<div class="dashbox-info">
-							<h4 class="dashbox-title">Acceso <?= ($i + 1) ?></h4>
-							<div class="dashbox-description">
-								Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</div>
-						</div>
-					</div>
-				</div>
-			<?php endfor; ?>
 
 		</div>
 	</div>

@@ -69,7 +69,7 @@ if ($_APPVARS['user'] == 'admin') {
 	$routes->post('servicios/almacen/stock/transferir', 'AdmAlmacen::serv_StockProductos_Transferir');
 	$routes->post('servicios/almacen/stock/listar', 'AdmAlmacen::serv_StockProductos_Listar');
 
-	$routes->get('administrator/reportes', 'Utils::void');
+	$routes->get('administrator/usuarios', 'AdmUsuarios::Usuarios_Listar');
 
 	$routes->get('administrator/ventas', 'AdmVentas');
 	$routes->post('servicios/ventas/salvar', 'AdmVentas::serv_Ventas_Salvar');

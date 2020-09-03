@@ -27,7 +27,7 @@
 		</div>
 		<div class="col m6 l3">
 			<a class="dashbox" href="<?= base_url() ?>/administrator/almacen/stock/consulta">
-				<i class="fal fa-store"></i>
+				<i class="fal fa-hand-holding-box"></i>
 				<div class="dashbox-info">
 					<h4 class="dashbox-title">Stock</h4>
 					<div class="dashbox-description">

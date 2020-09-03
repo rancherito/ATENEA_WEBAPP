@@ -18,4 +18,14 @@ class QueryUsuarios{
 		";
 		query_database($sql);
 	}
+	public function Usuarios_Listar($DNI, $Cargo, $Usuario)
+	{
+		$sql = "
+		EXEC [dbo].[spu_Usuarios_Listar_por]
+		@DNI = '$DNI',
+		@Cargo = '$Cargo',
+		@Usuario = '$Usuario'
+		";
+		return query_database($sql);
+	}
 }
