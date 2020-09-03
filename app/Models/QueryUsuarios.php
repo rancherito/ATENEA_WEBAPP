@@ -28,4 +28,12 @@ class QueryUsuarios{
 		";
 		return query_database($sql);
 	}
+	public function Cargos_Recuperar($Id = '')
+	{
+		$sql = "
+		EXEC [dbo].[spu_Cargo_Recuperar]
+		@Id = '$Id'
+		";
+		return query_database($sql);
+	}
 }

@@ -3,8 +3,9 @@ use App\Models\QueryUsuarios;
 class AdmUsuarios extends BaseController
 {
 	public function Usuarios_Listar()
-	{
-		echo $this->layout_view('admin', 'pages/adm_usuarios');
+	{	$_usuario = new QueryUsuarios();
+		$data = ['cargos' => $_usuario->Cargos_Recuperar()];
+		echo $this->layout_view('admin', 'pages/adm_usuarios', $data);
 	}
 	public function serv_Usuario_Listar()
 	{
