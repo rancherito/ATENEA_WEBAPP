@@ -73,6 +73,7 @@ if ($_APPVARS['user'] == 'admin') {
 	$routes->post('servicios/usuarios/listar', 'AdmUsuarios::serv_Usuario_Listar');
 
 	$routes->get('administrator/ventas', 'AdmVentas');
+	$routes->post('administrator/ventas/imprimir', 'AdmVentas::Ventas_ImprimirBoleta');
 	$routes->post('servicios/ventas/salvar', 'AdmVentas::serv_Ventas_Salvar');
 
 	$routes->get('administrator/categorias', 'AdmCategorias::categorias');

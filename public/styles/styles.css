@@ -16,6 +16,12 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+.space-32{
+	height: 32px;
+}
+.disable-events{
+  pointer-events: none;
+}
 .wrapper-tab{
 	padding: 32px;
 	height: calc(100% - 48px);

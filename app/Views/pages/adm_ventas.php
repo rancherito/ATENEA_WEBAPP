@@ -39,7 +39,7 @@
 		padding: 16px;
 	}
 </style>
-<div id="app" class="module opacity-0" :class="{'opacity-1': isLoad}">
+<div id="app" class="module opacity-0" :class="{'opacity-1': isLoad, 'pointer-events': disable}">
 		<main-search notsearch namemodule="REGISTRO DE VENTAS">
 
 			<form @submit.prevent="saveVenta">
@@ -168,7 +168,6 @@
 			}
 		},
 		mounted: function () {
-			//
 			M.Tooltip.init(this.$refs.tooltip);
 			Inputmask("numeric", {
 				allowMinus: false,
@@ -192,6 +191,7 @@
 	new Vue({
 		el: '#app',
 		data: {
+			disable: false,
 			searchItem: '',
 			productos: [],
 			carrito: [],
@@ -247,6 +247,7 @@
 					v_DNI(this.form_dni)
 				) {
 					if (this.quitar_stock.length) {
+						this.disable = true;
 						const cliente = {
 							dni: this.form_dni,
 							ruc: this.form_ruc,
@@ -261,10 +262,18 @@
 							detalles: this.quitar_stock
 						}
 						$.post('<?= base_url() ?>/servicios/ventas/salvar', datos, res => {
-							console.log(res);
+							this.disable = false;
 							this.clear()
 							this.loadItems()
 							M.toast({html: 'Venta Registrada', classes: 'bg-primary'});
+
+							let template = $(`
+								<form action="<?= base_url()?>/administrator/ventas/imprimir" method="post" target="_blank">
+									<input name="id_venta" type="hidden" value="${res.id_venta}"/>
+								</form>
+							`)
+							$(document.body).append(template)
+							template.submit()
 						})
 					}
 					else M.toast({html: 'Carro de venta vacio', classes: 'bg-alert'});

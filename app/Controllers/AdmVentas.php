@@ -5,6 +5,7 @@ class AdmVentas extends BaseController
 {
 	public function index()
 	{
+
 		echo $this->layout_view('admin', 'pages/adm_ventas');
 	}
 	public function serv_Ventas_Salvar()
@@ -22,6 +23,15 @@ class AdmVentas extends BaseController
 		}
 		return $this->response->setJSON($id_venta);
 	}
-
+	public function Ventas_ImprimirBoleta()
+	{
+		$id_venta = $_POST['id_venta'];
+		$_ventas = new QueryProductos();
+		$data = [
+			'detalles' => $_ventas->DetalleVenta_Recuperar($id_venta),
+			'venta' => $_ventas->Venta_Recuperar($id_venta)[0]
+		];
+		return view('pages/adm_boleta', $data);
+	}
 
 }

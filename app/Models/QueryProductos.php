@@ -3,8 +3,23 @@
 
 class QueryProductos
 {
-
-
+	public function DetalleVenta_Recuperar($IdVenta = '', $IdProducto = '')
+	{
+		$sql = "
+		EXEC [dbo].[spu_DetalleVenta_Recuperar]
+		@IdProducto  = '$IdProducto',
+		@IdVenta  = '$IdVenta'
+		";
+		return query_database($sql);
+	}
+	public function Venta_Recuperar($Id_venta = '')
+	{
+		$sql = "
+		EXEC [dbo].[spu_Venta_Recuperar]
+		@Id_venta  = '$Id_venta'
+		";
+		return query_database($sql);
+	}
 	public function Venta_Salvar($Id_venta,$cliente_dni,$Descripcion,$Descuento,$Estado)
 	{
 		$sql = "
