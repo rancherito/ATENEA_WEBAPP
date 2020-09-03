@@ -26,9 +26,9 @@ Vue.component('main-search',{
 			<div ref="cmain" id="content-main">
 				<div class="container">
 					<div id='barsearch'>
-						<div id='content-barsearch' v-if="cansearch">
+						<div id='content-barsearch' v-if="!notsearch">
 							<input id='search' class='searchinput' :placeholder="placeholder" v-model="search">
-							<a id='add-item' class='f-c waves-effect waves-light' @click="add" v-if="canadd"><i class='fal fa-plus'></i></a>
+							<a id='add-item' class='f-c waves-effect waves-light' @click="add" v-if="!notadd"><i class='fal fa-plus'></i></a>
 						</div>
 						<h2 class='title-module'>{{namemodule}}</h2>
 					</div>
@@ -46,7 +46,6 @@ Vue.component('main-search',{
 	},
 	props: {
 		additem: Function,
-		onsearch: Function,
 		placeholder: {
 			type: String,
 			default: 'BUSCAR'
@@ -55,27 +54,17 @@ Vue.component('main-search',{
 			type: String,
 			default: 'Nombre Modulo'
 		},
-		canadd: {
-			type: Boolean,
-			default: true
-		},
-		cansearch: {
-			type: Boolean,
-			default: true
-		}
+		notadd: Boolean,
+		notsearch: Boolean
 	},
 	watch: {
 			search: function (val) {
-				if (typeof this.onsearch == 'function') {
-					this.onsearch(val)
-				}
+				this.$emit('search', val)
 			}
 	},
 	methods: {
 			add: function (e) {
-				if (typeof this.additem == 'function') {
-					this.additem(e)
-				}
+				this.$emit('additem', e)
 			}
 	},
 	mounted: function () {

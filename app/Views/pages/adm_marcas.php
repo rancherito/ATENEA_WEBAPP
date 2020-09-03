@@ -1,28 +1,17 @@
 <div id="app" class="module opacity-0"  :class="{'opacity-1': loaded}">
-	<Smain @content="content = $event">
-		<div class="container">
-			<div id='barsearch'>
-				<div id='content-barsearch'>
-					<input id='search' class='searchinput' placeholder="BUSCAR MARCA" v-model="marca">
-					<a id='add-item' class='f-c waves-effect waves-light' @click="addItem"><i class='fal fa-plus'></i></a>
-				</div>
-				<h2 class='title-module'>GESTION MARCAS</h2>
-			</div>
-			<div class="space-32"></div>
-			<div class="row">
-				<div class="col l6 s12 xl3" v-for="marca in marcas">
-					<div class="brandbox">
-						<div class="brandbox-logo">
-							<img :src="marca.ImageUrl" alt="brand">
-						</div>
-						<span>{{marca.Nombre}}</span>
-						<a class="btn-floating waves-effect waves" @click="editItem(marca)"><i class="fal fa-ellipsis-v"></i></a>
+	<main-search @search="search" @additem="addItem" namemodule="GESTION PRODUCTOS">
+		<div class="row">
+			<div class="col l6 s12 xl3" v-for="marca in marcas">
+				<div class="brandbox">
+					<div class="brandbox-logo">
+						<img :src="marca.ImageUrl" alt="brand">
 					</div>
+					<span>{{marca.Nombre}}</span>
+					<a class="btn-floating waves-effect waves" @click="editItem(marca)"><i class="fal fa-ellipsis-v"></i></a>
 				</div>
-
 			</div>
 		</div>
-	</Smain>
+	</main-search>
 	<Soption>
 		<div class="f-c open-module" v-if="!isOpenCrud">
 			<i class="fal fa-comment-alt-smile icon-pres"></i>
@@ -69,23 +58,19 @@
 			form_image: null,
 			form_imageurl: '',
 			form_nombre: '',
-			form_key: -1,
-			marca: ''
+			form_key: -1
 		},
 		created: function () {
 			this.getItems()
 		},
 		mounted: function () {
 			this.loaded = true
-			new SimpleBar(this.content,{ autoHide: false });
-		},
-		watch: {
-			marca: function (val) {
-				for (var marca of this.marcas) marca.order = JaroWrinker(val.toLowerCase(), marca.Nombre.toLowerCase());
-				this.marcas.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
-			}
 		},
 		methods: {
+			search: function (val) {
+				for (var marca of this.marcas) marca.order = JaroWrinker(val.toLowerCase(), marca.Nombre.toLowerCase());
+				this.marcas.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
+			},
 			addItem: function () {
 				this.isOpenCrud = true;
 				this.isNewItem = true
@@ -96,7 +81,6 @@
 			getItems: function () {
 			   $.get('<?= base_url() ?>/servicios/marcas/recuperar', res => {
 				   this.marcas = res
-				   this.marca = this.form_nombre
 			   })
 		   },
 		   saveItem: function () {

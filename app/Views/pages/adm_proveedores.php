@@ -11,7 +11,7 @@
 </style>
 
 <div id="app" class="module">
-	<main-search :namemodule="'GESTION PROVEEDORES'" :onsearch="orderItems" :additem="addItem">
+	<main-search namemodule="GESTION PROVEEDORES" @search="orderItems" @additem="addItem">
 		<table class="table-items open-module">
 			<tr>
 				<th class="table-index">#</th>

@@ -1,32 +1,22 @@
 <div id="app" class="module opacity-0" :class="{'opacity-1': loaded}">
-	<Smain @content="content = $event">
-		<div class="container">
-			<div id='barsearch'>
-				<div id='content-barsearch'>
-					<input id='search' placeholder="BUSCAR CATEGORIA" v-model="categoria">
-					<a id='add-item' class='f-c waves-effect waves-light' @click="addItem"><i class='fal fa-plus'></i></a>
-				</div>
-				<h2 class='title-module'>Gestion Categorias</h2>
-			</div>
-			<div class="space-32"></div>
-			<table class="table-items">
-				<thead>
-					<tr>
-						<th style="width: 1px">#</th>
-						<th>Nombre</th>
-						<th class="c" style="width: 240px">Total Productos <br>
-							<span style="font-size: .8rem; color: gray">(# Productos asociados a esta categoria)</span>
-						</th>
-					</tr>
-				</thead>
-				<tr v-for="(categoria, i) in categorias" @click="editItem(categoria)">
-					<td>{{i+1}}</td>
-					<td>{{categoria.Nombre}}</td>
-					<td class="c">{{categoria.TotalProductos}}</td>
+	<main-search @search="search" @additem="addItem" namemodule="BUSCAR CATEGORIA">
+		<table class="table-items">
+			<thead>
+				<tr>
+					<th style="width: 1px">#</th>
+					<th>Nombre</th>
+					<th class="c" style="width: 240px">Total Productos <br>
+						<span style="font-size: .8rem; color: gray">(# Productos asociados a esta categoria)</span>
+					</th>
 				</tr>
-			</table>
-		</div>
-	</Smain>
+			</thead>
+			<tr v-for="(categoria, i) in categorias" @click="editItem(categoria)">
+				<td>{{i+1}}</td>
+				<td>{{categoria.Nombre}}</td>
+				<td class="c">{{categoria.TotalProductos}}</td>
+			</tr>
+		</table>
+	</main-search>
 	<Soption>
 		<div class="f-c open-module" v-if="!isOpenCrud">
 			<i class="fal fa-comment-alt-smile icon-pres"></i>
@@ -63,7 +53,6 @@
 			content: null,
 			isOpenCrud: false,
 			isNewItem: true,
-			categoria: '',
 			form_nombre: '',
 			form_key: -1
 		},
@@ -72,15 +61,12 @@
 		},
 		mounted: function () {
 			this.loaded = true
-			new SimpleBar(this.content,{ autoHide: false });
-		},
-		watch: {
-			categoria: function (val) {
-				for (var categoria of this.categorias) categoria.order = JaroWrinker(val.toLowerCase(), categoria.Nombre.toLowerCase());
-				this.categorias.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
-			}
 		},
 		methods: {
+			search: function (val) {
+				for (var categoria of this.categorias) categoria.order = JaroWrinker(val.toLowerCase(), categoria.Nombre.toLowerCase());
+				this.categorias.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));
+			},
 			addItem: function () {
 				this.isOpenCrud = true
 				this.isNewItem = true
@@ -89,9 +75,7 @@
 			},
 			loadItems: function () {
 				$.get('<?= base_url() ?>/servicios/categorias/recuperar', data =>{
-					//console.log(data);
 					this.categorias = data
-					this.categoria = this.form_nombre
 				})
 			},
 			editItem: function (item) {

@@ -1,8 +1,8 @@
 <style media="screen">
-	
+
 </style>
 <div id="app" class="module opacity-0" :class="{'opacity-1': isLoadModule}">
-	<main-search :namemodule="'Stock Productos'" :canadd="false" :onsearch="onsearch">
+	<main-search namemodule="Stock Productos" notadd @search="onsearch">
 		<div v-for="almacen in almacenes" class="row" v-if="almacen.check">
 			<div class="col s12">
 				<h4>{{almacen.Nombre}}</h4>

@@ -40,7 +40,7 @@
 	}
 </style>
 <div id="app" class="module opacity-0" :class="{'opacity-1': isLoad}">
-		<main-search :cansearch="false" :namemodule="'REGISTRO DE VENTAS'">
+		<main-search notsearch namemodule="REGISTRO DE VENTAS">
 
 			<form @submit.prevent="saveVenta">
 				<div class="row">

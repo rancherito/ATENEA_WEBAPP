@@ -57,7 +57,7 @@
 
 </style>
 <div id="app" class="module opacity-0" :class="{'opacity-1': onLoad}">
-	<main-search :onsearch="onsearch" :additem="addProducto" :namemodule="'GESTION PRODUCTOS'">
+	<main-search @search="onsearch" @additem="addProducto" namemodule="GESTION PRODUCTOS">
 
 		<div class="wrapp-card-productos">
 			<table class="table-items">
