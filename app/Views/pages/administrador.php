@@ -8,12 +8,12 @@
 
 </style>
 <div id="app" class="opacity-0" :class="{'opacity-1': isLoad}">
-	<h2 class="c opm">Dashboard</h2>
+	<h2 class="c opm title-color">Dashboard</h2>
 	<br>
 	<div class="container opm">
 
 		<div class="row dashbox-container">
-			<div class="col m6 l3" v-for="access in listAccess">
+			<div class="col s12 m6 l3" v-for="access in listAccess">
 				<a class="dashbox" :href="access.link">
 					<i class="fal" :class="[access.icon ? access.icon : 'fa-box']"></i>
 					<div class="dashbox-info">

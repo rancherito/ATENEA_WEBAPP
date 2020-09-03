@@ -201,6 +201,8 @@
 	display: flex;
 	min-height: 120px;
 	color: gray;
+	height: 128px;
+	width: 100%;
 }
 .dashbox.disable{
 	opacity: .4;

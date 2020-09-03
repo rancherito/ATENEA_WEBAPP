@@ -1,6 +1,12 @@
 :root{
 	--page-width: 1200px;
 }
+.title-color{
+	color: white;
+}
+.title-color-contrast{
+	color: gray;
+}
 .title-font{
 	font-family: var(--title-font) !important;
 }
