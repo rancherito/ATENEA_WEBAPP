@@ -36,7 +36,7 @@
 		        </div>
 			</div>
 			<div class="r">
-				<a class="btn bg-white" @click="isOpenCrud = false"><i class="fal fa-times left"></i>CERRAR</a>
+				<a class="btn-flat" @click="isOpenCrud = false"><i class="fal fa-times left"></i>CERRAR</a>
 				<a class="btn waves-effect waves-light" @click="saveItem"><i class="fal fa-save left"></i>SALVAR</a>
 			</div>
 		</div>

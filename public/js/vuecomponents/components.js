@@ -7,7 +7,7 @@
 			</div>
 			<a class="btn-floating waves-effect waves"  @click="isUploadFromUrl = !isUploadFromUrl"><i class="fal" :class="{'fa-link': !isUploadFromUrl, 'fa-folder': isUploadFromUrl}"></i></a>
 			<label>
-				<a class="btn bg-secondary" v-if="!isUploadFromUrl">Elija una imagen</a>
+				<a class="btn-flat" v-if="!isUploadFromUrl">Elija una imagen</a>
 				<input type="file" accept="image/x-png,image/jpeg" @change="onUploadFile">
 			</label>
 			<input v-if="isUploadFromUrl" class="browser-default" placeholder="Copie una imagen" @paste="onPaste" @paste.prevent>

@@ -13,13 +13,12 @@ body {
 }
 
 :root {
-    --bg-primary: var(--purple);
-    --bg-secondary: var(--teal);
-    --primary: var(--purple);
+	--primary: var(--purple);
 	--primary-hover: #713df1;
-	--secondary: var(--blue-black)
+	--secondary: var(--blue-black);
+    --bg-primary: var(--primary);
+    --bg-secondary: var(--secondary);
 }
-
 #logoapp {
     height: 30px
 }
@@ -28,7 +27,10 @@ body {
     margin-left: -11px;
     margin-right: -11px
 }
-
+.btn-flat{
+	border: 1px solid var(--primary);
+	color: var(--primary)
+}
 aside {
     width: 60px;
     display: flex;

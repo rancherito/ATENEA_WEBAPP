@@ -30,7 +30,7 @@
 		<p>
 			<?php if (! empty($message) && $message !== '(null)') : ?>
 				<?= esc($message) ?><br><br>
-				<a href="<?= base_url()?>" class="btn bg-white">REGRESE AL INICIO</a>
+				<a href="<?= base_url()?>" class="btn-flat">REGRESE AL INICIO</a>
 			<?php else : ?>
 				Sorry! Cannot seem to find the page you were looking for.
 			<?php endif ?>

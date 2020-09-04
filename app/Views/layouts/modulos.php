@@ -118,7 +118,7 @@ $year = date("Y");
 					</div>
 					<div class="col s12">
 						<div class="w100 r">
-							<a class="btn bg-white modal-close waves-effect">CERRAR</a>
+							<a class="btn-flat modal-close waves-effect">CERRAR</a>
 							<button class="btn waves-effect bg-secondary">ACCEDER</button>
 						</div>
 					</div>

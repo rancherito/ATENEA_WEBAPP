@@ -77,7 +77,7 @@
 				</div>
 				<br>
 				<div class="r">
-					<a class="btn bg-white" @click="isOpenForm = false">
+					<a class="btn-flat" @click="isOpenForm = false">
 						<i class="fal fa-times left" ></i>CERRAR
 					</a>
 					<a class="btn waves-effect waves-light" @click="saveForm">

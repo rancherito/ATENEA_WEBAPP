@@ -68,7 +68,7 @@
 			</div>
 		</div>
 		<div class="r">
-			<button type="button" name="button" class="btn bg-white" @click="clear">
+			<button type="button" name="button" class="btn-flat" @click="clear">
 				<i class="fal fa-long-arrow-left left"></i>
 				ATRAS
 			</button>
