@@ -126,3 +126,4 @@ nb-configuration.xml
 /results/
 /phpunit*.xml
 public/images/brands/*.png
+public/images/products/*.png
