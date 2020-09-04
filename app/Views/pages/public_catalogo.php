@@ -104,6 +104,13 @@ background-color:#EB0429;
 #ofer_letras a{
     color: #455a64;
 
+    
+}
+#listac div a{
+    color: black;
+}
+#listac ul li{
+    color: #616161;
 }
 </style>
 <div class="container">
@@ -166,7 +173,7 @@ background-color:#EB0429;
     <div class="container">
       
         <div class="row">
-            <div class="col s3 m2" style="display: block">
+            <div id="listac" class="col s3 m2" style="display: block">
                 <div>
                     <a href="#" class="list-group-item active">Electronicos
                     </a>

@@ -42,7 +42,7 @@
 	margin: 20px;
 }
 #cate a{
-	color: #424242;
+	color: #616161;
 	
 }
 
