@@ -1,13 +1,13 @@
 .simplebar-scrollbar.simplebar-visible:before{
 	border-radius: 1px;
-	opacity: .1;
-	transform: scaleX(.8);
 	transition: linear all .2s
 }
 .simplebar-scrollbar.simplebar-visible.simplebar-hover::before{
-	transform: scaleX(1.2);
+
 	transition: linear all .2s;
-	opacity: .3;
+}
+.simplebar-scrollbar:before{
+	background: rgba(0, 0, 0, .6)
 }
 .stockproducto{
 	background: white;
@@ -57,6 +57,7 @@
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
+	box-shadow: 0 0 0 1px var(--gray-light)
 }
 .brandbox-logo{
 	width: 100px;
@@ -139,6 +140,14 @@
 
 	color: gray;
 }
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after{
+	background-color: var(--primary);
+	border: 2px solid var(--primary);
+}
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after{
+	background-color: var(--primary);
+}
+
 .loader{
 	background: white;
 	color: gray;
@@ -197,10 +206,12 @@
 	width: 20px;
 }
 .dashbox{
-	background-color: rgba(255,255,255,0.95);
+	background-color: rgba(0,0,0,0.02);
 	display: flex;
 	min-height: 120px;
 	color: gray;
+	height: 128px;
+	width: 100%;
 }
 .dashbox.disable{
 	opacity: .4;

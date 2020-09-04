@@ -2,12 +2,11 @@
 	<main-search @search="search" @additem="addItem" namemodule="GESTION PRODUCTOS">
 		<div class="row">
 			<div class="col l6 s12 xl3" v-for="marca in marcas">
-				<div class="brandbox">
+				<div class="waves-effect waves brandbox" @click="editItem(marca)">
 					<div class="brandbox-logo">
 						<img :src="marca.ImageUrl" alt="brand">
 					</div>
 					<span>{{marca.Nombre}}</span>
-					<a class="btn-floating waves-effect waves" @click="editItem(marca)"><i class="fal fa-ellipsis-v"></i></a>
 				</div>
 			</div>
 		</div>

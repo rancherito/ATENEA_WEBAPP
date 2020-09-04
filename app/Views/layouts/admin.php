@@ -6,7 +6,7 @@
 	<title>ATENEA ADMINISTRADOR</title>
 
 	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/animate/animate.min.css">
-	<link rel="icon" href="<?= base_url() ?>/public/images/ICON.svg" type="image/svg" sizes="16x16">
+	<link rel="icon" href="<?= base_url() ?>/public/images/icon_color.svg" type="image/svg" sizes="16x16">
 	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/materialize/css/materialize.min.css">
 	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/normalize.css">
 	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/simplebar/simplebar.css"/>

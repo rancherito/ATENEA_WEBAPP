@@ -1,204 +1,218 @@
-h2, h3{
-	font-family: var(--primary-font)
-}
-html, body{
-	height: 100vh;
-	width: 100%;
-}
-body{
-	display: inline-flex;
-	background: #f3f3f3;
-}
-:root{
-	--bg-primary: var(--bg-orange);
-	--primary: var(--orange);
-}
-#logoapp{
-	height: 30px;
-}
-.row{
-	margin-left: -11px;
-	margin-right: -11px;
-}
-aside{
-	width: 60px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
-	background: var(--bg-secondary);
-}
-#content-body{
-	width: calc(100% - 60px);
-}
-#logo{
-	background: rgba(0, 0, 0, 0.1);
-	height: 60px;
-	width: 60px;
+h2,h3 {
+    font-family: var(--primary-font)
 }
 
-#menu-aside a{
-	display: block;
-	width: 100%;
-	font-size: 1.5rem;
-	color: white;
-	height: 50px;
-	width: 50px;
-	text-align: center;
-	line-height: 50px;
-	margin: 4px;
-	border-radius: 2px;
-	transition: linear background-color 0.2s;
-}
-#menu-aside a:hover, #menu-aside a.active{
-	background: white;
-	color: var(--primary);
-}
-#options-aside{
-	padding: 8px 0;
-}
-#options-aside a.aside-item-opt{
-	display: block;
-	font-size: 1.5rem;
-	color: var(--bg-secondary);
-	margin: 8px;
-	width: 45px;
-	height: 45px;
-	line-height: 45px;
-	text-align: center;
-	background: rgba(0, 0, 0, 0.05);
-	border-radius: 50%;
-	overflow: hidden;
-}
-#options-aside a.aside-item-opt div{
-	height: 100%;
-	width: 100%;
+body,html {
+    height: 100vh;
+    width: 100%
 }
 
-#barsearch{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-#barsearch h2{
-	margin: 0;
+body {
+    display: inline-flex;
+    background: white
 }
 
-.searchBox2{
-	height: 46px;
-	margin: 0;
-	height: 44px;
-	box-shadow: none;
-}
-.table-index{
-	width: 1px;;
-}
-.table-items{
-	background: white;
-	border-radius: 2px;
-}
-.title-module, h2{
-	color: gray;
-}
-#c-options i{
-	color: white;
-	font-size: 1.2rem;
-	display: inline-flex;
-	padding: 0 8px;
-}
-#c-list{
-	padding-top: 16px;
+:root {
+    --bg-primary: var(--purple);
+    --bg-secondary: var(--teal);
+    --primary: var(--purple);
+	--primary-hover: #713df1;
+	--secondary: var(--blue-black)
 }
 
-.row-menu{
-	padding: 0 16px;
-}
-.row-menu > i{
-	background-color: #dedede;
-	width: 20px;
-	height: 40px;
-	line-height: 40px;
-	border-radius: 2px;
-	text-align: center;
-	cursor: pointer;
+#logoapp {
+    height: 30px
 }
 
-#content-body{
-	padding: 0;
-	display: flex;
-	overflow: hidden;
-}
-#divider-option{
-	padding: 32px;
-}
-#divider-main{
-	width: calc(100% - 400px);
-}
-#divider-option{
-	background: #e8e8e8;
-	width: 400px;
-}
-.c-options{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background: white;
-	color: white;
-	padding: 16px;
-}
-.c-options label{
-	height: 20px;
-	width: 20px;
-}
-.c-options > input{
-	padding: 0px 8px !important;
-	height: 30px !important;
-	margin: 0 16px 0 0 !important;
-}
-#divider-main{
-	position: relative;
-}
-#content-main{
-	padding: 32px;
-	height: 100%;
+.row {
+    margin-left: -11px;
+    margin-right: -11px
 }
 
-#barsearch{
-	height: 44px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-#barsearch h2{
-	margin: 0;
-}
-.searchBox2{
-
-}
-#content-barsearch{
-	display: inline-flex;
-	height: 100%;
+aside {
+    width: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--bg-primary)
 }
 
-#content-barsearch > input{
-	margin-bottom: 0 !important;
-	padding: 0 16px;
-	height: 100%;
-	width: 400px;
+#content-body {
+    width: calc(100% - 60px)
 }
-#content-barsearch > *{
-	margin-right: 16px !important;
+
+#logo {
+    height: 60px;
+    width: 60px
 }
-#content-barsearch a{
-	width: 46px;
-	box-sizing: content-box;
-	border-radius: 2px;
-	font-size: 2rem;
-	cursor: pointer;
-	color: white;
-	background: var(--bg-primary);
+
+#menu-aside a,.row-menu>i {
+    border-radius: 2px;
+    text-align: center
 }
-.tab-in-divider{
-	margin: -32px;
-	height: 100vh;
+
+#menu-aside a {
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    margin: 4px;
+    transition: linear background-color .2s
+}
+
+#menu-aside a.active,#menu-aside a:hover {
+    background: #fff;
+    color: var(--primary)
+}
+
+#options-aside {
+    padding: 8px 0
+}
+
+#options-aside a.aside-item-opt {
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+    margin: 8px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: rgba(0,0,0,.05);
+    border-radius: 50%;
+    overflow: hidden
+}
+
+#options-aside a.aside-item-opt div {
+    height: 100%;
+    width: 100%
+}
+
+#barsearch h2 {
+    margin: 0
+}
+
+.searchBox2 {
+    margin: 0;
+    height: 44px;
+    box-shadow: 0 0 0 1px var(--gray-light)
+}
+
+.table-index {
+    width: 1px
+}
+
+.table-items {
+    background: #fff;
+    border-radius: 2px
+}
+
+.title-module,h2 {
+    color: gray
+}
+
+#c-options i {
+    color: #fff;
+    font-size: 1.2rem;
+    display: inline-flex;
+    padding: 0 8px
+}
+
+#c-list {
+    padding-top: 16px
+}
+
+.row-menu {
+    padding: 0 16px
+}
+
+.row-menu>i {
+    background-color: #dedede;
+    width: 20px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer
+}
+
+#content-body {
+    padding: 0;
+    display: flex;
+    overflow: hidden
+}
+
+#divider-option {
+    background: rgba(0,0,0,0.01);
+    width: 400px;
+    padding: 32px
+}
+
+#divider-main {
+    width: calc(100% - 400px);
+    position: relative
+}
+
+.c-options {
+    background: #fff;
+    color: #fff;
+    padding: 16px
+}
+
+.c-options label {
+    height: 20px;
+    width: 20px
+}
+
+.c-options>input {
+    padding: 0 8px!important;
+    height: 30px!important;
+    margin: 0 16px 0 0!important
+}
+
+#content-main {
+    padding: 32px;
+    height: 100%
+}
+
+#barsearch,.c-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+#barsearch {
+    height: 44px
+}
+
+#content-barsearch {
+    display: inline-flex;
+    height: 100%
+}
+
+#content-barsearch>input {
+    margin-bottom: 0!important;
+    padding: 0 16px;
+    height: 100%;
+    width: 400px
+}
+
+#content-barsearch>* {
+    margin-right: 16px!important
+}
+
+#content-barsearch a {
+    width: 46px;
+    box-sizing: content-box;
+    border-radius: 2px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+    background: var(--bg-primary)
+}
+
+.tab-in-divider {
+    margin: -32px;
+    height: 100vh
 }

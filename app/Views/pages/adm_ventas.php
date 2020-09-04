@@ -76,7 +76,7 @@
 				</div>
 			</form>
 			<div class="space-32"></div>
-			<h2>DETALLE VENTA</h2>
+			<h2 class="title-color">DETALLE VENTA</h2>
 			<div class="space-32"></div>
 			<table class="white" v-if="carrito.length">
 				<thead>
