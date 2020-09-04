@@ -30,7 +30,7 @@ Vue.component('main-search',{
 							<input id='search' class='searchinput' :placeholder="placeholder" v-model="search">
 							<a id='add-item' class='f-c waves-effect waves-light' @click="add" v-if="!notadd"><i class='fal fa-plus'></i></a>
 						</div>
-						<h2 class='title-module'>{{namemodule}}</h2>
+						<h2 class='title-color'>{{namemodule}}</h2>
 					</div>
 					<div class="space-32"></div>
 					<slot></slot>

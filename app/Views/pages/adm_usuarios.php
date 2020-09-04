@@ -46,7 +46,7 @@
 					<input name="group1" type="radio"  :value="cargo.Id" v-model.number="filter_cargo">
 					<span>{{cargo.Nombre}}</span>
 				</div>
-				<span class="badge" :class="{'bg-teal white-text': cargo.Registros}">{{cargo.Registros}}</span>
+				<span class="badge" :class="{'bg-primary white-text': cargo.Registros}">{{cargo.Registros}}</span>
 			</label>
 		</div>
 	</Soption>

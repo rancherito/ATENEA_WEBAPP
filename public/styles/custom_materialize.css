@@ -54,11 +54,11 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
 }
 input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type=text]:not(.browser-default):disabled, input[type=text]:not(.browser-default)[readonly="readonly"], input[type=password]:not(.browser-default):disabled, input[type=password]:not(.browser-default)[readonly="readonly"], input[type=email]:not(.browser-default):disabled, input[type=email]:not(.browser-default)[readonly="readonly"], input[type=url]:not(.browser-default):disabled, input[type=url]:not(.browser-default)[readonly="readonly"], input[type=time]:not(.browser-default):disabled, input[type=time]:not(.browser-default)[readonly="readonly"], input[type=date]:not(.browser-default):disabled, input[type=date]:not(.browser-default)[readonly="readonly"], input[type=datetime]:not(.browser-default):disabled, input[type=datetime]:not(.browser-default)[readonly="readonly"], input[type=datetime-local]:not(.browser-default):disabled, input[type=datetime-local]:not(.browser-default)[readonly="readonly"], input[type=tel]:not(.browser-default):disabled, input[type=tel]:not(.browser-default)[readonly="readonly"], input[type=number]:not(.browser-default):disabled, input[type=number]:not(.browser-default)[readonly="readonly"], input[type=search]:not(.browser-default):disabled, input[type=search]:not(.browser-default)[readonly="readonly"], textarea.materialize-textarea:disabled, textarea.materialize-textarea[readonly="readonly"]
 {
-	border: 1px solid var(--lightgray)
+	border: 1px solid var(--gray-light)
 }
 input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type=text]:not(.browser-default):disabled, input[type=text]:not(.browser-default)[readonly="readonly"], input[type=password]:not(.browser-default):disabled, input[type=password]:not(.browser-default)[readonly="readonly"], input[type=email]:not(.browser-default):disabled, input[type=email]:not(.browser-default)[readonly="readonly"], input[type=url]:not(.browser-default):disabled, input[type=url]:not(.browser-default)[readonly="readonly"], input[type=time]:not(.browser-default):disabled, input[type=time]:not(.browser-default)[readonly="readonly"], input[type=date]:not(.browser-default):disabled, input[type=date]:not(.browser-default)[readonly="readonly"], input[type=datetime]:not(.browser-default):disabled, input[type=datetime]:not(.browser-default)[readonly="readonly"], input[type=datetime-local]:not(.browser-default):disabled, input[type=datetime-local]:not(.browser-default)[readonly="readonly"], input[type=tel]:not(.browser-default):disabled, input[type=tel]:not(.browser-default)[readonly="readonly"], input[type=number]:not(.browser-default):disabled, input[type=number]:not(.browser-default)[readonly="readonly"], input[type=search]:not(.browser-default):disabled, input[type=search]:not(.browser-default)[readonly="readonly"], textarea.materialize-textarea:disabled, textarea.materialize-textarea[readonly="readonly"]
 {
-	border: 1px solid var(--lightgray)
+	border: 1px solid var(--gray-light)
 }
 .input-field input[type=text].valid {
 	border: 1px solid var(--primary);
@@ -85,7 +85,8 @@ input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type=t
 
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-small:hover, .btn-floating:hover{
 	box-shadow: none;
-	opacity: .8;
+	opacity: .9;
+	background: var(--primary-hover)
 }
 
 .btn.disabled, .disabled.btn-large, .disabled.btn-small, .btn-floating.disabled, .btn-large.disabled, .btn-small.disabled, .btn-flat.disabled, .btn:disabled, .btn-large:disabled, .btn-small:disabled, .btn-floating:disabled, .btn-large:disabled, .btn-small:disabled, .btn-flat:disabled, .btn[disabled], .btn-large[disabled], .btn-small[disabled], .btn-floating[disabled], .btn-large[disabled], .btn-small[disabled], .btn-flat[disabled]{
@@ -203,7 +204,7 @@ input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type=t
 }
 
 select{
-	border: 1px solid white;
+	border: 1px solid var(--gray-light);
 }
 
 /* label color
@@ -220,8 +221,8 @@ input:not([type]):disabled+label, input:not([type])[readonly="readonly"]+label, 
 }
 /* label underline focus color */
 .input-field input[type=text]:focus,.input-field select:focus {
-	border: 1px solid var(--lightgray);
-    box-shadow: 0 0 0px 1px var(--lightgray);
+	border: 1px solid var(--gray-light);
+    box-shadow: 0 0 0px 1px var(--gray-light);
 }
 /* valid color */
 
@@ -262,7 +263,6 @@ select:focus{
 	outline: none;
 }
 .input-field select{
-	border: 1px solid white;
 	padding: 14px 11px 0 11px;
 	height: 54px;
 	border-radius: 3px;

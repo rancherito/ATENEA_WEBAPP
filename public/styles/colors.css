@@ -1,17 +1,21 @@
 :root {
+
+    --secondary: #45bcd4;
+    --primary-dark: #1565c0;
+    --primary: #2196f3;
+	--secondary-hover: #45bcd4;
+	--primary-hover: #2196f3;
     --blue: #3d70ed;
     --purple: #6139ee;
     --turkey: #45bcd4;
 	--orange: #ff5722;
 	--bg-white: white;
-    --secondary: #45bcd4;
-    --primary-dark: #1565c0;
-    --primary: #2196f3;
 	--light-gray: #f5f5f5;
 	--gray-light: #f5f5f5;
 	--alert: #d65d54;
-	--teal: #007c7f;
+	--teal: #02adbe;
 	--pink: #e91e63;
+	--blue-black: #293146;
     --bg-primary: linear-gradient(45deg, #455a64, #37474f);
     --bg-secondary: linear-gradient(45deg, #343c49, #142238);
     --bg-alert: linear-gradient(45deg, #d65d54, #e01f54) ;
