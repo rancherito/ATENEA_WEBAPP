@@ -32,6 +32,9 @@
 	<link rel="stylesheet" href="<?= base_url() ?>/public/font/fontawesome/css/all.css">
 	<link href="<?= base_url() ?>/public/font/globalfont/globalfont.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?= base_url()?>/public/styles/admin-module.css">
+	<style media="screen">
+		
+	</style>
 </head>
 <body>
 
@@ -39,6 +42,20 @@
 		<li><a><i class="fas fa-cog"></i>Configuracion 01</a></li>
 		<li><a><i class="fas fa-cog"></i>Configuracion 02</a></li>
 	</ul>
+	<div id="admin-background">
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
 	<aside>
 		<a id="logo" class="f-c" href="<?= base_url()?>/administrator">
 			<img src="<?= base_url() ?>/public/images/icon_color.svg" alt="UNAMAD" id="logoapp">
@@ -71,8 +88,10 @@
 		</div>
 	</aside>
 	<section id="content-body">
+
 		<?= $body?>
 	</section>
+
 	<script type="text/javascript">
 		const aside_items = $('.aside-item-menu').tooltip();
 		$('.dropdown-trigger').dropdown({

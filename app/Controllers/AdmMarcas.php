@@ -29,7 +29,7 @@ class AdmMarcas extends BaseController
 			$file = "public/images/brands/$key.png";
 			file_put_contents($file, $data);
 		}
-		
+
 
 
 	}

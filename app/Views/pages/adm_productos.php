@@ -1,66 +1,29 @@
-<style media="screen">
-.wrapp-card-productos{
-	padding-top: 32px;
-	margin: 0 -5px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-.card-producto{
-	background: white;
-	height: 380px;
-	width: 240px;
-	margin: 5px;
-	border-radius: 3px;
-	position: relative;
-}
-.card-producto .card-producto-image{
-	width: 180px;
-	height: 180px;
-}
-.card-producto > div:nth-child(2){
-	z-index: 2;
-	width: 100%;
-	height: calc(100% - 180px);
-	padding: 16px;
-	font-size: .9rem;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-	text-align: center;
-}
-.card-producto img{
-	height: 100%;
-	padding: 16px;
-}
-.card-producto b{
 
-}
-.card-producto-categoria{
-	color: var(--orange);
-	font-size: 1rem;
-}
-.card-producto-estado{
-	height: 12px;
-	width: 12px;
-	float: right;
-	border-radius: 50%;
-	margin-left: 8px;
-	background: gray;
-	position: absolute;
-	top: 16px;
-	right: 16px;
-}
-.card-producto-estado-activo{
-	background: var(--bg-lima)
-}
-
-</style>
-<div id="app" class="module opacity-0" :class="{'opacity-1': onLoad}">
-	<main-search @search="onsearch" @additem="addProducto" namemodule="GESTION PRODUCTOS">
+<div id="app" class="opacity-0" :class="{'opacity-1': onLoad}">
+	<main-module @search="onsearch" @additem="addProducto" namemodule="GESTION PRODUCTOS" @openfilter="filter = $event" @opencrud="crud = $event" :crudtitle="isNewProducto ? 'AÑADIR PRODUCTO' : 'MODIFICAR PRODUCTO'">
 
 		<div class="wrapp-card-productos">
-			<table class="table-items">
+			<div class="row">
+				<div class="col s6 m6 l4 xl3" v-for="(producto , index) in productos" @click="editItem(producto)">
+					<div class="producto-view waves-effect waves" :class="{'producto-view-disabled': !producto.Estado}">
+
+						<div class="producto-view-wrap-image">
+							<div class="producto-view-name">{{producto.Nombre}}</div>
+							<img :src="producto.ImageUrl">
+						</div>
+						<div class="producto-view-wrap-description">
+							<div>
+								<div class="producto-view-category">{{producto.Marca_Nombre}}</div>
+								<span>{{producto.Descripcion}}</span>
+								<div class="producto-view-category">{{producto.Categoria_Nombre}}</div>
+							</div>
+							<div class="btn-flat">S/{{numeral(producto.PrecioRegular).format('0.00')}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--<table class="table-items">
 				<thead>
 					<tr>
 						<th class="c" style="width: 1px">#</th>
@@ -85,11 +48,74 @@
 						</td>
 					</tr>
 				</tbody>
-			</table>
+			</table>-->
+		</div>
+		<template v-slot:crud>
+
+			<div class="fill f-c contrast">
+				<div class="opm">
+					<div class="c ">
+						<i class="fal icon-pres c white-text" :class="{'fa-pen' : !isNewProducto, 'fa-plus' : isNewProducto}"></i>
+						<p class="white-text">{{isNewProducto ? message_new : message_edit}}</p>
+					</div>
+					<br>
+					<div class="row">
+						<div class="input-field col s12">
+							<input placeholder="ingrese categoria" type="text" v-model="form_nombre">
+							<label>NOMBRE</label>
+						</div>
+						<div class="input-field col s6">
+							<input  id="in_descripcion" type="text" placeholder="ingrese descripcion"  v-model="form_descripcion"></input>
+							<label>DESCRIPCION</label>
+						</div>
+						<div class="input-field col s6">
+							<input ref="input_precio" type="text" placeholder="ingrese descripcion" v-model="form_precio"></input>
+							<label>PRECIO</label>
+						</div>
+						<div class="input-field col s6">
+							<label>CATEGORIA</label>
+							<select v-model="form_categoria">
+								<option value="" disabled selected>Seleccione categoria</option>
+								<option v-for="categoria in categorias" :value="categoria.Id_categoriaProducto">{{categoria.Nombre}}</option>
+							</select>
+						</div>
+
+						<div class="input-field col s6">
+							<label>MARCA</label>
+							<select v-model="form_marca">
+								<option value="" disabled selected>Seleccione marca</option>
+								<option v-for="marca in marcas" :value="marca.Id_marcaProducto">{{marca.Nombre}}</option>
+							</select>
+						</div>
+
+						<div class="col s12">
+							<image-drop @get-image="form_image = $event" @get-imageurl="form_imageurl = $event"></image-drop>
+						</div>
+						<div class="col s12 f-b" style="height: 56px">
+							<span class="white-text">DESACTIVAR / ACTIVAR</span>
+							<div class="switch">
+								<label>
+									<input type="checkbox" id="ck_estado"  v-model="form_estado">
+									<span class="lever"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="r">
+						<a class="btn-flat" @click="crud(false)">
+							<i class="fal fa-times left" ></i>CERRAR
+						</a>
+						<a class="btn waves-effect waves-light" @click="saveForm">
+							<i class="fal fa-save left"></i>SALVAR
+						</a>
+					</div>
+				</div>
 			</div>
-		</main-search>
-		<Soption>
-			<div class="tab-in-divider" v-show="!onOpenCrud">
+		</template>
+		<template v-slot:filter>
+
+			<div class="tab-in-divider">
 				<ul ref="tabs" class="tabs tabs-fixed-width">
 					<li class="tab col s3"><a href="#tab-categorias">CATEGORIAS</a></li>
 					<li class="tab col s3"><a href="#tab-marcas">MARCAS</a></li>
@@ -134,71 +160,13 @@
 						:onchange="onChecked_categoria"
 						:name="marca.Nombre"
 						:check="marca.check"
-						@changecheck="marca.check = $event"
-						>
-					</list-filter>
+						@changecheck="marca.check = $event"></list-filter>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div v-show="onOpenCrud" class="fill f-c">
-			<div class="opm">
-				<div class="c ">
-					<i class="fal icon-pres c" :class="{'fa-pen' : !onNewProducto, 'fa-plus' : onNewProducto}"></i>
-					<p>{{onNewProducto ? message_new : message_edit}}</p>
-				</div>
-				<br>
-				<div class="row">
-					<div class="input-field col s12">
-						<input placeholder="ingrese categoria" type="text" v-model="form_nombre">
-						<label>NOMBRE</label>
-					</div>
-					<div class="input-field col s12">
-						<input  id="in_descripcion" type="text" placeholder="ingrese descripcion"  v-model="form_descripcion"></input>
-						<label>DESCRIPCION</label>
-					</div>
-					<div class="input-field col s12">
-						<label>CATEGORIA</label>
-						<select v-model="form_categoria">
-							<option value="" disabled selected>Seleccione categoria</option>
-							<option v-for="categoria in categorias" :value="categoria.Id_categoriaProducto">{{categoria.Nombre}}</option>
-						</select>
-					</div>
 
-					<div class="input-field col s12">
-						<label>MARCA</label>
-						<select v-model="form_marca">
-							<option value="" disabled selected>Seleccione marca</option>
-							<option v-for="marca in marcas" :value="marca.Id_marcaProducto">{{marca.Nombre}}</option>
-						</select>
-					</div>
-					<div class="input-field col s12">
-						<input ref="input_precio" type="text" placeholder="ingrese descripcion" v-model="form_precio"></input>
-						<label>PRECIO</label>
-					</div>
-					<div class="col s12 f-b">
-						<span class="">DESACTIVAR / ACTIVAR</span>
-						<div class="switch">
-							<label>
-								<input type="checkbox" id="ck_estado"  v-model="form_estado">
-								<span class="lever"></span>
-							</label>
-						</div>
-					</div>
-				</div>
-				<br>
-				<div class="r">
-					<a class="btn-flat" @click="onOpenCrud = false">
-						<i class="fal fa-times left" ></i>CERRAR
-					</a>
-					<a class="btn waves-effect waves-light" @click="saveForm">
-						<i class="fal fa-save left"></i>SALVAR
-					</a>
-				</div>
-			</div>
-		</div>
-
-
-	</Soption>
+		</template>
+	</main-module>
 </div>
 
 
@@ -214,15 +182,19 @@ let app = new Vue({
 		this.filter_marca = true;
 		this.getProductos()
 	},
+
 	data: {
+		numeral: numeral,
+		filter: null,
+		crud: null,
+		modal: null,
 		onLoad: false,
 		productos : [],
 		categorias: categorias,
 		marcas: marcas,
-		onOpenCrud: false,
 		message_edit: 'Proceso de modificacion. Modifica una categoria si estas seguro del proceso.',
 		message_new: 'Formulario de registro de productos. El registro de productos nuevos es posible aun cuando no haya stock del productos en almacen.',
-		onNewProducto: true,
+		isNewProducto: true,
 		filter_categoria: false,
 		filter_marca: false,
 		form_nombre: '',
@@ -232,6 +204,8 @@ let app = new Vue({
 		form_estado: true,
 		form_key: -1,
 		form_precio: 0,
+		form_image: null,
+		form_imageurl: null,
 		searchCategoria: '',
 		searchMarca: ''
 
@@ -293,22 +267,19 @@ let app = new Vue({
 					marca: this.form_marca,
 					estado: this.form_estado ? 1 : 0,
 					precio: this.form_precio,
-					key: this.form_key
+					key: this.form_key,
+					image: this.form_imageurl
 				}
 				$.post('<?= base_url()?>/servicios/productos/salvar', values, e => {
 					M.toast({html: 'PRODUCTO SALVADO', classes: 'bg-primary'});
-
+					console.log(e);
+					this.crud(false)
 					this.getProductos(values.nombre)
-					this.onOpenCrud = false
-
 				})
 			}
 			else {
 				M.toast({html: 'RELLENE LOS CAMPOS CORRECTAMENTE', classes: 'bg-alert'});
 			}
-
-
-
 		},
 		clearForm: function () {
 			this.form_nombre = ''
@@ -316,13 +287,15 @@ let app = new Vue({
 			this.form_categoria = ''
 			this.form_marca = ''
 			this.form_estado = true
-			this.onNewProducto = true
+			this.isNewProducto = true
 			this.form_precio = 0
 			this.form_key = -1
+			this.form_image.src = '<?= base_url() ?>/public/images/products/default.svg'
 		},
 		editItem: function (producto) {
-			this.onOpenCrud = true
-			this.onNewProducto = false
+			this.isNewProducto = false
+			this.crud(true)
+			this.form_image.src = producto.ImageUrl
 			this.form_nombre = producto.Nombre
 			this.form_descripcion = producto.Descripcion
 			this.form_categoria = producto.Id_Categoria
@@ -333,7 +306,6 @@ let app = new Vue({
 
 		},
 		addProducto: function () {
-			this.onOpenCrud = true;
 			this.clearForm()
 		},
 		getProductos: function (val) {
@@ -362,11 +334,7 @@ let app = new Vue({
 		}
 	}
 })
-$(document).ready(function() {
-	/*;
-	;
-	;*/
-});
+
 
 
 </script>

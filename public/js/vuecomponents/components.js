@@ -1,25 +1,43 @@
 	Vue.component('image-drop', {
 		template: `
-		<div class="input-drop">
-			<img style="display: none" ref="imagePut" src="../public/images/dropfile.svg" @load="onLoadImage">
-			<div class="input-drop-wrap-canvas">
-				<canvas ref="imageCanvas" width="200"></canvas>
+		<div class="input-drop" ref="bg" :class="{'input-drop-content': this.state > 1}">
+			<div class="input-drop-image">
+				<div class="cover" ref="fill"></div>
+				<img ref="imagePut" src="../public/images/dropfile.svg" @load="onLoadImage">
 			</div>
-			<a class="btn-floating waves-effect waves"  @click="isUploadFromUrl = !isUploadFromUrl"><i class="fal" :class="{'fa-link': !isUploadFromUrl, 'fa-folder': isUploadFromUrl}"></i></a>
-			<label>
-				<a class="btn-flat" v-if="!isUploadFromUrl">Elija una imagen</a>
-				<input type="file" accept="image/x-png,image/jpeg" @change="onUploadFile">
-			</label>
-			<input v-if="isUploadFromUrl" class="browser-default" placeholder="Copie una imagen" @paste="onPaste" @paste.prevent>
+			<canvas style="display: none" ref="imageCanvas" width="200"></canvas>
+			<div class="input-drop-option">
+				<label class="btn-floating">
+					<i class="fal fa-camera"></i>
+					<input type="file" accept="image/x-png,image/jpeg" @change="onUploadFile">
+				</label>
+				<div style="height: 5px"></div>
+				<label class="input-drop-paste" :class="{'input-drop-waiting-paste': waitPaste}">
+					<div class="dot"></div>
+					<a class="btn-floating waves-effect waves"><i class="fal fa-clipboard"></i></a>
+					<input class="browser-default" ref="lala" placeholder="Copie una imagen" @paste="onPaste">
+				</label>
+
+			</div>
+
 		</div>
 		`,
 		data: function () {
 			return {
-				isUploadFromUrl: false
+				isUploadFromUrl: false,
+				isLoadedImage: false,
+				waitPaste: false,
+				state: 0
 			}
 		},
 		mounted: function () {
 			this.$emit('get-image', this.$refs.imagePut)
+			$(this.$refs.lala).focus(() => {
+				this.waitPaste = true;
+			})
+			$(this.$refs.lala).focusout(() => {
+				this.waitPaste = false;
+			})
 		},
 		methods: {
 			onLoadImage: function (e) {
@@ -39,6 +57,11 @@
 				canvas.height = fh
 				ctx.drawImage(img, (200 - fw) / 2, 0,fw, fh);
 				this.$emit('get-imageurl', this.$refs.imageCanvas.toDataURL())
+				if (this.state) {
+					$(this.$refs.fill).css('background-image', 'url("'+img.src+'")')
+				}
+				this.state++;
+
 			},
 			onPaste: function (e) {
 				if (e.clipboardData.files[0]) this.loadFile(e.clipboardData.files[0])
@@ -47,7 +70,6 @@
 				if (e.target.files[0]) this.loadFile(e.target.files[0])
 			},
 			loadFile: function (file) {
-				console.log(file);
 				const reader = new FileReader();
 				reader.addEventListener("load", e => {
 					this.$refs.imagePut.src = reader.result

@@ -8,7 +8,7 @@
 	}
 
 </style>
-<h2 class="c opm">GESTION ALMACEN</h2>
+<h2 class="c opm white-text">GESTION ALMACEN</h2>
 <br>
 <div class="container opm">
 

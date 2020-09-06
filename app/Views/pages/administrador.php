@@ -8,25 +8,28 @@
 
 </style>
 <div id="app" class="opacity-0" :class="{'opacity-1': isLoad}">
-	<h2 class="c opm title-color">Dashboard</h2>
-	<br>
-	<div class="container opm">
+	<div class="w100">
+		<h2 class="c opm white-text">Dashboard</h2>
+		<br>
+		<div class="container opm">
 
-		<div class="row dashbox-container">
-			<div class="col s12 m6 l3" v-for="access in listAccess">
-				<a class="dashbox" :href="access.link">
-					<i class="fal" :class="[access.icon ? access.icon : 'fa-box']"></i>
-					<div class="dashbox-info">
-						<h4 class="dashbox-title">{{access.name}}</h4>
-						<div class="dashbox-description">
-							{{access.description}}
+			<div class="row dashbox-container">
+				<div class="col s12 m6 l3" v-for="access in listAccess">
+					<a class="dashbox" :href="access.link">
+						<i class="fal" :class="[access.icon ? access.icon : 'fa-box']"></i>
+						<div class="dashbox-info">
+							<h4 class="dashbox-title">{{access.name}}</h4>
+							<div class="dashbox-description">
+								{{access.description}}
+							</div>
 						</div>
-					</div>
-				</a>
-			</div>
+					</a>
+				</div>
 
+			</div>
 		</div>
 	</div>
+
 </div>
 
 <script>

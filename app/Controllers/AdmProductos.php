@@ -36,5 +36,15 @@ class AdmProductos extends BaseController
 	{
 		$Productos = new QueryProductos();
 		$res = $Productos->Productos_Guardar($_POST['key'], $_POST['nombre'], $_POST['descripcion'], $_POST['categoria'], $_POST['marca'],$_POST['precio'], '', $_POST['estado']);
+		$img = $_POST['image'];
+		$img = str_replace('data:image/png;base64,', '', $img);
+		$img = str_replace(' ', '+', $img);
+		$data = base64_decode($img);
+		print_r(json_encode($res));
+		if (!empty($res[0]['KeyItem'])) {
+			$key = $res[0]['KeyItem'];
+			$file = "public/images/products/$key.png";
+			file_put_contents($file, $data);
+		}
 	}
 }

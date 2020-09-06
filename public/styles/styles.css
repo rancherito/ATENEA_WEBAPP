@@ -25,6 +25,10 @@
 .space-32{
 	height: 32px;
 }
+.h-space-16{
+	width: 16px;
+	display: inline-block;
+}
 .disable-events{
   pointer-events: none;
 }

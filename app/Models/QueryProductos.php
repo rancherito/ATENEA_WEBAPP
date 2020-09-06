@@ -139,6 +139,6 @@ class QueryProductos
 			@Estado = '$Estado',
 			@precio = '$precio'
 		";
-		query_database($sql);
+		return query_database($sql);
 	}
 }

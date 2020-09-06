@@ -93,6 +93,19 @@ input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type=t
 	background: #876ced21 !important;
 	color: #876ced7a !important;
 }
+.btn-flat{
+	border: 1px solid var(--primary);
+	color: var(--primary)
+}
+.contrast .btn, .contrast .btn-large{
+	background: white !important;
+	color: var(--primary) !important;
+}
+
+.contrast .btn-flat{
+	border: 1px solid white;
+	color: white
+}
 .btn-animate{
 	position: relative;
 	overflow: hidden;
