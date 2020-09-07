@@ -198,10 +198,10 @@
 			quitar_stock: [],
 			isLoad: false,
 			numeral: numeral,
-			form_dni: '75258279',
+			form_dni: '',
 			form_ruc: '',
-			form_nombre: 'ADRIANO',
-			form_apellidos: 'ROMEROZ AQUINO',
+			form_nombre: '',
+			form_apellidos: '',
 			form_telefono: '',
 			form_email: ''
 		},
