@@ -104,6 +104,13 @@ background-color:#EB0429;
 #ofer_letras a{
     color: #455a64;
 
+    
+}
+#listac div a{
+    color: black;
+}
+#listac ul li{
+    color: #616161;
 }
 </style>
 <div class="container">
@@ -166,7 +173,7 @@ background-color:#EB0429;
     <div class="container">
       
         <div class="row">
-            <div class="col s3 m2" style="display: block">
+            <div id="listac" class="col s3 m2" style="display: block">
                 <div>
                     <a href="#" class="list-group-item active">Electronicos
                     </a>
@@ -270,136 +277,51 @@ background-color:#EB0429;
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
                                 <p>Price : <strong>$ 3,45,900</strong>  </p>                              
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                <p><a href="#" class="btn btn-success" role="button"><i class="fal fa-shopping-cart"></i></a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
                             </div>
                         </div>
-                    </div>
-                   
-                    <div class="col m3 text-center s6">
-                        <div class="thumbnail product-box">
-                            <img src="public/images/celular.jpg" alt="" />
-                            <div class="caption">
-                                <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                  
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                     
-                    <div class="col m3 text-center s6">
-                        <div class="thumbnail product-box">
-                            <img src="public/images/lavadora.jpg" alt="" />
-                            <div class="caption">
-                                <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                                                          
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col m3 text-center s6">
-                        <div class=" product-box">
-                            <img src="public/images/celular.jpg" alt="" />
-                            <div class="caption">
-                                <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                            
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
                     <div class="col m3 text-center s6">
                         <div class="thumbnail product-box">
                             <img src="public/images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
                                 <p>Price : <strong>$ 3,45,900</strong>  </p>                              
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                <p><a href="#" class="btn btn-success" role="button"><i class="fal fa-shopping-cart"></i></a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
                             </div>
                         </div>
-                    </div>
-                   
-                    <div class="col m3 text-center s6">
-                        <div class="thumbnail product-box">
-                            <img src="public/images/celular.jpg" alt="" />
-                            <div class="caption">
-                                <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                  
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                     
-                    <div class="col m3 text-center s6">
-                        <div class="thumbnail product-box">
-                            <img src="public/images/lavadora.jpg" alt="" />
-                            <div class="caption">
-                                <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                                                          
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col m3 text-center s6">
-                        <div class=" product-box">
-                            <img src="public/images/celular.jpg" alt="" />
-                            <div class="caption">
-                                <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                            
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
                     <div class="col m3 text-center s6">
                         <div class="thumbnail product-box">
                             <img src="public/images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
                                 <p>Price : <strong>$ 3,45,900</strong>  </p>                              
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                <p><a href="#" class="btn btn-success" role="button"><i class="fal fa-shopping-cart"></i></a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
                             </div>
                         </div>
-                    </div>
-                   
-                    <div class="col m3 text-center s6">
-                        <div class="thumbnail product-box">
-                            <img src="public/images/celular.jpg" alt="" />
-                            <div class="caption">
-                                <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                  
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                     
+                    </div> 
                     <div class="col m3 text-center s6">
                         <div class="thumbnail product-box">
                             <img src="public/images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                                                          
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                <p>Price : <strong>$ 3,45,900</strong>  </p>                              
+                                <p><a href="#" class="btn btn-success" role="button"><i class="fal fa-shopping-cart"></i></a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
                             </div>
                         </div>
-                    </div>
-                   
+                    </div> 
                     <div class="col m3 text-center s6">
-                        <div class=" product-box">
-                            <img src="public/images/celular.jpg" alt="" />
+                        <div class="thumbnail product-box">
+                            <img src="public/images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>                            
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                <p>Price : <strong>$ 3,45,900</strong>  </p>                              
+                                <p><a href="#" class="btn btn-success" role="button"><i class="fal fa-shopping-cart"></i></a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div> 
                    
-                  
-        
-
-
-
                 </div>
 
                

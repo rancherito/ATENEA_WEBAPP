@@ -24,7 +24,7 @@
     align-items: center;
     color: #5d5d5d;
     text-align: center;
-    font-size: .8rem;
+    font-size: 1em;
     font-weight: bold;
 
 }
@@ -33,9 +33,17 @@
     opacity: .9;
    
 }
+/* #categorias li p{
+	size: 50px;
+
+} */
 #categorias li{
-	padding-right: 30px;
-	padding-left: 30px;
+	
+	margin: 20px;
+}
+#cate a{
+	color: #616161;
+	
 }
 
 }
@@ -92,8 +100,8 @@
 				</li>			
 				<li class="col s1">
 					<a href="">
-						<img src="public/images/electrodomesticos.svg">
-						<p>Electrodomésticos</p>
+						<img src="public/images/deporte.svg">
+						<p>Deportes</p>
 					</a>
 				</li>			
 				<li class="col s1">
@@ -110,8 +118,8 @@
 				</li class="col s1">			
 				<li>
 					<a href="">
-						<img src="public/images/deporte.svg">
-						<p>Deporte</p>
+						<img src="public/images/electrodomesticos.svg">
+						<p>Electrodomésticos</p>
 					</a>
 				</li>
 			</ul>

@@ -2,7 +2,7 @@
 	box-shadow: none
 }
 a{
-	color: var(--secondary)
+	/* color: var(--secondary) */
 }
 [type="checkbox"]:checked+span:not(.lever):before{
 	border-right: 2px solid var(--primary);
