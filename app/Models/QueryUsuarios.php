@@ -41,4 +41,9 @@ class QueryUsuarios{
 		$sql = "SELECT TOP 1 * FROM Usuarios WHERE (DNI = '$user' OR Usuario = '$user') AND Clave = '$pass'";
 		return query_database($sql);
 	}
+	public function Usuario_RecuperarBasico($dni)
+	{
+		$sql = "SELECT  DNI,Nombres,Apellidos,telefono,email,RUC FROM Usuarios where DNI = '$dni'";
+		return query_database($sql);
+	}
 }

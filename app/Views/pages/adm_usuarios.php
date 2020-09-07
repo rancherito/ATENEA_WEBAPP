@@ -96,7 +96,15 @@ new Vue({
 		onLoad: false,
 		usuarios: [],
 		totalusers: 0,
-		cargos: <?= json_encode($cargos) ?>
+		form_nombres: '',
+		form_usuario: '',
+		form_apellidos: '',
+		form_dni: '',
+		form_ruc: '',
+		form_telefono: '',
+		form_email: '',
+		cargos: <?= json_encode($cargos) ?>,
+
 	},
 	watch: {
 		filter_cargo: function (val) {

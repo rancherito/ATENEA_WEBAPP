@@ -134,6 +134,7 @@
 </div>
 
 <script type="text/javascript">
+
 	Vue.component('product-car',{
 		'template': `
 			<div class="product-car">
@@ -213,6 +214,22 @@
 			}
 		},
 		watch: {
+			form_dni: function (val) {
+				this.form_nombre = ''
+				this.form_apellidos =''
+				this.form_telefono =''
+				this.form_email = ''
+				this.form_ruc = ''
+				$.post('<?= base_url() ?>/servicios/usuarios/recuperar_basico', {dni: val}, res =>{
+					if (res['DNI']) {
+						this.form_nombre =res.Nombres
+						this.form_apellidos =res.Apellidos
+						this.form_telefono =res.telefono == null ? '' : res.telefono
+						this.form_email = res.email == null ? '' : res.email
+						this.form_ruc = res.RUC == null ? '' : res.RUC
+					}
+				})
+			},
 			searchItem: function (val) {
 				for (var producto of this.productos) producto.order = JaroWrinker(val.toLowerCase(), producto.Nombre.toLowerCase())
 				this.productos.sort((a, b) => parseFloat(b.order) - parseFloat(a.order));

@@ -71,6 +71,7 @@ if ($_APPVARS['user'] == 'admin') {
 
 	$routes->get('administrator/usuarios', 'AdmUsuarios::Usuarios_Listar');
 	$routes->post('servicios/usuarios/listar', 'AdmUsuarios::serv_Usuario_Listar');
+	$routes->post('servicios/usuarios/recuperar_basico', 'AdmUsuarios::Usuario_RecuperarBasico');
 
 	$routes->get('administrator/ventas', 'AdmVentas');
 	$routes->post('administrator/ventas/imprimir', 'AdmVentas::Ventas_ImprimirBoleta');

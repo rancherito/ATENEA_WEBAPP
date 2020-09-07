@@ -19,4 +19,11 @@ class AdmUsuarios extends BaseController
 		$res = $_usuario->Usuarios_Listar($_V['dni'], $_V['cargo'], $_V['usuario']);
 		return $this->response->setJSON($res);
 	}
+	public function Usuario_RecuperarBasico()
+	{
+		$_usuario = new QueryUsuarios();
+		$res = $_usuario->Usuario_RecuperarBasico($_POST['dni']);
+		if (count($res)) $res = $res[0];
+		return $this->response->setJSON($res);
+	}
 }
