@@ -31,19 +31,19 @@
 #categorias li img {
 	width: 60px;
     opacity: .9;
-   
+
 }
 /* #categorias li p{
 	size: 50px;
 
 } */
 #categorias li{
-	
+
 	margin: 20px;
 }
 #cate a{
 	color: #616161;
-	
+
 }
 
 }
@@ -85,37 +85,37 @@
 						<img src="public/images/Audio.svg">
 						<p>Audio</p>
 					</a>
-				</li>		
+				</li>
 				<li class="col s1">
 					<a href="">
 						<img src="public/images/computo.svg">
 						<p>Cómputo</p>
 					</a>
-				</li>			
+				</li>
 				<li class="col s1">
 					<a href="">
 						<img src="public/images/linea-blanca.svg">
 						<p>Línea Blanca</p>
 					</a>
-				</li>			
+				</li>
 				<li class="col s1">
 					<a href="">
 						<img src="public/images/deporte.svg">
 						<p>Deportes</p>
 					</a>
-				</li>			
+				</li>
 				<li class="col s1">
 					<a href="">
 						<img src="public/images/celulares.svg">
 						<p>Celulares</p>
 					</a>
-				</li>			
+				</li>
 				<li class="col s1">
 					<a href="">
 						<img src="public/images/hogar.svg">
 						<p>Hogar</p>
 					</a>
-				</li class="col s1">			
+				</li class="col s1">
 				<li>
 					<a href="">
 						<img src="public/images/electrodomesticos.svg">
@@ -139,7 +139,6 @@
 			<h2 class="primary">Articulos en oferta!</h2>
 			<p>Escoja entre una gran variedad de productos que ofrecemos a su dispocision y con la mejor oferta</p>
 		</div>
-		<?php print_r($_SESSION['ateneaapp']) ?>
 		<div class="row">
 			<?php
 			for ($e=0; $e < 5; $e++) {
@@ -155,7 +154,7 @@
 						<div class="col s6 m3">
 							<div class="card-panel f-c" style="width: 100%; height: 300px;">
 								<h4>Lavadora</h4>
-								
+
 								<img src="public/images/lavadora.jpg" alt="" />
 							</div>
 						</div>

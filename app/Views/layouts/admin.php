@@ -24,16 +24,16 @@
 	<script src="<?= base_url()?>/public/libs/numeral/numeral.min.js" charset="utf-8"></script>
 	<script src="<?= base_url()?>/public/js/script.js"  charset="utf-8"></script>
 
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/colors.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/custom_materialize.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/style_components.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/styles.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/colors.css?=2">
+	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/custom_materialize.css?=2">
+	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/style_components.css?=2">
+	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/styles.css?=2">
 	<!--FUENTE DE ICONOS-->
 	<link rel="stylesheet" href="<?= base_url() ?>/public/font/fontawesome/css/all.css">
-	<link href="<?= base_url() ?>/public/font/globalfont/globalfont.css" rel="stylesheet">
-	<link rel="stylesheet" href="<?= base_url()?>/public/styles/admin-module.css">
+	<link href="<?= base_url() ?>/public/font/globalfont/globalfont.css" rel="stylesheet?=2">
+	<link rel="stylesheet" href="<?= base_url()?>/public/styles/admin-module.css?=2">
 	<style media="screen">
-		
+
 	</style>
 </head>
 <body>
