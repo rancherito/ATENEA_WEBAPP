@@ -24,7 +24,7 @@ Vue.component('main-module',{
 	template: `
 		<div id="main-module" :class="{'main-module-crud': isOpenCrud}">
 			<div id="main-module-wrapcrud">
-				<div id="main-module-crud">
+				<div id="main-module-crud" class="f-c white-text">
 					<slot name="crud"></slot>
 				</div>
 				<span id="main-module-crud-title">{{crudtitle}}</span>
@@ -46,13 +46,11 @@ Vue.component('main-module',{
 						<slot></slot>
 					</div>
 				</div>
-				<div id="main-module-filter" :class="{'main-module-filter-show': isOpenFilter}">
+				<div id="main-module-filter" class="f-c" :class="{'main-module-filter-show': isOpenFilter}">
 					<a v-if="isOpenFilter" id="main-module-filter-close" @click="isOpenFilter = false">
 						<i class="fal fa-angle-right"></i>
 					</a>
-					<div>
-						<slot name="filter"></slot>
-					</div>
+					<slot name="filter"></slot>
 				</div>
 			</div>
 

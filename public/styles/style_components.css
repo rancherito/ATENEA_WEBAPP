@@ -129,15 +129,22 @@
 }
 .input-drop-image{
 	width: calc(100% - 56px);
-	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	padding: 16px;
 	position: relative;
 	overflow: hidden;
+	min-height: 140px
 }
 .input-drop-image img{
-	height: 140px;
+	width: 140px;
 	position: relative;
 	z-index: 2
+}
+.input-drop label{
+	left: 0 !important;
+	top: 0 !important;
 }
 .input-drop-content .input-drop-image div{
 	height: 100%;
