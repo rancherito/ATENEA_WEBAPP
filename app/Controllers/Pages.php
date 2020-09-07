@@ -1,4 +1,5 @@
 <?php namespace App\Controllers;
+use App\Models\QueryUsuarios;
 class Pages extends BaseController
 {
 	public function index()
@@ -10,28 +11,38 @@ class Pages extends BaseController
 		$_SESSION['ateneaapp'] = [];
 		if (isset($_POST['user']) && isset($_POST['pass'])) {
 			$_user = strtolower($_POST['user']);
-			//$flag_pass = md5($_POST['pass']) == '202cb962ac59075b964b07152d234b70';
-			switch ($_user) {
-				case 'user':
-					$data = [
-						'user' => $_user,
-						'pass' => '202cb962ac59075b964b07152d234b70',
-						'type' => 'user'
-					];
-					$_SESSION['ateneaapp'] = $data;
-					echo "U";
-				break;
-				case 'admin':
-					$data = [
-						'user' => $_user,
-						'pass' => '202cb962ac59075b964b07152d234b70',
-						'type' => 'administrador'
-					];
-					$_SESSION['ateneaapp'] = $data;
-					echo "A";
-				break;
-				default: echo "0"; break;
+			$_pass = md5($_POST['pass']);
+			$_usuarios = new QueryUsuarios();
+			$res = $_usuarios->ValidarAcceso($_user, $_pass);
+
+			if (!empty($res[0])) {
+				$user = $res[0];
+
+				switch ($user['Cargo']) {
+					case 'user':
+						$data = [
+							'user' => $_user,
+							'pass' => '202cb962ac59075b964b07152d234b70',
+							'type' => 'user'
+						];
+						$_SESSION['ateneaapp'] = $data;
+						echo "U";
+					break;
+					case 5:
+						$data = [
+							'user' => 'admin',
+							'name' => $user['Nombres'].' '.$user['Apellidos'],
+							'pass' => $user['Clave'],
+							'type' => 'administrador'
+						];
+						$_SESSION['ateneaapp'] = $data;
+						echo "A";
+					break;
+					default: echo "0"; break;
+				}
 			}
+			//
+			/**/
 		}
 
 	}

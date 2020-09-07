@@ -45,7 +45,7 @@ $year = date("Y");
     		margin: 20px 14px!important;
     		width: 65px;
 		}
-		
+
 		.footer-top-text{
 			margin-top: 10px;
 		    margin-bottom: 0;
@@ -60,7 +60,7 @@ $year = date("Y");
 		    text-transform: none;
 		    justify-content: center;
     		align-items: center;
-		}	
+		}
 		.servicios{
 			margin-left: 20px;
 		    margin-right: 20px;
@@ -84,7 +84,7 @@ $year = date("Y");
 			border-radius:  19px 19px 19px 19px;
 		}
 
-		
+
 
 
 	</style>
@@ -130,17 +130,17 @@ $year = date("Y");
 	</div>
 	<header>
 		<div class="container header_content">
-			
+
 			<a href="#" data-target="menu-responsive" class="sidenav-trigger">
 				<i  class="fal fa-bars"></i>
 			</a>
-			
+
 			<ul class="sidenav" id="menu-responsive">
 				<li>
 					<div class="user-view">
 						<div class="background">
 							<img src="public/images/fondo.jpg" alt="">
-							
+
 						</div>
 						<a href="" >
 							<img src="public/images/avatar_hombre.png" class="circle">
@@ -167,23 +167,23 @@ $year = date("Y");
 						Ayuda
 					</a>
 				</li>
-				
-			</ul>	
+
+			</ul>
 
 
 
 			<a href="." id="content-title-web">
 				<img src="<?= base_url()?>/public/images/ICON.svg" alt="UNAMAD" class="logo-index">
 				<span><?= $_ENV['varialbe.webname']?></span>
-				
+
 			</a>
-			
+
 				<div  class="buscar1">
 					<input id='search' placeholder="Buscar..." v-model="categoria">
 
 					<a id='' class='f-c waves-effect waves-light' ></a>
 
-				</div>		
+				</div>
 			<div class="header-links">
 
 				<a class="btn btn-large">
@@ -194,7 +194,7 @@ $year = date("Y");
 				</a>
 			</div>
 		</div>
-		
+
 		<div class="" style="height: 4px"></div>
 	</header>
 	<section id="content-body"  style="min-height: 600px;">
@@ -220,85 +220,85 @@ $year = date("Y");
 					<img src="public/images/retiro_compra.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Retira tu compra en
-						<br>			
+						<br>
 						<b>76 tiendas</b>
 						en todo el pais
-					</h3>					
+					</h3>
 				</a>
 				<a href="" class="">
 					<img src="public/images/despachos.svg" height="30px">
 					<h3  class="footer-top-text" style="line-height: 19px">
 						Envios a todo el Perú.
-						<br>			
+						<br>
 						<b></b>
 						Más de 1800 distritos
-					</h3>					
+					</h3>
 				</a>
 				<a href="" class="">
 					<img src="public/images/servicios_esp.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
-						Atencion al cliente 
-						<br>			
+						Atencion al cliente
+						<br>
 						<b></b>
 						(01) 983-4734
-					</h3>					
+					</h3>
 				</a>
 				<a href="" class="">
 					<img src="public/images/libroreclam.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Servicios
-						<br>			
+						<br>
 						<b></b>
 						Especializados
-					</h3>					
+					</h3>
 				</a>
 				<a href="" class="">
 					<img src="public/images/atencion_cliente.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Libro de
-						<br>			
+						<br>
 						<b></b>
 						Reclamaciones
-					</h3>					
+					</h3>
 				</a>
 				</div>
-				
+
 			</div>
-			
+
 		</div>
 		<!--<div id="copyright" class="black white-text f-c" style="height: 60px;">COPYRIGHT</div>-->
-		
+
 		<div id="contato" class="#263238 blue-grey darken-4 white-text f-c" style="height: 350px;">
 			<div class="container" style="display: block">
 				<div class="footer-pagos">
 					<br><br>
 					<h4 class="footer-h4" >Haz tus compras facilmente<br>
-					<span>Con total seguridad y privacidad</span>							
-					</h4>					
+					<span>Con total seguridad y privacidad</span>
+					</h4>
 				</div>
 				<div class="footer-imgs-wrapper1 row">
-					<img class="col s1 " src="public/images/visa.svg" width="4" >	
+					<img class="col s1 " src="public/images/visa.svg" width="4" >
 
-					<img class="col s1 " src="public/images/mastercard.svg" width="4">						
-					<img class="col s1" src="public/images/americanexpress.svg" width="4">			
-				
-					<img class="col s1" src="public/images/dinnersclub.svg" width="4">			
-				
-					<img class="col s1" src="public/images/pagoefectivo.svg" width="4">			
-				
-					<img class="col s1" src="public/images/secure1.png" width="4">			
+					<img class="col s1 " src="public/images/mastercard.svg" width="4">
+					<img class="col s1" src="public/images/americanexpress.svg" width="4">
+
+					<img class="col s1" src="public/images/dinnersclub.svg" width="4">
+
+					<img class="col s1" src="public/images/pagoefectivo.svg" width="4">
+
+					<img class="col s1" src="public/images/secure1.png" width="4">
 				</div>
-				
+
 				<div class="social-media">
 					<h3>Siguenos en</h3>
 					<ul class="row">
 						<i class="material-icons" >facebook</i>
-						
+
 					</ul>
 				</div>
 			</div>
 		</div>
-		
+
 	</footer>
 
 
@@ -310,6 +310,7 @@ $year = date("Y");
 		e.preventDefault();
 		const serialize = form_acceso.serialize()
 		$.post('<?= base_url()?>/validar_acceso', serialize, function (res) {
+			console.log(res);
 			switch (res) {
 				case 'A':
 					console.log('ADMINSTRADOR');
@@ -333,19 +334,19 @@ $year = date("Y");
     	dist:10,
     	fullWidth:false
     	});
-    
+
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
     });
 
-	
-  
+
+
 	  // Or with jQuery
 
 	  // $(document).ready(function(){
 	  //   $('.carousel').carousel();
 	  // });
-      
+
 	</script>
 </body>
 </html>

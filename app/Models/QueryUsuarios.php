@@ -36,4 +36,9 @@ class QueryUsuarios{
 		";
 		return query_database($sql);
 	}
+	public function ValidarAcceso($user, $pass)
+	{
+		$sql = "SELECT TOP 1 * FROM Usuarios WHERE (DNI = '$user' OR Usuario = '$user') AND Clave = '$pass'";
+		return query_database($sql);
+	}
 }
