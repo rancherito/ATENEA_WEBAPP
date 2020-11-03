@@ -31,6 +31,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 session_start();
+if(empty($_SESSION['ateneaapp'])) $_SESSION['ateneaapp'] = [];
 
 $_APPVARS = $_SESSION['ateneaapp'];
 $routes->get('/', 'Pages::index');
@@ -43,7 +44,7 @@ $routes->add('venta','Pages::venta');
 
 
 //SECCION ADMINISTRADOR
-if ($_APPVARS['user'] == 'admin') {
+if (!empty($_APPVARS['user']) && $_APPVARS['user'] == 'admin') {
 
 	//require 'Config/RoutesAdmin.php';
 	$routes->get('administrator', 'Pages::administrator');
