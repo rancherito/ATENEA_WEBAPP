@@ -40,7 +40,7 @@
                 <tbody>
                   <tr>
                     <td class="product-image">
-                      <img src="public/images/celular.jpg" alt="Image" >
+                      <img src="images/celular.jpg" alt="Image" >
                     </td>
                     <td class="product-name">
                       <h2 class="h5 text-black">Smartphone</h2>

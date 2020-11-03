@@ -2,12 +2,12 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<link rel="icon" href="<?= base_url() ?>/public/images/ICON.svg" type="image/svg" sizes="16x16">
-		<link rel="stylesheet" href="<?= base_url() ?>/public/libs/materialize/css/materialize.min.css">
-		<link rel="stylesheet" href="<?= base_url() ?>/public/styles/normalize.css">
+		<link rel="icon" href="<?= base_url() ?>/images/ICON.svg" type="image/svg" sizes="16x16">
+		<link rel="stylesheet" href="<?= base_url() ?>/libs/materialize/css/materialize.min.css">
+		<link rel="stylesheet" href="<?= base_url() ?>/styles/normalize.css">
 
-		<link rel="stylesheet" href="<?= base_url() ?>/public/styles/style_components.css">
-		<link rel="stylesheet" href="<?= base_url() ?>/public/styles/styles.css">
+		<link rel="stylesheet" href="<?= base_url() ?>/styles/style_components.css">
+		<link rel="stylesheet" href="<?= base_url() ?>/styles/styles.css">
 		<title>IMPRESION COMPROBANTE</title>
 	</head>
 	<style media="screen">
@@ -36,7 +36,7 @@
 					<span><?=$newDate?></span>
 				</div>
 				<div class="info f-c">
-					<img width="100" src="http://localhost:4000/public/images/icon_color.svg" alt="UNAMAD" id="logoapp">
+					<img width="100" src="http://localhost:4000/images/icon_color.svg" alt="UNAMAD" id="logoapp">
 					<b>R-<?= substr(($_POST['id_venta'] + 100000) . '', 1,5)?> </b>
 				</div>
 			</div>

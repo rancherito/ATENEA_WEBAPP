@@ -10,7 +10,7 @@
 			<div class="col l12 xl6" v-for="producto in agrupacion_productos[almacen.Nombre]">
 				<div class="stockproducto waves-effect waves" @click="transferir(producto)">
 					<div class="stockproducto-wrap-image">
-						<img src="<?= base_url() ?>/public/images/products/default.svg">
+						<img src="<?= base_url() ?>/images/products/default.svg">
 					</div>
 					<div class="stockproducto-wrap-description">
 						<div class="">

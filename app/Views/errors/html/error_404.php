@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/normalize.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/animate/animate.min.css">
-	<link rel="icon" href="<?= base_url() ?>/public/images/ICON.svg" type="image/svg" sizes="16x16">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/materialize/css/materialize.min.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/colors.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/custom_materialize.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/style_components.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/styles.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/font/fontawesome/css/all.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/normalize.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/libs/animate/animate.min.css">
+	<link rel="icon" href="<?= base_url() ?>/images/ICON.svg" type="image/svg" sizes="16x16">
+	<link rel="stylesheet" href="<?= base_url() ?>/libs/materialize/css/materialize.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/colors.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/custom_materialize.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/style_components.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/styles.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/font/fontawesome/css/all.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Rosario:ital@1&display=swap" rel="stylesheet">
 	<style media="screen">
 		html, body, .ccc{

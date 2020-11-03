@@ -290,7 +290,7 @@ let app = new Vue({
 			this.isNewProducto = true
 			this.form_precio = 0
 			this.form_key = -1
-			this.form_image.src = '<?= base_url() ?>/public/images/products/default.svg'
+			this.form_image.src = '<?= base_url() ?>/images/products/default.svg'
 		},
 		editItem: function (producto) {
 			this.isNewProducto = false

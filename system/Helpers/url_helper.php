@@ -141,7 +141,7 @@ if (! function_exists('base_url'))
 		}
 
 		return rtrim((string) $url, '/ ');*/
-		return "$_SERVER[REQUEST_SCHEME]://$_SERVER[HTTP_HOST]".( !empty($_ENV['app.subURL']) ? '/'.$_ENV['app.subURL'] : '');
+		return "$_SERVER[REQUEST_SCHEME]://$_SERVER[HTTP_HOST]";
 	}
 }
 

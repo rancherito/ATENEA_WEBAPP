@@ -73,7 +73,7 @@
 			addItem: function () {
 				this.isOpenCrud = true;
 				this.isNewItem = true
-				this.form_image.src = '<?= base_url() ?>/public/images/brands/default.svg'
+				this.form_image.src = '<?= base_url() ?>/images/brands/default.svg'
 				this.form_nombre = ''
 				this.form_key = -1
 			},

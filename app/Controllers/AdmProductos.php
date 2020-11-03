@@ -43,7 +43,7 @@ class AdmProductos extends BaseController
 		print_r(json_encode($res));
 		if (!empty($res[0]['KeyItem'])) {
 			$key = $res[0]['KeyItem'];
-			$file = "public/images/products/$key.png";
+			$file = "images/products/$key.png";
 			file_put_contents($file, $data);
 		}
 	}

@@ -5,33 +5,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>ATENEA ADMINISTRADOR</title>
 
-	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/animate/animate.min.css">
-	<link rel="icon" href="<?= base_url() ?>/public/images/icon_color.svg" type="image/svg" sizes="16x16">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/materialize/css/materialize.min.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/normalize.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/libs/simplebar/simplebar.css"/>
-	<script src="<?= base_url() ?>/public/libs/simplebar/simplebar.min.js"></script>
-	<script src="<?= base_url() ?>/public/libs/vue/vue.min.js"></script>
-	<script src="<?= base_url() ?>/public/js/vuecomponents/layout-components.js"></script>
-	<script src="<?= base_url() ?>/public/js/vuecomponents/components.js"></script>
+	<link rel="stylesheet" href="<?= base_url() ?>/libs/animate/animate.min.css">
+	<link rel="icon" href="<?= base_url() ?>/images/icon_color.svg" type="image/svg" sizes="16x16">
+	<link rel="stylesheet" href="<?= base_url() ?>/libs/materialize/css/materialize.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/normalize.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/libs/simplebar/simplebar.css"/>
+	<script src="<?= base_url() ?>/libs/simplebar/simplebar.min.js"></script>
+	<script src="<?= base_url() ?>/libs/vue/vue.min.js"></script>
+	<script src="<?= base_url() ?>/js/vuecomponents/layout-components.js"></script>
+	<script src="<?= base_url() ?>/js/vuecomponents/components.js"></script>
 	<!--JQUERY-->
-	<script src="<?= base_url() ?>/public/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="<?= base_url() ?>/public/libs/materialize/js/materialize.min.js"></script>
-	<link rel="stylesheet" href="<?= base_url()?>/public/libs/searchBox2/searchBox2.css">
-	<script src="<?= base_url()?>/public/libs/searchBox2/searchBox2.js"></script>
-	<script src="<?= base_url() ?>/public/libs/JaroWrinker/JaroWrinker.js"></script>
-	<script src="<?= base_url()?>/public/libs/inputmask/inputmask.min.js" charset="utf-8"></script>
-	<script src="<?= base_url()?>/public/libs/numeral/numeral.min.js" charset="utf-8"></script>
-	<script src="<?= base_url()?>/public/js/script.js"  charset="utf-8"></script>
+	<script src="<?= base_url() ?>/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="<?= base_url() ?>/libs/materialize/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="<?= base_url()?>/libs/searchBox2/searchBox2.css">
+	<script src="<?= base_url()?>/libs/searchBox2/searchBox2.js"></script>
+	<script src="<?= base_url() ?>/libs/JaroWrinker/JaroWrinker.js"></script>
+	<script src="<?= base_url()?>/libs/inputmask/inputmask.min.js" charset="utf-8"></script>
+	<script src="<?= base_url()?>/libs/numeral/numeral.min.js" charset="utf-8"></script>
+	<script src="<?= base_url()?>/js/script.js"  charset="utf-8"></script>
 
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/colors.css?=2">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/custom_materialize.css?=2">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/style_components.css?=2">
-	<link rel="stylesheet" href="<?= base_url() ?>/public/styles/styles.css?=2">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/colors.css?=2">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/custom_materialize.css?=2">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/style_components.css?=2">
+	<link rel="stylesheet" href="<?= base_url() ?>/styles/styles.css?=2">
 	<!--FUENTE DE ICONOS-->
-	<link rel="stylesheet" href="<?= base_url() ?>/public/font/fontawesome/css/all.css">
-	<link href="<?= base_url() ?>/public/font/globalfont/globalfont.css" rel="stylesheet?=2">
-	<link rel="stylesheet" href="<?= base_url()?>/public/styles/admin-module.css?=2">
+	<link rel="stylesheet" href="<?= base_url() ?>/font/fontawesome/css/all.css">
+	<link href="<?= base_url() ?>/font/globalfont/globalfont.css" rel="stylesheet?=2">
+	<link rel="stylesheet" href="<?= base_url()?>/styles/admin-module.css?=2">
 	<style media="screen">
 
 	</style>
@@ -58,7 +58,7 @@
 	</div>
 	<aside>
 		<a id="logo" class="f-c" href="<?= base_url()?>/administrator">
-			<img src="<?= base_url() ?>/public/images/icon_color.svg" alt="UNAMAD" id="logoapp">
+			<img src="<?= base_url() ?>/images/icon_color.svg" alt="UNAMAD" id="logoapp">
 		</a>
 		<div id="menu-aside">
 
@@ -83,7 +83,7 @@
 			</a>
 		</div>
 		<div id="options-aside">
-			<a class="aside-item-opt dropdown-trigger" data-target='dropdown1'><div class="cover" style="background-image: url('<?= base_url() ?>/public/images/avatar_hombre.png')"></div></a>
+			<a class="aside-item-opt dropdown-trigger" data-target='dropdown1'><div class="cover" style="background-image: url('<?= base_url() ?>/images/avatar_hombre.png')"></div></a>
 			<a class="aside-item-opt" href="<?= base_url()?>/close"><i class="fal fa-power-off"></i></a>
 		</div>
 	</aside>

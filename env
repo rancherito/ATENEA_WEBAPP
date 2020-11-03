@@ -16,7 +16,7 @@ varialbe.webname = 'Inversiones Atenea'
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-CI_ENVIRONMENT = production
+CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP

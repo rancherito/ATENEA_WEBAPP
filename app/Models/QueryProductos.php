@@ -82,8 +82,8 @@ class QueryProductos
 		";
         $list = query_database($sql);
 		foreach ($list as $key => $v) {
-			$file = 'public/images/products/' . $v['Id_Producto'] .'.png';
-			$list[$key]['ImageUrl'] = file_exists($file) ? base_url() . '/' . $file . '?v=' . rand() : base_url() . '/public/images/products/default.svg';
+			$file = 'images/products/' . $v['Id_Producto'] .'.png';
+			$list[$key]['ImageUrl'] = file_exists($file) ? base_url() . '/' . $file . '?v=' . rand() : base_url() . '/images/products/default.svg';
 		}
 		return $list;
     }
@@ -113,8 +113,8 @@ class QueryProductos
 		$list = query_database($sql);
 
 		foreach ($list as $key => $v) {
-			$file = 'public/images/brands/' . $v['Id_marcaProducto'] .'.png';
-			$list[$key]['ImageUrl'] = file_exists($file) ? base_url() . '/' . $file . '?v=' . rand() : base_url() . '/public/images/brands/default.svg';
+			$file = 'images/brands/' . $v['Id_marcaProducto'] .'.png';
+			$list[$key]['ImageUrl'] = file_exists($file) ? base_url() . '/' . $file . '?v=' . rand() : base_url() . '/images/brands/default.svg';
 		}
 		return $list;
 	}

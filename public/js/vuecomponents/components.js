@@ -3,7 +3,7 @@
 		<div class="input-drop" ref="bg" :class="{'input-drop-content': this.state > 1}">
 			<div class="input-drop-image">
 				<div class="cover" ref="fill"></div>
-				<img ref="imagePut" src="../public/images/dropfile.svg" @load="onLoadImage">
+				<img ref="imagePut" src="../images/dropfile.svg" @load="onLoadImage">
 			</div>
 			<canvas style="display: none" ref="imageCanvas" width="200"></canvas>
 			<div class="input-drop-option">

@@ -26,7 +26,7 @@ justify-content: center;
     <div class="row ">
         <div id="imagen_central" class="col s6">
             
-            <img class="materialboxed" src="public/images/celular.jpg" alt="">
+            <img class="materialboxed" src="images/celular.jpg" alt="">
 
         </div>
         <div class="col s6">

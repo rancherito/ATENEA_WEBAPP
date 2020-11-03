@@ -122,7 +122,7 @@ background-color:#EB0429;
                         30% off here
                     </div>
                     <div class="product-box-offer">
-                        <img src="public/images/celular.jpg" alt="" />
+                        <img src="images/celular.jpg" alt="" />
                         <div class="caption">
                             <h3><a href="#">Samsung Galaxy </a></h3>
                             <p><a href="#">Detalles </a></p>
@@ -134,7 +134,7 @@ background-color:#EB0429;
                         30% off here
                     </div>
                     <div class="product-box-offer">
-                        <img src="public/images/celular.jpg" alt="" />
+                        <img src="images/celular.jpg" alt="" />
                         <div class="caption">
                             <h3><a href="#">Samsung Galaxy </a></h3>
                             <p><a href="#">Detalles </a></p>
@@ -146,7 +146,7 @@ background-color:#EB0429;
                         30% off here
                     </div>
                     <div class="product-box-offer">
-                        <img src="public/images/celular.jpg" alt="" />
+                        <img src="images/celular.jpg" alt="" />
                         <div class="caption">
                             <h3><a href="#">Samsung Galaxy </a></h3>
                             <p><a href="#">Detalles </a></p>
@@ -158,7 +158,7 @@ background-color:#EB0429;
                         30% off here
                     </div>
                     <div class="product-box-offer">
-                        <img src="public/images/celular.jpg" alt="" />
+                        <img src="images/celular.jpg" alt="" />
                         <div class="caption">
                             <h3><a href="#">Samsung Galaxy </a></h3>
                             <p><a href="#">Detalles </a></p>
@@ -273,7 +273,7 @@ background-color:#EB0429;
                 <div  class="listapro row">
                     <div class="col m3 text-center s6">
                         <div class="thumbnail product-box">
-                            <img src="public/images/lavadora.jpg" alt="" />
+                            <img src="images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
                                 <p>Price : <strong>$ 3,45,900</strong>  </p>                              
@@ -283,7 +283,7 @@ background-color:#EB0429;
                     </div> 
                     <div class="col m3 text-center s6">
                         <div class="thumbnail product-box">
-                            <img src="public/images/lavadora.jpg" alt="" />
+                            <img src="images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
                                 <p>Price : <strong>$ 3,45,900</strong>  </p>                              
@@ -293,7 +293,7 @@ background-color:#EB0429;
                     </div> 
                     <div class="col m3 text-center s6">
                         <div class="thumbnail product-box">
-                            <img src="public/images/lavadora.jpg" alt="" />
+                            <img src="images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
                                 <p>Price : <strong>$ 3,45,900</strong>  </p>                              
@@ -303,7 +303,7 @@ background-color:#EB0429;
                     </div> 
                     <div class="col m3 text-center s6">
                         <div class="thumbnail product-box">
-                            <img src="public/images/lavadora.jpg" alt="" />
+                            <img src="images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
                                 <p>Price : <strong>$ 3,45,900</strong>  </p>                              
@@ -313,7 +313,7 @@ background-color:#EB0429;
                     </div> 
                     <div class="col m3 text-center s6">
                         <div class="thumbnail product-box">
-                            <img src="public/images/lavadora.jpg" alt="" />
+                            <img src="images/lavadora.jpg" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
                                 <p>Price : <strong>$ 3,45,900</strong>  </p>                              

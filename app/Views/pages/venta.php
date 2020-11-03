@@ -137,10 +137,10 @@
 	          			</table>
           			</div>
           			<div id="botones_pago" class="input-field col s12">
-          				<button class="btn red"><img src="public/images/visa.svg" width="50"></button>
-          				<button class="btn"><img src="public/images/mastercard.svg" width="40"></button>
-          				<button class="btn"><img src="public/images/pagoefectivo.svg" width="70"></button>
-          				<button class="btn"><img src="public/images/dinnersclub.svg" width="50"></button>
+          				<button class="btn red"><img src="images/visa.svg" width="50"></button>
+          				<button class="btn"><img src="images/mastercard.svg" width="40"></button>
+          				<button class="btn"><img src="images/pagoefectivo.svg" width="70"></button>
+          				<button class="btn"><img src="images/dinnersclub.svg" width="50"></button>
           			</div>
           			<div id="r_pedido" class="input-field col s12"> 
           				<button class="btn-large blue-grey darken-3">Realizar Pedido</button>

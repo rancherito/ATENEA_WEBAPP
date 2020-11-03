@@ -26,7 +26,7 @@ class AdmMarcas extends BaseController
 
 		if (!empty($res[0]['KeyItem'])) {
 			$key = $res[0]['KeyItem'];
-			$file = "public/images/brands/$key.png";
+			$file = "images/brands/$key.png";
 			file_put_contents($file, $data);
 		}
 

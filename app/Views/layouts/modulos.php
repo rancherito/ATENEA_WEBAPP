@@ -7,27 +7,27 @@ $year = date("Y");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>ATENEA</title>
-	<link rel="stylesheet" href="<?= base_url()?>/public/styles/normalize.css">
-	<link rel="stylesheet" href="<?= base_url()?>/public/libs/animate/animate.min.css">
-	<link rel="icon" href="<?= base_url()?>/public/images/ICON.svg" type="image/svg" sizes="16x16">
-	<link rel="stylesheet" href="<?= base_url()?>/public/libs/materialize/css/materialize.min.css">
+	<link rel="stylesheet" href="<?= base_url()?>/styles/normalize.css">
+	<link rel="stylesheet" href="<?= base_url()?>/libs/animate/animate.min.css">
+	<link rel="icon" href="<?= base_url()?>/images/ICON.svg" type="image/svg" sizes="16x16">
+	<link rel="stylesheet" href="<?= base_url()?>/libs/materialize/css/materialize.min.css">
 	<!--JQUERY-->
-	<script src="<?= base_url()?>/public/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="<?= base_url()?>/public/libs/materialize/js/materialize.min.js"></script>
-	<script src="<?= base_url() ?>/public/libs/vue/vue.min.js"></script>
+	<script src="<?= base_url()?>/libs/Jquery/jquery-3.5.0.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="<?= base_url()?>/libs/materialize/js/materialize.min.js"></script>
+	<script src="<?= base_url() ?>/libs/vue/vue.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<link rel="stylesheet" href="<?= base_url()?>/public/styles/colors.css">
-	<link rel="stylesheet" href="<?= base_url()?>/public/styles/custom_materialize.css">
-	<link rel="stylesheet" href="<?= base_url()?>/public/styles/style_components.css">
-	<link rel="stylesheet" href="<?= base_url()?>/public/styles/styles.css">
-	<link rel="stylesheet" href="<?= base_url()?>/public/styles/main.css">
+	<link rel="stylesheet" href="<?= base_url()?>/styles/colors.css">
+	<link rel="stylesheet" href="<?= base_url()?>/styles/custom_materialize.css">
+	<link rel="stylesheet" href="<?= base_url()?>/styles/style_components.css">
+	<link rel="stylesheet" href="<?= base_url()?>/styles/styles.css">
+	<link rel="stylesheet" href="<?= base_url()?>/styles/main.css">
 	<!--FUENTE DE ICONOS-->
-	<link rel="stylesheet" href="<?= base_url()?>/public/font/fontawesome/css/all.css">
+	<link rel="stylesheet" href="<?= base_url()?>/font/fontawesome/css/all.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Rosario:ital@1&display=swap" rel="stylesheet">
 	<style media="screen">
 		#modal-login{
-			background-image: url('<?= base_url()?>/public/images/bg_003.jpg');
+			background-image: url('<?= base_url()?>/images/bg_003.jpg');
 		}
 		#modal-login::before{
 			content: '';
@@ -139,11 +139,11 @@ $year = date("Y");
 				<li>
 					<div class="user-view">
 						<div class="background">
-							<img src="public/images/fondo.jpg" alt="">
+							<img src="images/fondo.jpg" alt="">
 
 						</div>
 						<a href="" >
-							<img src="public/images/avatar_hombre.png" class="circle">
+							<img src="images/avatar_hombre.png" class="circle">
 						</a>
 						<a href="">
 							<span class="name white-text">Nickie</span>
@@ -173,7 +173,7 @@ $year = date("Y");
 
 
 			<a href="." id="content-title-web">
-				<img src="<?= base_url()?>/public/images/ICON.svg" alt="UNAMAD" class="logo-index">
+				<img src="<?= base_url()?>/images/ICON.svg" alt="UNAMAD" class="logo-index">
 				<span><?= $_ENV['varialbe.webname']?></span>
 
 			</a>
@@ -203,11 +203,11 @@ $year = date("Y");
 	<body>
 		 <div class="carousel">
 		 	<h1 class="c">Productos más vendidos</h1>
-		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
-		    <a class="carousel-item" href="#"><img src="public/images/lavadora.jpg"></a>
-		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
-		    <a class="carousel-item" href="#"><img src="public/images/lavadora.jpg"></a>
-		    <a class="carousel-item" href="#"><img src="public/images/celular.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="images/celular.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="images/lavadora.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="images/celular.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="images/lavadora.jpg"></a>
+		    <a class="carousel-item" href="#"><img src="images/celular.jpg"></a>
  		 </div>
 	</body>
 
@@ -217,7 +217,7 @@ $year = date("Y");
 			<div class="container" style="display: block">
 				<div class="servicios row">
 				<a href="" class="">
-					<img src="public/images/retiro_compra.svg" height="30px">
+					<img src="images/retiro_compra.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Retira tu compra en
 						<br>
@@ -226,7 +226,7 @@ $year = date("Y");
 					</h3>
 				</a>
 				<a href="" class="">
-					<img src="public/images/despachos.svg" height="30px">
+					<img src="images/despachos.svg" height="30px">
 					<h3  class="footer-top-text" style="line-height: 19px">
 						Envios a todo el Perú.
 						<br>
@@ -235,7 +235,7 @@ $year = date("Y");
 					</h3>
 				</a>
 				<a href="" class="">
-					<img src="public/images/servicios_esp.svg" height="30px">
+					<img src="images/servicios_esp.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Atencion al cliente
 						<br>
@@ -244,7 +244,7 @@ $year = date("Y");
 					</h3>
 				</a>
 				<a href="" class="">
-					<img src="public/images/libroreclam.svg" height="30px">
+					<img src="images/libroreclam.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Servicios
 						<br>
@@ -253,7 +253,7 @@ $year = date("Y");
 					</h3>
 				</a>
 				<a href="" class="">
-					<img src="public/images/atencion_cliente.svg" height="30px">
+					<img src="images/atencion_cliente.svg" height="30px">
 					<h3 class="footer-top-text" style="line-height: 19px">
 						Libro de
 						<br>
@@ -277,16 +277,16 @@ $year = date("Y");
 					</h4>
 				</div>
 				<div class="footer-imgs-wrapper1 row">
-					<img class="col s1 " src="public/images/visa.svg" width="4" >
+					<img class="col s1 " src="images/visa.svg" width="4" >
 
-					<img class="col s1 " src="public/images/mastercard.svg" width="4">
-					<img class="col s1" src="public/images/americanexpress.svg" width="4">
+					<img class="col s1 " src="images/mastercard.svg" width="4">
+					<img class="col s1" src="images/americanexpress.svg" width="4">
 
-					<img class="col s1" src="public/images/dinnersclub.svg" width="4">
+					<img class="col s1" src="images/dinnersclub.svg" width="4">
 
-					<img class="col s1" src="public/images/pagoefectivo.svg" width="4">
+					<img class="col s1" src="images/pagoefectivo.svg" width="4">
 
-					<img class="col s1" src="public/images/secure1.png" width="4">
+					<img class="col s1" src="images/secure1.png" width="4">
 				</div>
 
 				<div class="social-media">

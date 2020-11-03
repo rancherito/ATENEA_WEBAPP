@@ -1,4 +1,4 @@
-<script src="<?= base_url() ?>/public/js/vuecomponents/components.js" charset="utf-8"></script>
+<script src="<?= base_url() ?>/js/vuecomponents/components.js" charset="utf-8"></script>
 <style media="screen">
 	#filter_form{
 		width: 400px;

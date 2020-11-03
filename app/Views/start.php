@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?= base_url()?>/public/libs/swiper/swiper-bundle.min.css">
-<script src="<?= base_url()?>/public/libs/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="<?= base_url()?>/libs/swiper/swiper-bundle.min.css">
+<script src="<?= base_url()?>/libs/swiper/swiper-bundle.min.js"></script>
 <style media="screen">
 :root {
     --swiper-theme-color: var(--bg-primary);
@@ -52,16 +52,16 @@
 	<div class="swiper-container container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
-				<img src="<?= base_url()?>/public/images/010720-slider-amd-1.png" style="width: 100%">
+				<img src="<?= base_url()?>/images/010720-slider-amd-1.png" style="width: 100%">
 			</div>
 			<div class="swiper-slide">
-				<img src="<?= base_url()?>/public/images/010720-slider-lb-1.png" style="width: 100%">
+				<img src="<?= base_url()?>/images/010720-slider-lb-1.png" style="width: 100%">
 			</div>
 			<div class="swiper-slide">
-				<img src="<?= base_url()?>/public/images/010720-slider-pads-1.png" style="width: 100%">
+				<img src="<?= base_url()?>/images/010720-slider-pads-1.png" style="width: 100%">
 			</div>
 			<div class="swiper-slide">
-				<img src="<?= base_url()?>/public/images/010720-slider-celulares-1.png" style="width: 100%">
+				<img src="<?= base_url()?>/images/010720-slider-celulares-1.png" style="width: 100%">
 			</div>
 		</div>
 		<!-- Add Arrows -->
@@ -76,49 +76,49 @@
 			<ul class="row" id="categorias">
 				<li class="col s1">
 					<a href="">
-						<img src="public/images/Televisores.svg">
+						<img src="images/Televisores.svg">
 						<p>Televisores</p>
 					</a>
 				</li>
 				<li class="col s1">
 					<a href="">
-						<img src="public/images/Audio.svg">
+						<img src="images/Audio.svg">
 						<p>Audio</p>
 					</a>
 				</li>
 				<li class="col s1">
 					<a href="">
-						<img src="public/images/computo.svg">
+						<img src="images/computo.svg">
 						<p>Cómputo</p>
 					</a>
 				</li>
 				<li class="col s1">
 					<a href="">
-						<img src="public/images/linea-blanca.svg">
+						<img src="images/linea-blanca.svg">
 						<p>Línea Blanca</p>
 					</a>
 				</li>
 				<li class="col s1">
 					<a href="">
-						<img src="public/images/deporte.svg">
+						<img src="images/deporte.svg">
 						<p>Deportes</p>
 					</a>
 				</li>
 				<li class="col s1">
 					<a href="">
-						<img src="public/images/celulares.svg">
+						<img src="images/celulares.svg">
 						<p>Celulares</p>
 					</a>
 				</li>
 				<li class="col s1">
 					<a href="">
-						<img src="public/images/hogar.svg">
+						<img src="images/hogar.svg">
 						<p>Hogar</p>
 					</a>
 				</li class="col s1">
 				<li>
 					<a href="">
-						<img src="public/images/electrodomesticos.svg">
+						<img src="images/electrodomesticos.svg">
 						<p>Electrodomésticos</p>
 					</a>
 				</li>
@@ -155,7 +155,7 @@
 							<div class="card-panel f-c" style="width: 100%; height: 300px;">
 								<h4>Lavadora</h4>
 
-								<img src="public/images/lavadora.jpg" alt="" />
+								<img src="images/lavadora.jpg" alt="" />
 							</div>
 						</div>
 
